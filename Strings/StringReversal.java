@@ -72,6 +72,19 @@ class ReverseUsingCollections
         System.out.println(result);
     }
 }
+
+class using_recursion_reverse_String
+{
+    public static void using_recursion_reverse_String_methods(String str,int index) {
+        
+        if(index<0)
+        {
+            return;
+        }
+        System.out.print(str.charAt(index));
+        using_recursion_reverse_String_methods(str,index-1);
+    }
+}
 public class StringReversal {
     
     public static void main(String[] args) {
@@ -79,5 +92,7 @@ public class StringReversal {
         ReverseUsingStringBuilder.reverseUsingStringBuilder("Python");
         ReverseUsingArrayList.reverseUsingArrayList("Ruby");
         ReverseUsingCollections.reverseUsingCollections("Appium");
+        using_recursion_reverse_String.using_recursion_reverse_String_methods("Playwright", "Playwright".length()-1);
+        System.out.println();
     }
 }
