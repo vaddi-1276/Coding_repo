@@ -12,16 +12,16 @@ import java.util.Collections;
 
 class UsingForLoopReversePalindromeCheck {
     public static void UsingForLoopReversePalindromeCheckMethods(String str) {
-        String result = "";
+
+        String reverseString = "";
         for (int i = str.length() - 1; i >= 0; i--) {
-            result = result + str.charAt(i);
+            reverseString = reverseString + str.charAt(i);
         }
 
-        if (result.equals(str)) {
-            System.out.println("Reverse = " + result);
-            System.out.println("Palindrome = Yes");
+        if (str.equals(reverseString)) {
+            System.out.println(str + " Reverse = " + reverseString);
+            System.out.println("Palindrome = Yes ");
         } else {
-            System.out.println("Reverse = " + result);
             System.out.println("Palindrome = No");
         }
     }
@@ -32,11 +32,10 @@ class UsingStringBuilderReversePalindromeCheck {
 
         String result = new StringBuilder(str).reverse().toString();
 
-        if (result.equals(str)) {
-            System.out.println("Reverse = " + result);
-            System.out.println("Palindrome = Yes");
+        if (str.equals(result)) {
+            System.out.println(str + " Reverse = " + result);
+            System.out.println("Palindrome = Yes ");
         } else {
-            System.out.println("Reverse = " + result);
             System.out.println("Palindrome = No");
         }
     }
@@ -51,6 +50,7 @@ class UsingArrayListCollectionsReverseBuiltinReversePalindromeCheck {
         }
 
         Collections.reverse(list);
+        System.out.println(list);
 
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
@@ -59,10 +59,9 @@ class UsingArrayListCollectionsReverseBuiltinReversePalindromeCheck {
         System.out.println(result);
 
         if (str.equals(result.toString())) {
-            System.out.println("Reverse = " + result);
-            System.out.println("Palindrome = Yes");
+            System.out.println(str + " Reverse = " + result);
+            System.out.println("Palindrome = Yes ");
         } else {
-            System.out.println("Reverse = " + result);
             System.out.println("Palindrome = No");
         }
     }
@@ -70,8 +69,8 @@ class UsingArrayListCollectionsReverseBuiltinReversePalindromeCheck {
 
 public class ReversePalindromeCheck {
     public static void main(String[] args) {
-        UsingForLoopReversePalindromeCheck.UsingForLoopReversePalindromeCheckMethods("like");
-        UsingStringBuilderReversePalindromeCheck.UsingStringBuilderReversePalindromeCheckMethods("madam");
+        UsingForLoopReversePalindromeCheck.UsingForLoopReversePalindromeCheckMethods("madam");
+        UsingStringBuilderReversePalindromeCheck.UsingStringBuilderReversePalindromeCheckMethods("like");
         UsingArrayListCollectionsReverseBuiltinReversePalindromeCheck
                 .UsingArrayListCollectionsReverseBuiltinReversePalindromeCheckMethods("madam");
     }

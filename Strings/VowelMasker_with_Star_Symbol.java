@@ -12,7 +12,6 @@ class VowelMaskingUsingLoop {
     public static void maskUsingLoop(String str) {
 
         String result = "";
-
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
@@ -34,16 +33,17 @@ class VowelMaskingUsingArrayList {
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
-
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
-                    || ch == 'o' || ch == 'u') {
+                    || ch == 'o' || ch == 'u')
+
+            {
                 result.append("*");
+
             } else {
-                result.append(list.get(i));
+                result.append(ch);
             }
         }
         System.out.println(result);

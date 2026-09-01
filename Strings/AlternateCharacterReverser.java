@@ -11,83 +11,88 @@ import java.util.Collections;
 
 class AlternateCharacterReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
-        String even_position = "";
+
+        String onlyevenindexvalueString = "";
         for (int i = 0; i < str.length(); i++) {
             if (i % 2 == 0) {
-                char ch = str.charAt(i);
-                even_position = even_position + ch;
+                onlyevenindexvalueString = onlyevenindexvalueString + str.charAt(i);
             }
         }
-        String reverse_even_position = "";
-        for (int i = even_position.length() - 1; i >= 0; i--) {
-            reverse_even_position = reverse_even_position + even_position.charAt(i);
+
+        String reverseonlyevenindexvalueString = "";
+
+        for (int i = onlyevenindexvalueString.length() - 1; i >= 0; i--) {
+            reverseonlyevenindexvalueString = reverseonlyevenindexvalueString + onlyevenindexvalueString.charAt(i);
         }
+
         int index = 0;
-        String finalString = "";
+        String result = "";
 
         for (int i = 0; i < str.length(); i++) {
             if (i % 2 == 0) {
-                finalString = finalString + reverse_even_position.charAt(index++);
+                result = result + reverseonlyevenindexvalueString.charAt(index++);
             } else {
-                finalString = finalString + str.charAt(i);
+                result = result + str.charAt(i);
             }
         }
-        System.out.println("Using Nested For Loop " + finalString);
+        System.out.println(result);
     }
 }
 
 class AlternateCharacterReversalUsingArrayList {
     public static void reverseUsingArrayList(String str) {
         ArrayList<Character> list = new ArrayList<>();
-
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        String even_position_value = "";
+
+        ArrayList<Character> onlyevenindexvalue = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                even_position_value = even_position_value + list.get(i);
+                onlyevenindexvalue.add(list.get(i));
             }
         }
-        String reverse_even_position_value = "";
-        for (int j = even_position_value.length() - 1; j >= 0; j--) {
-            reverse_even_position_value = reverse_even_position_value + even_position_value.charAt(j);
+
+        ArrayList<Character> reverseonlyevenindexvalue = new ArrayList<>();
+        for (int i = onlyevenindexvalue.size() - 1; i >= 0; i--) {
+            reverseonlyevenindexvalue.add(onlyevenindexvalue.get(i));
         }
+        System.out.println(reverseonlyevenindexvalue);
+
         int index = 0;
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                result.append(reverse_even_position_value.charAt(index++));
+                result.append(reverseonlyevenindexvalue.get(index++));
             } else {
                 result.append(list.get(i));
             }
         }
-        System.out.println("Using ArrayList " + result);
+        System.out.println(result);
     }
 }
 
 class AlternateCharacterReversalUsingCollections {
     public static void reverseUsingCollections(String str) {
+
         ArrayList<Character> list = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> even_positionString = new ArrayList<>();
+        ArrayList<Character> onlyevenindexvalue = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                even_positionString.add(list.get(i));
+                onlyevenindexvalue.add(list.get(i));
             }
         }
-        Collections.reverse(even_positionString);
-        System.out.println(even_positionString);
+        Collections.reverse(onlyevenindexvalue);
 
         int index = 0;
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
-
             if (i % 2 == 0) {
-                result.append(even_positionString.get(index++));
+                result.append(onlyevenindexvalue.get(index++));
             } else {
                 result.append(list.get(i));
             }

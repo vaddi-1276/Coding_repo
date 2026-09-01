@@ -14,24 +14,29 @@ class UsingNestedForLoopReverseOnlyOddIndexCharacters
 {
     public static void UsingNestedForLoopReverseOnlyOddIndexCharactersMethods(String str) {
 
-        String oddvalueString = "";
+        String onlyoddindexvalueString = "";
         for (int i = 0; i < str.length(); i++) {
+
             if (i % 2 != 0) {
-                oddvalueString = oddvalueString + str.charAt(i);
+                char ch = str.charAt(i);
+                onlyoddindexvalueString = onlyoddindexvalueString + ch;
             }
         }
-        String reverseoddvalueString = "";
 
-        for (int i = oddvalueString.length() - 1; i >= 0; i--) {
-            reverseoddvalueString = reverseoddvalueString + oddvalueString.charAt(i);
+        String reverseonlyoddindexvalueString = "";
+
+        for (int i = onlyoddindexvalueString.length() - 1; i >= 0; i--) {
+            reverseonlyoddindexvalueString = reverseonlyoddindexvalueString + onlyoddindexvalueString.charAt(i);
         }
+
         int index = 0;
         String result = "";
         for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
             if (i % 2 != 0) {
-                result = result + reverseoddvalueString.charAt(index++);
+                result = result + reverseonlyoddindexvalueString.charAt(index++);
             } else {
-                result = result + str.charAt(i);
+                result = result + ch;
             }
         }
         System.out.println(result);
@@ -53,6 +58,7 @@ class UsingArrayListCollectionsReverseReverseOnlyOddIndexCharacters {
             }
         }
         Collections.reverse(oddindexvalue);
+
         int index = 0;
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
@@ -62,7 +68,6 @@ class UsingArrayListCollectionsReverseReverseOnlyOddIndexCharacters {
                 result.append(list.get(i));
             }
         }
-
         System.out.println(result);
     }
 }
@@ -70,7 +75,7 @@ class UsingArrayListCollectionsReverseReverseOnlyOddIndexCharacters {
 public class ReverseOnlyOddIndexCharacters {
     public static void main(String[] args) {
         UsingNestedForLoopReverseOnlyOddIndexCharacters
-        .UsingNestedForLoopReverseOnlyOddIndexCharactersMethods("abcdef");
+                .UsingNestedForLoopReverseOnlyOddIndexCharactersMethods("abcdef");
         UsingArrayListCollectionsReverseReverseOnlyOddIndexCharacters
                 .UsingArrayListCollectionsReverseReverseOnlyOddIndexCharactersMethods("abcdef");
     }

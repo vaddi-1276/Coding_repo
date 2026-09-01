@@ -12,38 +12,33 @@ import java.util.Collections;
 class ReverseSpecialCharactersUsingLoop {
     public static void reverseUsingLoop(String str) {
 
-        String specialCharacters = "";
+        String onlyStringvalue = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
-            if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9') {
-                continue;
+            if (!(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9')) {
+                onlyStringvalue = onlyStringvalue + ch;
             }
+        }
 
-            else {
-                specialCharacters = specialCharacters + ch;
-            }
+        String reverseonlyStringvalue = "";
+        for (int i = onlyStringvalue.length() - 1; i >= 0; i--) {
+            reverseonlyStringvalue = reverseonlyStringvalue + onlyStringvalue.charAt(i);
         }
-        String reverse_specialCharacters = "";
-        for (int i = specialCharacters.length() - 1; i >= 0; i--) {
-            char ch = specialCharacters.charAt(i);
-            reverse_specialCharacters = reverse_specialCharacters + ch;
-        }
+
         int index = 0;
-        String result = "";
+        String finalvalue = "";
 
         for (int i = 0; i < str.length(); i++) {
-
             char ch = str.charAt(i);
-
-            if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9') {
-                result = result + ch;
+            if (!(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9')) {
+                finalvalue = finalvalue + reverseonlyStringvalue.charAt(index++);
             } else {
-                result = result + reverse_specialCharacters.charAt(index++);
+                finalvalue = finalvalue + ch;
             }
-
         }
-        System.out.println(result);
+        System.out.println(finalvalue);
+
     }
 }
 
@@ -53,34 +48,29 @@ class ReverseSpecialCharactersUsingArrayList {
 
         ArrayList<Character> list = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
-
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> specialcharacters = new ArrayList<>();
-
+        ArrayList<Character> onlyspecialCharacters = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
-
             if (!(Character.isLetterOrDigit(ch))) {
-                specialcharacters.add(ch);
+                onlyspecialCharacters.add(ch);
             }
         }
-        Collections.reverse(specialcharacters);
 
-        StringBuilder result = new StringBuilder();
+        Collections.reverse(onlyspecialCharacters);
+
         int index = 0;
-
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
-
             if (!(Character.isLetterOrDigit(ch))) {
-                result.append(specialcharacters.get(index++));
+                result.append(onlyspecialCharacters.get(index++));
             } else {
                 result.append(ch);
             }
         }
-
         System.out.println(result);
     }
 }

@@ -11,22 +11,22 @@ import java.util.Collections;
 
 class ReverseAndToggleUsingLoop {
     public static void transformUsingLoop(String str) {
-
-        String reverse_String = "";
+        String reverseString = "";
         for (int i = str.length() - 1; i >= 0; i--) {
-            reverse_String = reverse_String + str.charAt(i);
+            reverseString = reverseString + str.charAt(i);
         }
-        String result = "";
 
-        for (int i = 0; i < reverse_String.length(); i++) {
-            char ch = reverse_String.charAt(i);
+        String finalvalue = "";
+        for (int i = 0; i < reverseString.length(); i++) {
+            char ch = reverseString.charAt(i);
+
             if (i % 2 == 0) {
-                result = result + Character.toUpperCase(ch);
+                finalvalue = finalvalue + Character.toUpperCase(ch);
             } else {
-                result = result + Character.toLowerCase(ch);
+                finalvalue = finalvalue + ch;
             }
         }
-        System.out.println(result);
+        System.out.println(finalvalue);
     }
 }
 
@@ -37,13 +37,10 @@ class ReverseAndToggleUsingArrayList {
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-
         Collections.reverse(list);
         StringBuilder result = new StringBuilder();
-
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
-
             if (i % 2 == 0) {
                 result.append(Character.toUpperCase(ch));
             } else {
@@ -54,35 +51,28 @@ class ReverseAndToggleUsingArrayList {
     }
 }
 
-class ReverseAndToggleUsingASCII
-{
+class ReverseAndToggleUsingASCII {
     public static void transformUsingASCII(String str) {
-        
-        String result="";
-        for(int i=str.length()-1;i>=0;i--)
-        {
-            char ch=str.charAt(i);
-            result=result+ch;
+
+        String reverseString = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reverseString = reverseString + str.charAt(i);
         }
 
-        String final_value="";
+        String finalvalue = "";
+        for (int i = 0; i < reverseString.length(); i++) {
+            char ch = reverseString.charAt(i);
 
-        for(int i=0;i<result.length();i++)
-        {
-            char ch=result.charAt(i);
-            if(i%2==0)
-            {
-                ch=(char)(ch-32);
+            if (i % 2 == 0) {
+                finalvalue = finalvalue + (char) (ch - 32);
+            } else {
+                finalvalue = finalvalue + ch;
             }
-            else
-            {
-                ch=(char)(ch);
-            }
-            final_value=final_value+ch;
         }
-        System.out.println(final_value);
+        System.out.println(finalvalue);
     }
 }
+
 public class ReverseAndToggleCase {
     public static void main(String[] args) {
         ReverseAndToggleUsingLoop.transformUsingLoop("abcdef");

@@ -16,21 +16,13 @@ class ReverseRangeUsingLoop {
         int start = 2;
         int end = 6;
         String result = "";
-        String position_string = "";
-        String reverse_position_string = "";
-
         for (int i = 0; i < start; i++) {
             result = result + str.charAt(i);
         }
 
-        for (int i = start; i < end; i++) {
-            position_string = position_string + str.charAt(i);
+        for (int i = end - 1; i >= start; i--) {
+            result = result + str.charAt(i);
         }
-
-        for (int i = position_string.length() - 1; i >= 0; i--) {
-            reverse_position_string = reverse_position_string + position_string.charAt(i);
-        }
-        result = result + reverse_position_string;
 
         for (int i = end; i < str.length(); i++) {
             result = result + str.charAt(i);
@@ -45,13 +37,11 @@ class ReverseRangeUsingSubstring {
         String result = "";
         int start = 2;
         int end = 6;
-
         String firstpart = str.substring(0, start);
-        String positionsString = str.substring(start, end);
-        String reverse_positionsString = new StringBuilder(positionsString).reverse().toString();
-        String secondpart = str.substring(end);
+        String reverseString = new StringBuilder(str.substring(start, end)).reverse().toString();
+        String endpart = str.substring(end);
 
-        result = firstpart + reverse_positionsString + secondpart;
+        result = firstpart + reverseString + endpart;
         System.out.println(result);
 
     }
@@ -63,29 +53,32 @@ class ReverseRangeUsingArrayList {
         ArrayList<Character> list = new ArrayList<>();
         int start = 2;
         int end = 6;
+
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> position_ArrayList = new ArrayList<>();
+        ArrayList<Character> reversepositionString = new ArrayList<>();
         for (int i = start; i < end; i++) {
-            position_ArrayList.add(list.get(i));
+            reversepositionString.add(list.get(i));
         }
-        Collections.reverse(position_ArrayList);
 
-        StringBuilder result = new StringBuilder();
+        Collections.reverse(reversepositionString);
         int index = 0;
+        StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < start; i++) {
             result.append(list.get(i));
         }
 
         for (int i = start; i < end; i++) {
-            result.append(position_ArrayList.get(index++));
+            result.append(reversepositionString.get(index++));
         }
+
         for (int i = end; i < list.size(); i++) {
             result.append(list.get(i));
         }
+
         System.out.println(result);
     }
 }

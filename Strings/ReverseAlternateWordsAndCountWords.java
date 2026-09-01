@@ -12,27 +12,27 @@ import java.util.ArrayList;
 class UsingForLoopReverseAlternateWordsAndCountWords {
     public static void UsingForLoopReverseAlternateWordsAndCountWordsMethods(String str) {
         String words[] = str.split(" ");
-        String finalvalue = "";
 
+        String reverseString = "";
         for (int i = 0; i < words.length; i++) {
-
             if (i % 2 == 0) {
                 for (int j = words[i].length() - 1; j >= 0; j--) {
-                    finalvalue = finalvalue + words[i].charAt(j);
+                    reverseString = reverseString + words[i].charAt(j);
                 }
-                finalvalue = finalvalue + " ";
+                reverseString = reverseString + " ";
             } else {
-                finalvalue = finalvalue + words[i];
+                reverseString = reverseString + words[i];
             }
-            finalvalue = finalvalue + " ";
+            reverseString = reverseString + " ";
         }
-        System.out.println(finalvalue);
-        int count = 0;
 
+        System.out.println(reverseString);
+
+        int count = 0;
         for (int i = 0; i < words.length; i++) {
             count++;
         }
-        System.out.println("Count = " + count);
+        System.out.println("Word Count = " + count);
     }
 }
 
@@ -40,25 +40,24 @@ class UsingStringBuilderReverseAlternateWordsAndCountWords {
     public static void UsingStringBuilderReverseAlternateWordsAndCountWordsMethods(String str) {
 
         String words[] = str.split(" ");
-        String finalvalue = "";
-
+        String reverseString = "";
         for (int i = 0; i < words.length; i++) {
             if (i % 2 == 0) {
-                finalvalue = finalvalue + new StringBuilder(words[i]).reverse();
-            } else {
-                finalvalue = finalvalue + words[i];
+                reverseString = reverseString + new StringBuilder(words[i]).reverse();
             }
 
-            finalvalue = finalvalue + " ";
+            else {
+                reverseString = reverseString + words[i];
+            }
+            reverseString = reverseString + " ";
         }
 
-        System.out.println(finalvalue);
+        System.out.println(reverseString);
         int count = 0;
-
         for (int i = 0; i < words.length; i++) {
             count++;
         }
-        System.out.println("Count = " + count);
+        System.out.println("Word Count = " + count);
     }
 }
 
@@ -71,23 +70,24 @@ class UsingArrayListReverseAlternateWordsAndCountWords {
             list.add(words[i]);
         }
 
-        StringBuilder result = new StringBuilder();
+        String reverseString = "";
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                result.append(new StringBuilder(words[i]).reverse());
+                for (int j = list.get(i).length() - 1; j >= 0; j--) {
+                    reverseString = reverseString + list.get(i).charAt(j);
+                }
             } else {
-                result.append(words[i]);
+                reverseString = reverseString + list.get(i);
             }
-
-            result.append(" ");
+            reverseString = reverseString + " ";
         }
-        System.out.println(result);
-        int count=0;
-        for(int i=0;i<words.length;i++)
-        {
+        System.out.println(reverseString);
+
+        int count = 0;
+        for (int i = 0; i < words.length; i++) {
             count++;
         }
-        System.out.println("Count = "+count);
+        System.out.println("Word Count = " + count);
     }
 }
 
@@ -96,8 +96,10 @@ public class ReverseAlternateWordsAndCountWords {
         UsingForLoopReverseAlternateWordsAndCountWords
                 .UsingForLoopReverseAlternateWordsAndCountWordsMethods("Java Selenium Testing Automation");
         UsingStringBuilderReverseAlternateWordsAndCountWords
-                .UsingStringBuilderReverseAlternateWordsAndCountWordsMethods("Java Selenium Testing Automation");
+                .UsingStringBuilderReverseAlternateWordsAndCountWordsMethods(
+                        "Java Selenium Testing Automation Programming");
         UsingArrayListReverseAlternateWordsAndCountWords
-                .UsingArrayListReverseAlternateWordsAndCountWordsMethods("Java Selenium Testing Automation");
+                .UsingArrayListReverseAlternateWordsAndCountWordsMethods(
+                        "Java Selenium Testing Automation Programming Learning");
     }
 }

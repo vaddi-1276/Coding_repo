@@ -12,19 +12,11 @@ class UsingSubstringCamelCaseConversion {
     public static void UsingSubstringCamelCaseConversionMethods(String str) {
 
         String words[] = str.split(" ");
-        String firstword = words[0];
         String result = "";
-        result = result + firstword;
-
-        for (int i = 1; i < words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             String word = words[i];
-
-            String firstchar = word.substring(0, 1).toUpperCase();
-            String remainingcharString = word.substring(1).toLowerCase();
-
-            result = result + firstchar + remainingcharString;
+            result = result + word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase() + " ";
         }
-
         System.out.println(result);
     }
 }
@@ -37,18 +29,10 @@ class UsingArrayListSubstringCamelCaseConversion {
         for (int i = 0; i < words.length; i++) {
             list.add(words[i]);
         }
-
-        String firstWord = list.get(0);
         String result = "";
-        result = result + firstWord;
-
-        for (int i = 1; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             String word = list.get(i);
-
-            String firstChar = word.substring(0, 1).toUpperCase();
-            String remainingString = word.substring(1).toLowerCase();
-
-            result = result + firstChar + remainingString;
+            result = result + word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase() + " ";
         }
         System.out.println(result);
     }

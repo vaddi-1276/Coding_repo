@@ -13,23 +13,23 @@ class WhitespaceRemovalUsingLoop {
         String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (ch == ' ') {
                 continue;
             } else {
                 result = result + ch;
             }
         }
+
         System.out.println(result);
     }
 }
 
 class WhitespaceRemovalUsingStringBuilder {
     public static void removeUsingStringBuilder(String str) {
+
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (ch == ' ') {
                 continue;
             } else {
@@ -43,19 +43,18 @@ class WhitespaceRemovalUsingStringBuilder {
 class WhitespaceRemovalUsingArrayList {
     public static void removeUsingArrayList(String str) {
         ArrayList<Character> list = new ArrayList<>();
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+            list.add(str.charAt(i));
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            char ch = list.get(i);
             if (ch == ' ') {
                 continue;
             } else {
-                list.add(ch);
+                result.append(ch);
             }
-        }
-        System.out.println(list);
-
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < list.size(); i++) {
-            result.append(list.get(i));
         }
         System.out.println(result);
     }

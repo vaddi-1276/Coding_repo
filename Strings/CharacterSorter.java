@@ -17,23 +17,28 @@ class CharacterSortingUsingArrayList {
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        Collections.sort(list);
 
+        Collections.sort(list);
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
             result.append(list.get(i));
         }
+
         System.out.println(result);
     }
 }
 
 class CharacterSortingUsingArray {
     public static void sortUsingArray(String str) {
-        char ch[] = str.toCharArray();
 
-        Arrays.sort(ch);
-        System.out.println(ch);
+        char arr[] = str.toCharArray();
+        Arrays.sort(arr);
 
+        String result = "";
+        for (int i = 0; i < arr.length; i++) {
+            result = result + arr[i];
+        }
+        System.out.println(result);
     }
 }
 

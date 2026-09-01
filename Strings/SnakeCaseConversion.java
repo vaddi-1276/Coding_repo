@@ -14,12 +14,11 @@ class UsingchSnakeCaseConversion {
         String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (ch == ' ') {
                 result = result + "_";
             } else if (ch >= 'A' && ch <= 'Z') {
                 result = result + (char) (ch + 32);
-            } else {
+            } else if (ch >= 'a' && ch <= 'z') {
                 result = result + ch;
             }
         }
@@ -36,9 +35,7 @@ class UsingBuiltinFunctionSnakeCaseConversion {
 
             if (ch == ' ') {
                 result = result + "_";
-            }
-
-            else if (Character.isUpperCase(ch)) {
+            } else if (Character.isUpperCase(ch)) {
                 result = result + Character.toLowerCase(ch);
             } else {
                 result = result + ch;
@@ -55,19 +52,22 @@ class UsingArrayListSnakeCaseConversion {
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < list.size(); i++) {
-            char ch = list.get(i);
+        StringBuilder result=new StringBuilder();
+        for(int i=0;i<list.size();i++)
+        {
+            char ch=list.get(i);
 
-            if (ch == ' ') {
+            if(ch==' ')
+            {
                 result.append("_");
             }
 
-            else if (Character.isUpperCase(ch)) {
+            else if(Character.isUpperCase(ch))
+            {
                 result.append(Character.toLowerCase(ch));
             }
-
-            else {
+            else if(Character.isLowerCase(ch))
+            {
                 result.append(ch);
             }
         }

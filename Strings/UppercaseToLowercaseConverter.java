@@ -13,7 +13,11 @@ class LowercaseUsingCharacterAPI {
         String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            result = result + Character.toLowerCase(ch);
+            if (ch == ' ') {
+                result = result + " ";
+            } else {
+                result = result + Character.toLowerCase(ch);
+            }
         }
         System.out.println(result);
     }
@@ -24,13 +28,15 @@ class LowercaseUsingASCII {
 
         String result = "";
         for (int i = 0; i < str.length(); i++) {
-
             char ch = str.charAt(i);
 
-            if (ch >= 'A' && ch <= 'Z') {
-                ch = (char) (ch + 32);
+            if (ch == ' ') {
+                result = result + " ";
             }
-            result = result + ch;
+
+            else {
+                result = result + (char) (ch + 32);
+            }
         }
         System.out.println(result);
     }
@@ -42,17 +48,19 @@ class LowercaseUsingArrayList {
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        System.out.println(list);
 
-        StringBuilder result = new StringBuilder();
-
-        for (int i = 0; i < list.size(); i++) {
-            char ch = list.get(i);
-
-            if (ch >= 'A' && ch <= 'Z') {
-                ch = (char) (ch + 32);
+        StringBuilder result=new StringBuilder();
+        for(int i=0;i<list.size();i++)
+        {
+            char ch=list.get(i);
+            if(ch==' ')
+            {
+                result.append(" ");
             }
-            result.append(ch);
+
+            else{
+                result.append((char)(ch+32));
+            }
         }
         System.out.println(result);
     }

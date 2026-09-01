@@ -12,91 +12,89 @@ import java.util.ArrayList;
 
 class CharacterTypeUsingLoop {
     public static void countUsingLoop(String str) {
-        int count_of_alphabets1 = 0;
-        int count_of_digits1 = 0;
-        int count_of_specialcharacters1 = 0;
+
+        int countofalphabetsCharacterType = 0;
+        int countofdigitsCharacterType = 0;
+        int countofspecialcharactersCharacterType = 0;
+
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') {
-                count_of_alphabets1++;
-            } else if (ch >= '0' && ch <= '9') {
-                count_of_digits1++;
-            } else {
-                count_of_specialcharacters1++;
+                countofalphabetsCharacterType++;
+            }
+
+            else if (ch >= '0' && ch <= '9') {
+                countofdigitsCharacterType++;
+            }
+
+            else if (!(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9')) {
+                countofspecialcharactersCharacterType++;
             }
         }
-        System.out.println("Alphabets "+count_of_alphabets1);
-        System.out.println("Digits "+count_of_digits1);
-        System.out.println("Special Characters "+count_of_specialcharacters1);
+        System.out.println("Alphabets = " + countofalphabetsCharacterType);
+        System.out.println("Digits = " + countofdigitsCharacterType);
+        System.out.println("Special Characters = " + countofspecialcharactersCharacterType);
+
     }
 }
 
-class CharacterTypeUsingCharacterMethods
-{
-    public static void countUsingCharacterMethods(String str)
-    {
-        int count_of_alphabets2=0;
-        int count_of_digits2=0;
-        int count_of_specialcharacters2=0;
-        for(int i=0;i<str.length();i++)
-        {
-            char ch=str.charAt(i);
+class CharacterTypeUsingCharacterMethods {
+    public static void countUsingCharacterMethods(String str) {
 
-            if(Character.isLetter(ch))
-            {
-                count_of_alphabets2++;
+        int countofalphabetsCharacterType = 0;
+        int countofdigitsCharacterType = 0;
+        int countofspecialcharactersCharacterType = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (Character.isLetter(ch)) {
+                countofalphabetsCharacterType++;
             }
-            else if(Character.isDigit(ch))
-            {
-                count_of_digits2++;
+
+            else if (Character.isDigit(ch)) {
+                countofdigitsCharacterType++;
             }
-            else
-            {
-                count_of_specialcharacters2++;
+
+            else if (!(Character.isLetterOrDigit(ch))) {
+                countofspecialcharactersCharacterType++;
             }
         }
-        System.out.println("Alphabets count "+count_of_alphabets2);
-        System.out.println("Digits count "+count_of_digits2);
-        System.out.println("Special Characters count "+count_of_specialcharacters2);
+        System.out.println("Alphabets = " + countofalphabetsCharacterType);
+        System.out.println("Digits = " + countofdigitsCharacterType);
+        System.out.println("Special Characters = " + countofspecialcharactersCharacterType);
     }
 }
 
-class CharacterTypeUsingArrayList{
+class CharacterTypeUsingArrayList {
 
-    public static void countUsingArrayList(String str)
-    {
-        ArrayList<Character>list =new ArrayList<>();
-        for(int i=0;i<str.length();i++)
-        {
+    public static void countUsingArrayList(String str) {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        System.out.println(list);
 
-        int count_of_alphabets3=0;
-        int count_of_digits3=0;
-        int count_of_specialcharacters3=0;
+        int countofalphabetsCharacterType = 0;
+        int countofdigitsCharacterType = 0;
+        int countofspecialcharactersCharacterType = 0;
+        for (int i = 0; i < list.size(); i++) {
+            char ch = list.get(i);
 
-        for(int i=0;i<list.size();i++)
-        {
-            char ch=list.get(i);
-            if(Character.isLetter(ch))
-            {
-                count_of_alphabets3++;
+            if (Character.isLetter(ch)) {
+                countofalphabetsCharacterType++;
+            } else if (Character.isDigit(ch)) {
+                countofdigitsCharacterType++;
             }
-            else if(Character.isDigit(ch))
-            {
-                count_of_digits3++;
-            }
-            else
-            {
-                count_of_specialcharacters3++;
+
+            else if (!(Character.isLetterOrDigit(ch))) {
+                countofspecialcharactersCharacterType++;
             }
         }
-
-        System.out.println("alphabets "+count_of_alphabets3);
-        System.out.println("digits "+count_of_digits3);
-        System.out.println("special character "+count_of_specialcharacters3);
+        System.out.println("Alphabets = " + countofalphabetsCharacterType);
+        System.out.println("Digits = " + countofdigitsCharacterType);
+        System.out.println("Special Characters = " + countofspecialcharactersCharacterType);
     }
 }
 
