@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 class ReverseWordsUsingNestedLoop {
     public static void reverseUsingNestedLoop(String str) {
+
         String words[] = str.split(" ");
         String result = "";
         for (int i = 0; i < words.length; i++) {
@@ -18,37 +19,36 @@ class ReverseWordsUsingNestedLoop {
             }
             result = result + " ";
         }
-        System.out.print(result);
-        System.out.println();
+        System.out.println(result);
     }
 
 }
 
 class ReverseWordsUsingStringBuilder {
     public static void reverseUsingStringBuilder(String str) {
+        String result = "";
         String words[] = str.split(" ");
         for (int i = 0; i < words.length; i++) {
-            String result = new StringBuilder(words[i]).reverse().toString();
+            result = result + new StringBuilder(words[i]).reverse();
             result = result + " ";
-            System.out.print(result);
         }
-        System.out.println();
+        System.out.println(result);
     }
 }
 
 class ReverseWordsUsingArrayList {
     public static void reverseUsingArrayList(String str) {
+
         ArrayList<String> list = new ArrayList<>();
         String words[] = str.split(" ");
         for (int i = 0; i < words.length; i++) {
             list.add(words[i]);
         }
-        // System.out.println(list);
+        System.out.println(list);
+
         StringBuilder result = new StringBuilder();
-
         for (int i = 0; i < list.size(); i++) {
-
-            result.append(new StringBuilder(list.get(i)).reverse().toString());
+            result.append(new StringBuilder(list.get(i)).reverse());
             result.append(" ");
         }
         System.out.println(result);

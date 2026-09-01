@@ -9,90 +9,76 @@ import java.util.Collections;
 // Output:
 // avaJ
 
+class ReverseUsingLoop {
 
-class ReverseUsingLoop{
-
-    public static void reverseUsingLoop(String str)
-    {
-        String reverse="";
-        for(int i=str.length()-1;i>=0;i--)
-        {
-            reverse=reverse+str.charAt(i);
+    public static void reverseUsingLoop(String str) {
+        String reverseString = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reverseString = reverseString + str.charAt(i);
         }
-        System.out.println(reverse);
+        System.out.println(reverseString);
     }
 }
 
-class ReverseUsingStringBuilder
-{
-    public static void reverseUsingStringBuilder(String str)
-    {
-        String reverse=new StringBuilder(str).reverse().toString();
-
-        System.out.println(reverse);
-
+class ReverseUsingStringBuilder {
+    public static void reverseUsingStringBuilder(String str) {
+        String result = new StringBuilder(str).reverse().toString();
+        System.out.println(result);
     }
 }
 
-class ReverseUsingArrayList
-{
-    public static void reverseUsingArrayList(String str)
-    {
-        ArrayList<Character>list=new ArrayList<>();
-        for(int i=0;i<str.length();i++)
-        {
+class ReverseUsingArrayList {
+    public static void reverseUsingArrayList(String str) {
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-       StringBuilder result=new StringBuilder();
-       for(int i=list.size()-1;i>=0;i--)
-       {
-        result.append(list.get(i));
-       }
-       System.out.println(result);
+        StringBuilder result = new StringBuilder();
+        for (int i = list.size() - 1; i >= 0; i--) {
+            result.append(list.get(i));
+        }
+
+        System.out.println(result);
     }
 }
 
-class ReverseUsingCollections
-{
-    public static void reverseUsingCollections(String str)
-    {
-        ArrayList<Character>list=new ArrayList<>();
-        for(int i=0;i<str.length();i++)
-        {
+class ReverseUsingCollections {
+    public static void reverseUsingCollections(String str) {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
+
         Collections.reverse(list);
-
-        StringBuilder result=new StringBuilder();
-        for(int i=0;i<list.size();i++)
-        {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
             result.append(list.get(i));
         }
         System.out.println(result);
     }
 }
 
-class using_recursion_reverse_String
-{
-    public static void using_recursion_reverse_String_methods(String str,int index) {
-        
-        if(index<0)
-        {
+class using_recursion_reverse_String {
+    public static void using_recursion_reverse_String_methods(String str, int index) {
+
+        if (index < 0)
             return;
-        }
         System.out.print(str.charAt(index));
-        using_recursion_reverse_String_methods(str,index-1);
+        using_recursion_reverse_String_methods(str, index-1);
     }
 }
+
 public class StringReversal {
-    
+
     public static void main(String[] args) {
         ReverseUsingLoop.reverseUsingLoop("Java");
         ReverseUsingStringBuilder.reverseUsingStringBuilder("Python");
         ReverseUsingArrayList.reverseUsingArrayList("Ruby");
         ReverseUsingCollections.reverseUsingCollections("Appium");
-        using_recursion_reverse_String.using_recursion_reverse_String_methods("Playwright", "Playwright".length()-1);
+        using_recursion_reverse_String.using_recursion_reverse_String_methods("Playwright",
+        "Playwright".length()-1);
         System.out.println();
     }
 }

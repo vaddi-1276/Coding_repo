@@ -12,30 +12,28 @@ import java.util.Collections;
 class ReverseNumbersOnlyUsingForLoop {
     public static void ReverseNumbersOnlyUsingForLoopMethods(String str) {
 
-        String onlynumbersString = "";
+        String onlydigitvalue = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (ch >= '0' && ch <= '9') {
-                onlynumbersString = onlynumbersString + ch;
+                onlydigitvalue = onlydigitvalue + str.charAt(i);
             }
         }
-
-        String reverse_onlynumbersString = "";
-        for (int i = onlynumbersString.length() - 1; i >= 0; i--) {
-            char ch = onlynumbersString.charAt(i);
-            reverse_onlynumbersString = reverse_onlynumbersString + ch;
+        String reverseonlydigitvalue = "";
+        for (int i = onlydigitvalue.length() - 1; i >= 0; i--) {
+            reverseonlydigitvalue = reverseonlydigitvalue + onlydigitvalue.charAt(i);
         }
 
-        String result = "";
         int index = 0;
-
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (ch >= '0' && ch <= '9') {
-                result = result + reverse_onlynumbersString.charAt(index++);
-            } else {
+                result = result + reverseonlydigitvalue.charAt(index++);
+            }
+
+            else {
                 result = result + ch;
             }
         }
@@ -52,16 +50,14 @@ class ReverseNumberOnlyUsingArrayListCollectionsReverse {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> onlyNumbersString = new ArrayList<>();
+        ArrayList<Character> onlydigitvalue = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
-
             if (ch >= '0' && ch <= '9') {
-
-                onlyNumbersString.add(ch);
+                onlydigitvalue.add(ch);
             }
         }
-        Collections.reverse(onlyNumbersString);
+        Collections.reverse(onlydigitvalue);
 
         int index = 0;
         StringBuilder result = new StringBuilder();
@@ -69,7 +65,7 @@ class ReverseNumberOnlyUsingArrayListCollectionsReverse {
             char ch = list.get(i);
 
             if (ch >= '0' && ch <= '9') {
-                result.append(onlyNumbersString.get(index++));
+                result.append(onlydigitvalue.get(index++));
             } else {
                 result.append(ch);
             }

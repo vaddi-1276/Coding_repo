@@ -28,11 +28,13 @@ class UsingForLoopSortAndFrequencyCount {
         for (int i = 0; i < arr.length; i++) {
             SortedString = SortedString + arr[i];
         }
-        System.out.println("Sorted = " + SortedString);
+
+        System.out.println(SortedString);
 
         for (int i = 0; i < SortedString.length(); i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
+
                 if (SortedString.charAt(i) == SortedString.charAt(j)) {
                     found = true;
                     break;
@@ -44,13 +46,14 @@ class UsingForLoopSortAndFrequencyCount {
             }
             int count = 1;
             for (int k = i + 1; k < SortedString.length(); k++) {
+
                 if (SortedString.charAt(k) == SortedString.charAt(i)) {
                     count++;
                 }
             }
-
             System.out.println(SortedString.charAt(i) + " = " + count);
         }
+
     }
 }
 
@@ -63,17 +66,17 @@ class UsingArrayListSortAndFrequencyCount {
         }
 
         Collections.sort(list);
-
-        StringBuilder sortedstringvalue = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
-            sortedstringvalue.append(list.get(i));
+            result.append(list.get(i));
         }
-        System.out.println("Sorted = " + sortedstringvalue);
+        System.out.println(result);
 
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < result.length(); i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
-                if (list.get(i) == list.get(j)) {
+
+                if (result.charAt(i) == result.charAt(j)) {
                     found = true;
                     break;
                 }
@@ -81,14 +84,16 @@ class UsingArrayListSortAndFrequencyCount {
             if (found) {
                 continue;
             }
+
             int count = 1;
-            for (int k = i + 1; k < list.size(); k++) {
-                if (list.get(k) == list.get(i)) {
+            for (int k = i + 1; k < result.length(); k++) {
+                if (result.charAt(k) == result.charAt(i)) {
                     count++;
                 }
             }
-            System.out.println(list.get(i) + " = " + count);
+            System.out.println(result.charAt(i) + " = " + count);
         }
+
     }
 }
 

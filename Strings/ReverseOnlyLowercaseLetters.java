@@ -12,28 +12,27 @@ import java.util.Collections;
 class ReverseOnlyLowercaseLettersUsingForLoop {
     public static void ReverseOnlyLowercaseLettersUsingForLoopMethods(String str) {
 
-        String lowercaseString = "";
+        String onlylowercasevalue = "";
         for (int i = 0; i < str.length(); i++) {
-
             char ch = str.charAt(i);
 
             if (ch >= 'a' && ch <= 'z') {
-                lowercaseString = lowercaseString + ch;
+                onlylowercasevalue = onlylowercasevalue + ch;
             }
         }
-        String reverse_lowercaseString = "";
-        for (int i = lowercaseString.length() - 1; i >= 0; i--) {
-            reverse_lowercaseString = reverse_lowercaseString + lowercaseString.charAt(i);
+        String reverseonlylowercasevalue = "";
+        for (int i = onlylowercasevalue.length() - 1; i >= 0; i--) {
+            reverseonlylowercasevalue = reverseonlylowercasevalue + onlylowercasevalue.charAt(i);
         }
 
         int index = 0;
         String result = "";
-        for (int i = 0; i < str.length(); i++) {
 
+        for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (ch >= 'a' && ch <= 'z') {
-                result = result + reverse_lowercaseString.charAt(index++);
+                result = result + reverseonlylowercasevalue.charAt(index++);
             } else {
                 result = result + ch;
             }
@@ -46,37 +45,28 @@ class ReverseOnlyLowercaseLettersUsingArrayListCollectionsReverse {
     public static void ReverseOnlyLowercaseLettersUsingArrayListCollectionsReverseMethods(String str) {
 
         ArrayList<Character> list = new ArrayList<>();
-
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> lowercaseString = new ArrayList<>();
+        ArrayList<Character> onlylowercasevalue = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            char ch = list.get(i);
+            if (ch >= 'a' && ch <= 'z') {
+                onlylowercasevalue.add(ch);
+            }
+        }
+        Collections.reverse(onlylowercasevalue);
+        int index = 0;
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
 
             if (ch >= 'a' && ch <= 'z') {
-                lowercaseString.add(ch);
-            }
-        }
-
-        Collections.reverse(lowercaseString);
-        System.out.println(lowercaseString);
-
-        StringBuilder result=new StringBuilder();
-        int index=0;
-
-        for(int i=0;i<list.size();i++)
-        {
-            char ch=list.get(i);
-
-             if (ch >= 'a' && ch <= 'z')
-             {
-                result.append(lowercaseString.get(index++));
-             }
-             else{
+                result.append(onlylowercasevalue.get(index++));
+            } else {
                 result.append(ch);
-             }
+            }
         }
         System.out.println(result);
     }

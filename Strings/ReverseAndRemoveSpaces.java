@@ -4,34 +4,70 @@ package Strings;
 // Java Selenium Python
 
 // Output:
-// Reverse = muineleS avaJ
-// Without Spaces = muineleSavaJ
+// Reverse = nohtyP muineleS avaJ
+// Without Spaces = nohtyPmuineleSavaJ
 
 class UsingForLoopReverseAndRemoveSpaces {
     public static void UsingForLoopReverseAndRemoveSpacesMethods(String str) {
 
-        String reverseString="";
-        String withoutspaces="";
-        for(int i=str.length()-1;i>=0;i--)
-        {
-            char ch=str.charAt(i);
+        String words[] = str.split(" ");
 
-            if(ch==' ')
-            {
-                reverseString=reverseString+ch;
+        String ReverseString = "";
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            for (int j = words[i].length() - 1; j >= 0; j--) {
+                ReverseString = ReverseString + words[i].charAt(j);
             }
-            else{
-                reverseString=reverseString+ch;
-                withoutspaces=withoutspaces+ch;
+            ReverseString = ReverseString + " ";
+        }
+        System.out.println("Reverse = " + ReverseString);
+        String withoutspaces = "";
+
+        for (int i = 0; i < ReverseString.length(); i++) {
+            char ch = ReverseString.charAt(i);
+
+            if (ch == ' ') {
+                continue;
+            } else {
+                withoutspaces = withoutspaces + ch;
             }
         }
-        System.out.println("Reverse = "+reverseString);
-        System.out.println("Without Spaces = "+withoutspaces);
+        System.out.println("Without Spaces = " + withoutspaces);
+    }
+}
+
+class UsingStringBuilderReverseAndRemoveSpaces {
+    public static void UsingStringBuilderReverseAndRemoveSpacesMethods(String str) {
+        String words[] = str.split(" ");
+        String result = "";
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            for (int j = words[i].length() - 1; j >= 0; j--) {
+                result = result + words[i].charAt(j);
+            }
+            result = result + " ";
+        }
+        System.out.println("Reverse = " + result);
+
+        String withoutspacesString = "";
+        for (int i = 0; i < result.length(); i++) {
+
+            char ch = result.charAt(i);
+
+            if (ch == ' ') {
+                continue;
+            } else {
+                withoutspacesString = withoutspacesString + ch;
+            }
+        }
+        System.out.println("without Spaces = " + withoutspacesString);
     }
 }
 
 public class ReverseAndRemoveSpaces {
     public static void main(String[] args) {
         UsingForLoopReverseAndRemoveSpaces.UsingForLoopReverseAndRemoveSpacesMethods("Java Selenium Python");
+        UsingStringBuilderReverseAndRemoveSpaces
+                .UsingStringBuilderReverseAndRemoveSpacesMethods("Java Selenium Python");
     }
 }

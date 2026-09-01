@@ -10,6 +10,7 @@ import java.util.ArrayList;
 class AlternateWordReversalUsingLoop {
 
     public static void reverseUsingLoop(String str) {
+
         String words[] = str.split(" ");
         String result = "";
         for (int i = 0; i < words.length; i++) {
@@ -17,10 +18,10 @@ class AlternateWordReversalUsingLoop {
                 for (int j = words[i].length() - 1; j >= 0; j--) {
                     result = result + words[i].charAt(j);
                 }
-                result = result + " ";
             } else {
                 result = result + words[i];
             }
+
             result = result + " ";
         }
         System.out.println(result);
@@ -30,12 +31,17 @@ class AlternateWordReversalUsingLoop {
 class AlternateWordReversalUsingStringBuilder {
     public static void reverseUsingStringBuilder(String str) {
         String words[] = str.split(" ");
-        String result = "";
+        StringBuilder result = new StringBuilder();
+
         for (int i = 0; i < words.length; i++) {
             if (i % 2 == 0) {
-                result = result + new StringBuilder(words[i]).reverse().toString() + " ";
+
+                for (int j = words[i].length() - 1; j >= 0; j--) {
+                    result.append(words[i].charAt(j));
+                }
+
             } else {
-                result = result + words[i] + " ";
+                result.append(words[i]);
             }
         }
         System.out.println(result);
@@ -51,17 +57,15 @@ class AlternateWordReversalUsingArrayList {
         for (int i = 0; i < words.length; i++) {
             list.add(words[i]);
         }
-        System.out.println(list);
-
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                for (int j = list.get(i).length() - 1; j >= 0; j--) {
-                    result = result + list.get(i).charAt(j);
+                for (int j = words[i].length() - 1; j >= 0; j--) {
+                    result = result + words[i].charAt(j);
                 }
-                result = result + " ";
             } else {
-                result = result + list.get(i) + " ";
+                result = result + list.get(i);
             }
+            result = result + " ";
         }
         System.out.println(result);
     }

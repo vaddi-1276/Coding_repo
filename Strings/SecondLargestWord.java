@@ -10,9 +10,12 @@ import java.util.ArrayList;
 
 class UsingTempVariableForSecondLargestWord {
     public static void UsingTempVariableForSecondLargestWordMethods(String str) {
+
         String words[] = str.split(" ");
         for (int i = 0; i < words.length; i++) {
+
             for (int j = i + 1; j < words.length; j++) {
+
                 if (words[i].length() > words[j].length()) {
                     String temp = words[i];
                     words[i] = words[j];
@@ -21,11 +24,11 @@ class UsingTempVariableForSecondLargestWord {
             }
         }
 
-        System.out.println("First Smallest Word Length using Temp Variable " + words[words.length - 1].length());
-        System.out.println("First Smallest Word using Temp Variable " + words[words.length - 1]);
+        System.out.println("First Largest Word Length " + words[words.length - 1].length());
+        System.out.println("First Largest Word  " + words[words.length - 1]);
 
-        System.out.println("Second Smallest Word Length using Temp Variable " + words[words.length - 2].length());
-        System.out.println("Second Smallest Word using Temp Variable " + words[words.length - 2]);
+        System.out.println("Second Largest Word Length " + words[words.length - 2].length());
+        System.out.println("Second Largest Word  " + words[words.length - 2]);
     }
 }
 
@@ -34,12 +37,13 @@ class UsingTwoVariablesForSecondLargestWord {
 
         String words[] = str.split(" ");
         String firstlargestword = words[0];
-        String secondlargestword = words[1];
+        String secondlargestword = words[0];
 
         int firstlargestwordlength = Integer.MIN_VALUE;
         int secondlargestwordlength = Integer.MIN_VALUE;
 
         for (int i = 0; i < words.length; i++) {
+
             if (words[i].length() > firstlargestwordlength) {
                 secondlargestwordlength = firstlargestwordlength;
                 secondlargestword = firstlargestword;
@@ -54,11 +58,11 @@ class UsingTwoVariablesForSecondLargestWord {
             }
         }
 
-        System.out.println("First Smallest Word Length using Two Variable " + firstlargestwordlength);
-        System.out.println("First Smallest Word using Two Variable " + firstlargestword);
+        System.out.println("First Largest Word Length " + firstlargestwordlength);
+        System.out.println("First Largest Word " + firstlargestword);
 
-        System.out.println("Second Smallest Word Length using Two Variable " + secondlargestwordlength);
-        System.out.println("Second Smallest Word using Two Variable " + secondlargestword);
+        System.out.println("Second Largest Word Length " + secondlargestwordlength);
+        System.out.println("First Largest Word " + secondlargestword);
     }
 }
 
@@ -71,34 +75,31 @@ class UsingArrayListForSecondLargestWord {
             list.add(words[i]);
         }
 
-        String firstlargestwordstring = words[0];
-        String secondlargestwordstring = words[0];
+        String firstlargestword = words[0];
+        String secondlargestword = words[0];
 
         int firstlargestwordlength = Integer.MIN_VALUE;
         int secondlargestwordlength = Integer.MIN_VALUE;
 
-        for (int i = 0; i < list.size(); i++)
-
-        {
+        for (int i = 0; i < list.size(); i++) {
             if (list.get(i).length() > firstlargestwordlength) {
                 secondlargestwordlength = firstlargestwordlength;
-                secondlargestwordstring = firstlargestwordstring;
+                secondlargestword = firstlargestword;
 
-                firstlargestwordlength = list.get(i).length();
-                firstlargestwordstring = list.get(i);
+                firstlargestwordlength = words[i].length();
+                firstlargestword = words[i];
             }
 
             else if (list.get(i).length() > secondlargestwordlength) {
-                secondlargestwordlength = list.get(i).length();
-                secondlargestwordstring = list.get(i);
+                secondlargestwordlength = words[i].length();
+                secondlargestword = words[i];
             }
         }
+        System.out.println("First Largest Word Length " + firstlargestwordlength);
+        System.out.println("First Largest Word " + firstlargestword);
 
-        System.out.println("First Smallest Word Length using ArrayList " + firstlargestwordlength);
-        System.out.println("First Smallest Word using ArrayList " + firstlargestwordstring);
-
-        System.out.println("Second Smallest Word Length using ArrayList " + secondlargestwordlength);
-        System.out.println("Second Smallest Word using ArrayList " + secondlargestwordstring);
+        System.out.println("Second Largest Word Length " + secondlargestwordlength);
+        System.out.println("Second Largest Word " + secondlargestword);
     }
 }
 

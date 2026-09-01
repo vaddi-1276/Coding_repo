@@ -11,105 +11,101 @@ import java.util.Collections;
 
 class SecondHalfReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
-        int n = str.length() / 2;
-        String second_half_String = "";
-        for (int i = n; i < str.length(); i++) {
-            second_half_String = second_half_String + str.charAt(i);
+
+        int mid = str.length() / 2;
+
+        String midString = "";
+        for (int i = mid; i < str.length(); i++) {
+            midString = midString + str.charAt(i);
         }
 
-        String reverse_second_half_String = "";
-        for (int j = second_half_String.length() - 1; j >= 0; j--) {
-            reverse_second_half_String = reverse_second_half_String + second_half_String.charAt(j);
+        String reversemidString = "";
+        for (int i = midString.length() - 1; i >= 0; i--) {
+            reversemidString = reversemidString + midString.charAt(i);
         }
-
+        int index = 0;
         String result = "";
-        int index=0;
-        for (int i = 0; i < n; i++) {
+
+        for (int i = 0; i < mid; i++) {
             result = result + str.charAt(i);
         }
-        for(int i=n;i<str.length();i++)
-        {
-            result=result+reverse_second_half_String.charAt(index++);
+        for (int i = mid; i < str.length(); i++) {
+            result = result + reversemidString.charAt(index++);
         }
+
         System.out.println(result);
     }
 }
 
-class SecondHalfReversalUsingArrayList
-{
-    public static void reverseUsingArrayList(String str)
-    {
-        ArrayList<Character>list=new ArrayList<>();
-        for(int i=0;i<str.length();i++)
-        {
+class SecondHalfReversalUsingArrayList {
+    public static void reverseUsingArrayList(String str) {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        int n=list.size()/2;
+        int midString = list.size() / 2;
+        String secondhalf = "";
 
-        String secondhalfString="";
-        for(int i=n;i<list.size();i++)
-        {
-            secondhalfString=secondhalfString+list.get(i);
-        }
-        String reverse_secondhalfString="";
-
-        for(int i=secondhalfString.length()-1;i>=0;i--)
-        {
-            reverse_secondhalfString=reverse_secondhalfString+secondhalfString.charAt(i);
+        for (int i = midString; i < list.size(); i++) {
+            secondhalf = secondhalf + list.get(i);
         }
 
-        String result="";
-        int index=0;
-
-        for(int i=0;i<n;i++)
-        {
-            result=result+list.get(i);
+        String reversesecondhalf = "";
+        for (int i = secondhalf.length() - 1; i >= 0; i--) {
+            reversesecondhalf = reversesecondhalf + secondhalf.charAt(i);
         }
-        for(int j=n;j<list.size();j++)
-        {
-            result=result+reverse_secondhalfString.charAt(index++);
-        }
-        System.out.println(result);
 
+        int index = 0;
+        StringBuilder finalvalue = new StringBuilder();
+        for (int i = 0; i < midString; i++) {
+            finalvalue.append(list.get(i));
+        }
+
+        for (int i = midString; i < list.size(); i++) {
+            finalvalue.append(reversesecondhalf.charAt(index++));
+        }
+
+        System.out.println(finalvalue);
     }
 }
 
-class SecondHalfReversalUsingCollections
-{
-    public static void reverseUsingCollections(String str)
-    {
-        ArrayList<Character>list=new ArrayList<>();
-        for(int i=0;i<str.length();i++)
-        {
+class SecondHalfReversalUsingCollections {
+    public static void reverseUsingCollections(String str) {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        int n=list.size()/2;
-        ArrayList<Character>second_half=new ArrayList<>();
-        for(int i=n;i<str.length();i++)
-        {
-            second_half.add(list.get(i));
+        int midString = list.size() / 2;
+
+        ArrayList<Character> secondhalf = new ArrayList<>();
+
+        for (int i = midString; i < list.size(); i++) {
+            secondhalf.add(list.get(i));
         }
 
-        Collections.reverse(second_half);
-        StringBuilder result=new StringBuilder();
-        int index=0;
+        Collections.reverse(secondhalf);
 
-        for(int i=0;i<n;i++)
-        {
+        int index = 0;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < midString; i++) {
             result.append(list.get(i));
         }
-        for(int i=n;i<list.size();i++)
-        {
-            result.append(second_half.get(index++));
+
+        for (int i = midString; i < list.size(); i++) {
+            result.append(secondhalf.get(index++));
         }
+
         System.out.println(result);
     }
 }
+
 public class SecondHalfReverser {
     public static void main(String[] args) {
-       SecondHalfReversalUsingLoop.reverseUsingLoop("abcdef");
+        SecondHalfReversalUsingLoop.reverseUsingLoop("abcdef");
         SecondHalfReversalUsingArrayList.reverseUsingArrayList("defghi");
         SecondHalfReversalUsingCollections.reverseUsingCollections("ghijkl");
     }

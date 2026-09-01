@@ -7,40 +7,37 @@ import java.util.Collections;
 // Automation
 
 // Output:
-// Aotumation
+// oitamotuAn
 
 class VowelReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
-        String vowelString = "";
+        String onlyVowelsString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                vowelString = vowelString + ch;
+                onlyVowelsString = onlyVowelsString + ch;
             }
         }
-
-        String reverse_vowelsString = "";
-        for (int i = vowelString.length() - 1; i >= 0; i--) {
-            reverse_vowelsString = reverse_vowelsString + vowelString.charAt(i);
+        String reverseonlyVowels = "";
+        for (int i = onlyVowelsString.length() - 1; i >= 0; i--) {
+            reverseonlyVowels = reverseonlyVowels + onlyVowelsString.charAt(i);
         }
-        System.out.println(reverse_vowelsString);
+        // System.out.println(reverseonlyVowels);
 
-        String final_value = "";
         int index = 0;
+        String finalvalue = "";
+
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                final_value = final_value + reverse_vowelsString.charAt(index++);
+                finalvalue = finalvalue + reverseonlyVowels.charAt(index++);
             } else {
-                final_value = final_value + str.charAt(i);
+                finalvalue = finalvalue + ch;
             }
-
         }
-        System.out.println(final_value);
+        System.out.println(finalvalue);
     }
 }
 
@@ -51,33 +48,28 @@ class VowelReversalUsingArrayList {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> vowelsString = new ArrayList<>();
+        String onlyvowelsString = "";
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                vowelsString.add(ch);
+                onlyvowelsString = onlyvowelsString + ch;
             }
         }
-
-        ArrayList<Character> reverseVowelsString = new ArrayList<>();
-
-        for (int j = vowelsString.size() - 1; j >= 0; j--) {
-            char ch = vowelsString.get(j);
-            reverseVowelsString.add(ch);
+        String reverseonlyvowelsString = "";
+        for (int i = onlyvowelsString.length() - 1; i >= 0; i--) {
+            reverseonlyvowelsString = reverseonlyvowelsString + onlyvowelsString.charAt(i);
         }
-
         int index = 0;
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                result.append(reverseVowelsString.get(index++));
+                result.append(reverseonlyvowelsString.charAt(index++));
             } else {
                 result.append(ch);
             }
-
         }
         System.out.println(result);
     }
@@ -90,15 +82,15 @@ class VowelReversalUsingCollections {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> vowelsString = new ArrayList<>();
+        ArrayList<Character> onlyVowelsCharacters = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             char ch = list.get(i);
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                vowelsString.add(ch);
+                onlyVowelsCharacters.add(ch);
             }
         }
-        Collections.reverse(vowelsString);
+        Collections.reverse(onlyVowelsCharacters);
 
         int index = 0;
         StringBuilder result = new StringBuilder();
@@ -106,10 +98,11 @@ class VowelReversalUsingCollections {
             char ch = list.get(i);
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                result.append(vowelsString.get(index++));
+                result.append(onlyVowelsCharacters.get(index++));
             } else {
                 result.append(ch);
             }
+
         }
         System.out.println(result);
     }
@@ -118,7 +111,7 @@ class VowelReversalUsingCollections {
 public class VowelReverser {
     public static void main(String[] args) {
         VowelReversalUsingLoop.reverseUsingLoop("Automation");
-        VowelReversalUsingArrayList.reverseUsingArrayList("Selenium");
+        VowelReversalUsingArrayList.reverseUsingArrayList("Automation");
         VowelReversalUsingCollections.reverseUsingCollections("Automation");
     }
 }

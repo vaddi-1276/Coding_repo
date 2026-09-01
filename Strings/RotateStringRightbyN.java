@@ -11,15 +11,12 @@ import java.util.ArrayList;
 
 class UsingSubStringRightbyN {
     public static void UsingSubStringRightbyNMethods(String str) {
-
         int position = 2;
         String result = "";
-
-        result = str.substring(str.length() - position);
+        result = result + str.substring(str.length() - position, str.length());
         result = result + str.substring(0, str.length() - position);
 
         System.out.println(result);
-
     }
 }
 
@@ -28,7 +25,6 @@ class UsingNestedForLoopRotateStringRightbyN {
 
         int position = 2;
         String result = "";
-
         for (int i = str.length() - position; i < str.length(); i++) {
             result = result + str.charAt(i);
         }
@@ -41,34 +37,26 @@ class UsingNestedForLoopRotateStringRightbyN {
     }
 }
 
-class UsingArrayListRotateStringRightbyN
-{
+class UsingArrayListRotateStringRightbyN {
     public static void UsingArrayListRotateStringRightbyNMethods(String str) {
-        
-        ArrayList<Character>list=new ArrayList<>();
-        int position=2;
-        for(int i=0;i<str.length();i++)
-        {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character>result=new ArrayList<>();
+        int position = 2;
+        StringBuilder result = new StringBuilder();
 
-        for(int j=list.size()-position;j<list.size();j++)
-        {
-            result.add(list.get(j));
+        for (int i = list.size() - position; i < list.size(); i++) {
+            result.append(list.get(i));
         }
 
-        for(int i=0;i<list.size()-position;i++)
-        {
-            result.add(list.get(i));
+        for (int i = 0; i < list.size() - position; i++) {
+            result.append(list.get(i));
         }
-        StringBuilder finalvalue=new StringBuilder();
-        for(int i=0;i<result.size();i++)
-        {
-            finalvalue.append(result.get(i));
-        }
-        System.out.println(finalvalue);
+
+        System.out.println(result);
     }
 }
 

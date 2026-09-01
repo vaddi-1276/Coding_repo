@@ -12,29 +12,29 @@ import java.util.Collections;
 class UsingNestedForLoopReverseOnlyEvenIndexCharacters {
     public static void UsingNestedForLoopReverseOnlyEvenIndexCharactersMethods(String str) {
 
-        String evendigitString = "";
+        String onlyevenindexvalue = "";
         for (int i = 0; i < str.length(); i++) {
             if (i % 2 == 0) {
-                char ch = str.charAt(i);
-                evendigitString = evendigitString + ch;
+                onlyevenindexvalue = onlyevenindexvalue + str.charAt(i);
+            }
+        }
 
-            }
+        String reverseonlyevenindexvalue = "";
+
+        for (int i = onlyevenindexvalue.length() - 1; i >= 0; i--) {
+            reverseonlyevenindexvalue = reverseonlyevenindexvalue + onlyevenindexvalue.charAt(i);
         }
-        String reverseevendigitString = "";
-        for (int i = evendigitString.length() - 1; i >= 0; i--) {
-            reverseevendigitString = reverseevendigitString + evendigitString.charAt(i);
-        }
+
         int index = 0;
-        String final_value = "";
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
             if (i % 2 == 0) {
-                final_value = final_value + reverseevendigitString.charAt(index++);
+                result = result + reverseonlyevenindexvalue.charAt(index++);
             } else {
-                final_value = final_value + ch;
+                result = result + str.charAt(i);
             }
         }
-        System.out.println(final_value);
+        System.out.println(result);
     }
 }
 
@@ -46,20 +46,19 @@ class UsingArrayListCollectionsReverseOnlyEvenIndexCharacters {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> evenlist = new ArrayList<>();
+        ArrayList<Character> onlyevenindexvalue = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                evenlist.add(list.get(i));
+                onlyevenindexvalue.add(list.get(i));
             }
         }
-        Collections.reverse(evenlist);
+        Collections.reverse(onlyevenindexvalue);
 
-        StringBuilder result = new StringBuilder();
         int index = 0;
-
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                result.append(evenlist.get(index++));
+                result.append(onlyevenindexvalue.get(index++));
             } else {
                 result.append(list.get(i));
             }

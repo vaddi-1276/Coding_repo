@@ -11,16 +11,17 @@ import java.util.ArrayList;
 
 class UsingNestedForLoopRotateStringLeftbyN {
     public static void UsingNestedForLoopRotateStringLeftbyNMethods(String str) {
+
+        int positions = 2;
         String result = "";
-        int n = 2;
-        for (int i = n; i < str.length(); i++) {
+
+        for (int i = positions; i < str.length(); i++) {
             result = result + str.charAt(i);
         }
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < positions; i++) {
             result = result + str.charAt(i);
         }
-
         System.out.println(result);
     }
 }
@@ -28,39 +29,38 @@ class UsingNestedForLoopRotateStringLeftbyN {
 class UsingSubstringRotateStringLeftbyN {
     public static void UsingSubstringRotateStringLeftbyNMethods(String str) {
 
+        int positions = 2;
+
         String result = "";
-        int n = 2;
-        result = result + str.substring(n) + str.substring(0, n);
+
+        result = result + str.substring(positions);
+        result = result + str.substring(0, positions);
 
         System.out.println(result);
     }
 }
 
-class UsingArrayListRotateStringLeftbyN
-{
+class UsingArrayListRotateStringLeftbyN {
     public static void UsingArrayListRotateStringLeftbyNMethods(String str) {
-        
-        ArrayList<Character>list=new ArrayList<>();
-        int n=2;
-        StringBuilder result=new StringBuilder();
-        for(int i=0;i<str.length();i++)
-        {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        for(int i=n;i<list.size();i++)
-        {
+        int positions = 2;
+        StringBuilder result = new StringBuilder();
+        for (int i = positions; i < list.size(); i++) {
             result.append(list.get(i));
         }
 
-        for(int i=0;i<n;i++)
-        {
+        for (int i = 0; i < positions; i++) {
             result.append(list.get(i));
         }
-
         System.out.println(result);
     }
 }
+
 public class RotateStringLeftbyN {
     public static void main(String[] args) {
         UsingNestedForLoopRotateStringLeftbyN.UsingNestedForLoopRotateStringLeftbyNMethods("abcdef");

@@ -13,15 +13,13 @@ import java.util.Collections;
 class UsingForLoopReverseCountVowels {
     public static void UsingForLoopReverseCountVowelsMethods(String str) {
 
-        String result = "";
+        String reverseString = "";
         for (int i = str.length() - 1; i >= 0; i--) {
-            result = result + str.charAt(i);
+            reverseString = reverseString + str.charAt(i);
         }
-        System.out.println(result);
-
+        System.out.println("Reverse = " + reverseString);
         int countofVowels = 0;
-
-        for (int i = 0; i < result.length(); i++) {
+        for (int i = 0; i < reverseString.length(); i++) {
             char ch = str.charAt(i);
 
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
@@ -35,32 +33,34 @@ class UsingForLoopReverseCountVowels {
 
 class UsingArrayListCollectionsReverseBuiltinReverseCountVowels {
     public static void UsingArrayListCollectionsReverseBuiltinReverseCountVowelsMethods(String str) {
-
         ArrayList<Character> list = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-
         Collections.reverse(list);
-        System.out.println(list);
-
-        int count_of_vowels = 1;
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < list.size(); i++) {
-            char ch = list.get(i);
+            result.append(list.get(i));
+        }
+        System.out.println("Reverse " + result);
+        int countofVowels = 0;
+
+        for (int i = 0; i < result.length(); i++) {
+            char ch = result.charAt(i);
+
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                count_of_vowels++;
+                countofVowels++;
             }
-
         }
-        System.out.println(count_of_vowels);
+        System.out.println(countofVowels);
     }
 }
 
 public class ReverseCountVowels {
     public static void main(String[] args) {
-        UsingForLoopReverseCountVowels.UsingForLoopReverseCountVowelsMethods("automation");
+        UsingForLoopReverseCountVowels.UsingForLoopReverseCountVowelsMethods("automationaeiouAEIOU");
         UsingArrayListCollectionsReverseBuiltinReverseCountVowels
-                .UsingArrayListCollectionsReverseBuiltinReverseCountVowelsMethods("automation");
+                .UsingArrayListCollectionsReverseBuiltinReverseCountVowelsMethods("automationaeiouAEIOU");
     }
 }

@@ -12,30 +12,32 @@ import java.util.Collections;
 class ReverseOnlyUppercaseLettersUsingForLoop {
     public static void ReverseOnlyLowercaseLettersUsingForLoopMethods(String str) {
 
-        String upperCaseString = "";
+        String onlycapitalCharacters = "";
         for (int i = 0; i < str.length(); i++) {
-
             char ch = str.charAt(i);
 
             if (ch >= 'A' && ch <= 'Z') {
-                upperCaseString = upperCaseString + ch;
+                onlycapitalCharacters = onlycapitalCharacters + ch;
             }
         }
-        String reverse_upperCaseString = "";
-        for (int i = upperCaseString.length() - 1; i >= 0; i--) {
-            reverse_upperCaseString = reverse_upperCaseString + upperCaseString.charAt(i);
+        String reverseonlycapitalCharacters = "";
+        for (int i = onlycapitalCharacters.length() - 1; i >= 0; i--) {
+            reverseonlycapitalCharacters = reverseonlycapitalCharacters + onlycapitalCharacters.charAt(i);
         }
 
-        int index = 0;
-        String result = "";
-        for (int i = 0; i < str.length(); i++) {
+        int index=0;
+        String result="";
 
-            char ch = str.charAt(i);
-
-            if (ch >= 'A' && ch <= 'Z') {
-                result = result + reverse_upperCaseString.charAt(index++);
-            } else {
-                result = result + ch;
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+            
+            if (ch >= 'A' && ch <= 'Z')
+            {
+                result=result+reverseonlycapitalCharacters.charAt(index++);
+            }
+            else{
+                result=result+ch;
             }
         }
         System.out.println(result);
@@ -45,31 +47,36 @@ class ReverseOnlyUppercaseLettersUsingForLoop {
 class ReverseOnlyUppercaseLettersUsingArrayListCollectionsReverse {
     public static void ReverseOnlyUppercaseLettersUsingArrayListCollectionsReverseMethods(String str) {
 
-        ArrayList<Character> list = new ArrayList<>();
-
-        for (int i = 0; i < str.length(); i++) {
+        ArrayList<Character>list=new ArrayList<>();
+        for(int i=0;i<str.length();i++)
+        {
             list.add(str.charAt(i));
         }
 
-        ArrayList<Character> upperCaseString = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            char ch = list.get(i);
+        ArrayList<Character>onlyUppercasecharacters=new ArrayList<>();
+        for(int i=0;i<list.size();i++)
+        {
+            char ch=list.get(i);
 
-            if (ch >= 'A' && ch <= 'Z') {
-                upperCaseString.add(ch);
+            if(ch>='A' && ch<='Z')
+            {
+                onlyUppercasecharacters.add(ch);
             }
         }
+        Collections.reverse(onlyUppercasecharacters);
 
-        Collections.reverse(upperCaseString);
-        StringBuilder result = new StringBuilder();
-        int index = 0;
+        int index=0;
+        StringBuilder result=new StringBuilder();
+        for(int i=0;i<list.size();i++)
+        {
+            char ch=list.get(i);
 
-        for (int i = 0; i < list.size(); i++) {
-            char ch = list.get(i);
+            if(ch>='A' && ch<='Z')
+            {
+                result.append(onlyUppercasecharacters.get(index++));
+            }
 
-            if (ch >= 'A' && ch <= 'Z') {
-                result.append(upperCaseString.get(index++));
-            } else {
+            else{
                 result.append(ch);
             }
         }
@@ -79,8 +86,8 @@ class ReverseOnlyUppercaseLettersUsingArrayListCollectionsReverse {
 
 public class ReverseOnlyUppercaseLetters {
     public static void main(String[] args) {
-        ReverseOnlyUppercaseLettersUsingForLoop.ReverseOnlyLowercaseLettersUsingForLoopMethods("Java Selenium");
+       ReverseOnlyUppercaseLettersUsingForLoop.ReverseOnlyLowercaseLettersUsingForLoopMethods("Java Selenium");
         ReverseOnlyUppercaseLettersUsingArrayListCollectionsReverse
-                .ReverseOnlyUppercaseLettersUsingArrayListCollectionsReverseMethods("Java Selenium");
+        .ReverseOnlyUppercaseLettersUsingArrayListCollectionsReverseMethods("Java Selenium");
     }
 }
