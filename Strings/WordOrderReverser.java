@@ -11,10 +11,9 @@ import java.util.Collections;
 
 class WordOrderUsingLoop {
     public static void reverseUsingLoop(String str) {
-
         String words[] = str.split(" ");
         for (int i = words.length - 1; i >= 0; i--) {
-            System.out.print(words[i] + " ");
+            System.out.print(words[i]);
         }
         System.out.println();
     }
@@ -61,7 +60,7 @@ class WordOrderUsingCollections {
 public class WordOrderReverser {
     public static void main(String[] args) {
         WordOrderUsingLoop.reverseUsingLoop("Java Selenium Testing");
-        WordOrderUsingArrayList.reverseUsingArrayList("Python Testing");
+        // WordOrderUsingArrayList.reverseUsingArrayList("Python Testing");
         // WordOrderUsingCollections.reverseUsingCollections("Java Learning");
     }
 }
