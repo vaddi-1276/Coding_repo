@@ -43,7 +43,7 @@ class UsingRecursionCountZeros {
     public static void UsingRecursionCountZerosMethods(int arr[], int index, int countofzero) {
 
         if (index == arr.length) {
-            System.out.println("Using Recursion count of Zero "+countofzero);
+            System.out.println("Using Recursion count of Zero " + countofzero);
             return;
         }
 
