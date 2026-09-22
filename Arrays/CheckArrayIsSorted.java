@@ -3,14 +3,15 @@ package Arrays;
 // Input: [10, 20, 30, 40, 50]
 // Output: Sorted
 
+import java.util.Arrays;
+
 class UsingNestedForLoopCheckArrayIsSorted {
     public static void UsingNestedForLoopCheckArrayIsSortedMethods(int arr[]) {
-
         for (int i = 0; i < arr.length; i++) {
-
             for (int j = i + 1; j < arr.length; j++) {
+
                 if (arr[i] > arr[j]) {
-                    System.out.println("Not Sorted");
+                    System.out.println(" Not Sorted");
                     return;
                 }
             }
@@ -38,11 +39,25 @@ class UsingRecursionCheckArrayIsSorted {
     }
 }
 
+class UsingArrayCloneCheckArrayIsSorted {
+    public static void UsingArrayCloneCheckArrayIsSortedMethods(int arr[]) {
+
+        int clonearray[] = arr.clone();
+        Arrays.sort(clonearray);
+        if (Arrays.equals(clonearray, arr)) {
+            System.out.println("Sorted");
+        } else {
+            System.out.println("Not Sorted");
+        }
+    }
+}
+
 public class CheckArrayIsSorted {
     public static void main(String[] args) {
         UsingNestedForLoopCheckArrayIsSorted
-        .UsingNestedForLoopCheckArrayIsSortedMethods(new int[] { 10, 30, 20, 40, 50
-        });
-        UsingRecursionCheckArrayIsSorted.UsingRecursionCheckArrayIsSortedMethods(new int[] { 10, 20,30, 40, 50 }, 0);
+                .UsingNestedForLoopCheckArrayIsSortedMethods(new int[] { 10, 30, 20, 40, 50
+                });
+        UsingRecursionCheckArrayIsSorted.UsingRecursionCheckArrayIsSortedMethods(new int[] { 10, 20, 30, 40, 50 }, 0);
+        UsingArrayCloneCheckArrayIsSorted.UsingArrayCloneCheckArrayIsSortedMethods(new int[] { 10, 20, 30, 40, 50 });
     }
 }

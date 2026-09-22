@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 class UsingForLoopCountEvenandOddNumbers {
     public static void UsingForLoopCountEvenandOddNumbersMethods(int arr[]) {
-
         int evencount = 0;
         int oddcount = 0;
 
@@ -22,14 +21,13 @@ class UsingForLoopCountEvenandOddNumbers {
                 oddcount++;
             }
         }
-        System.out.println(evencount);
-        System.out.println(oddcount);
+        System.out.println("Even = " + evencount);
+        System.out.println("Odd = " + oddcount);
     }
 }
 
 class UsingArrayListCountEvenandOddNumbers {
     public static void UsingArrayListCountEvenandOddNumbersMethods(int arr[]) {
-
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
@@ -40,9 +38,7 @@ class UsingArrayListCountEvenandOddNumbers {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) % 2 == 0) {
                 evencount++;
-            }
-
-            else {
+            } else {
                 oddcount++;
             }
         }
@@ -52,24 +48,20 @@ class UsingArrayListCountEvenandOddNumbers {
 }
 
 class UsingRecursionCountEvenandOddNumbers {
-    public static void UsingRecursionCountEvenandOddNumbersMethods(int arr[], int recursionevencount,
-            int recursionoddcount, int index) {
+    public static void UsingRecursionCountEvenandOddNumbersMethods(int arr[], int index, int evencount, int oddcount) {
 
         if (index == arr.length) {
-            System.out.println(recursionevencount);
-            System.out.println(recursionoddcount);
+            System.out.println("Even Count using Recursion " + evencount);
+            System.out.println("Odd Count using Recursion " + oddcount);
             return;
         }
 
         if (arr[index] % 2 == 0) {
-            recursionevencount++;
+            evencount++;
+        } else {
+            oddcount++;
         }
-
-        else {
-            recursionoddcount++;
-        }
-
-        UsingRecursionCountEvenandOddNumbersMethods(arr, recursionevencount, recursionoddcount, index + 1);
+        UsingRecursionCountEvenandOddNumbersMethods(arr, index + 1, evencount, oddcount);
     }
 }
 

@@ -10,28 +10,27 @@ class UsingNestedForLoopFindElementsGreaterThanAverage {
         for (int i = 0; i < arr.length; i++) {
             sum = sum + arr[i];
         }
-
         int average = sum / arr.length;
-
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > average) {
-                System.out.print(arr[i] + " ");
+                System.out.println(arr[i]);
             }
         }
-        System.out.println();
     }
 }
 
 class UsingRecursionFindElementsGreaterThanAverage {
-    public static int sumofelements(int arr[], int index, int sum) {
+
+    static int sum = 0;
+
+    public static void sumofelements(int arr[], int index) {
 
         if (index == arr.length) {
-            return sum;
+            return;
         }
 
         sum = sum + arr[index];
-
-        return sumofelements(arr, index + 1, sum);
+        sumofelements(arr, index + 1);
     }
 
     public static void averageofelementsgreaterthanaverage(int arr[], int index, int average) {
@@ -39,9 +38,8 @@ class UsingRecursionFindElementsGreaterThanAverage {
         if (index == arr.length) {
             return;
         }
-
         if (arr[index] > average) {
-            System.out.println(arr[index] + " ");
+            System.out.println(arr[index]);
         }
         averageofelementsgreaterthanaverage(arr, index + 1, average);
     }
@@ -51,14 +49,18 @@ public class FindElementsGreaterThanAverage {
     public static void main(String[] args) {
         UsingNestedForLoopFindElementsGreaterThanAverage
                 .UsingNestedForLoopFindElementsGreaterThanAverageMethods(new int[] { 10, 20, 30, 40, 50 });
+
+        System.out.println(
+                "----------------------------------------------------------------------------------------------");
+
         int arr[] = { 10, 20, 30, 40, 50 };
 
-        int sum = UsingRecursionFindElementsGreaterThanAverage
-                .sumofelements(arr, 0, 0);
+        UsingRecursionFindElementsGreaterThanAverage.sumofelements(arr, 0);
 
-        int average = sum / arr.length;
+        int average = UsingRecursionFindElementsGreaterThanAverage.sum / arr.length;
 
-        UsingRecursionFindElementsGreaterThanAverage.averageofelementsgreaterthanaverage(arr, 0,
+        UsingRecursionFindElementsGreaterThanAverage.averageofelementsgreaterthanaverage(arr,
+                0,
                 average);
     }
 }

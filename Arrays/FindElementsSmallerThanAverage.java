@@ -12,10 +12,12 @@ class UsingNestedForLoopFindElementsSmallerThanAverage {
             sum = sum + arr[i];
         }
         int average = sum / arr.length;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < average) {
-                System.out.print(arr[i] + " ");
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<average)
+            {
+                System.out.print(arr[i]+" ");
             }
         }
         System.out.println();
@@ -43,7 +45,7 @@ class UsingRecursionFindElementsSmallerThanAverage {
         }
 
         if (arr[index] < average) {
-            System.out.print(arr[index]+" ");
+            System.out.print(arr[index] + " ");
         }
         smallerthanaverage(arr, index + 1, average);
     }
@@ -51,14 +53,19 @@ class UsingRecursionFindElementsSmallerThanAverage {
 
 public class FindElementsSmallerThanAverage {
     public static void main(String[] args) {
+
         UsingNestedForLoopFindElementsSmallerThanAverage
                 .UsingNestedForLoopFindElementsSmallerThanAverageMethods(new int[] { 10, 20, 30, 40, 50 });
 
-        int arr[] = new int[] { 10, 20, 30, 40, 50 };
-        UsingRecursionFindElementsSmallerThanAverage.sumofelements(arr, 0);
+        System.out.println(
+                "----------------------------------------------------------------------------------------------");
 
-        int average = UsingRecursionFindElementsSmallerThanAverage.sum / arr.length;
-        UsingRecursionFindElementsSmallerThanAverage.smallerthanaverage(arr, 0, average);
-        System.out.println();
+        // int arr[] = new int[] { 10, 20, 30, 40, 50 };
+        // UsingRecursionFindElementsSmallerThanAverage.sumofelements(arr, 0);
+
+        // int average = UsingRecursionFindElementsSmallerThanAverage.sum / arr.length;
+        // UsingRecursionFindElementsSmallerThanAverage.smallerthanaverage(arr, 0,
+        // average);
+        // System.out.println();
     }
 }
