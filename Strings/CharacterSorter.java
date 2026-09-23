@@ -12,18 +12,15 @@ import java.util.Collections;
 
 class CharacterSortingUsingArrayList {
     public static void sortUsingArrayList(String str) {
-
         ArrayList<Character> list = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-
         Collections.sort(list);
-        StringBuilder result = new StringBuilder();
+        String result = "";
         for (int i = 0; i < list.size(); i++) {
-            result.append(list.get(i));
+            result = result + list.get(i);
         }
-
         System.out.println(result);
     }
 }
@@ -45,6 +42,6 @@ class CharacterSortingUsingArray {
 public class CharacterSorter {
     public static void main(String[] args) {
         CharacterSortingUsingArrayList.sortUsingArrayList("programming");
-        CharacterSortingUsingArray.sortUsingArray("programming");
+        // CharacterSortingUsingArray.sortUsingArray("programming");
     }
 }

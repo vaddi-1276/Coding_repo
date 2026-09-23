@@ -10,10 +10,9 @@ import java.util.LinkedHashSet;
 // Output:
 // [10, 20, 30, 40]
 
-class UsingNestedForLoopRemoveDuplicateElements {
-    public static void UsingNestedForLoopRemoveDuplicateElementsMethods(int arr[]) {
+class UsingForLoopRemoveDuplicateElements {
+    public static void UsingForLoopRemoveDuplicateElementsMethods(int arr[]) {
 
-        Arrays.sort(arr);
         for (int i = 0; i < arr.length; i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
@@ -25,10 +24,28 @@ class UsingNestedForLoopRemoveDuplicateElements {
             if (found) {
                 continue;
             }
-
-            System.out.print(arr[i] + " ");
+            System.out.println(arr[i] + " ");
         }
-        System.out.println();
+    }
+}
+
+class UsingNestedForLoopRemoveDuplicateElements {
+    public static void UsingNestedForLoopRemoveDuplicateElementsMethods(int arr[]) {
+        Arrays.sort(arr);
+
+        for (int i = 0; i < arr.length; i++) {
+            boolean found = false;
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                continue;
+            }
+            System.out.println(arr[i] + " ");
+        }
     }
 }
 
@@ -71,13 +88,60 @@ class UsingHashSetRemoveDuplicateElements {
     }
 }
 
+class UsingRecursionRemoveDuplicateElements {
+    public static void UsingRecursionRemoveDuplicateElementsMethods(int arr[], int index) {
+
+        if (index == arr.length) {
+            return;
+        }
+
+        boolean found = false;
+        for (int i = 0; i < index; i++) {
+            if (arr[index] == arr[i]) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            UsingRecursionRemoveDuplicateElementsMethods(arr, index + 1);
+            return;
+        }
+        System.out.println(arr[index]);
+        UsingRecursionRemoveDuplicateElementsMethods(arr, index + 1);
+    }
+}
+
 public class RemoveDuplicateElements {
     public static void main(String[] args) {
+
+        UsingForLoopRemoveDuplicateElements
+                .UsingForLoopRemoveDuplicateElementsMethods(new int[] { 10, 20, 10, 30, 20,
+                        40 });
+        System.out.println(
+                "----------------------------------------------------------------------------------------------");
+
         UsingNestedForLoopRemoveDuplicateElements
-                .UsingNestedForLoopRemoveDuplicateElementsMethods(new int[] { 10, 20, 10, 30, 20, 40 });
+                .UsingNestedForLoopRemoveDuplicateElementsMethods(new int[] { 10, 20, 10, 30,
+                        20, 40 });
+
+        System.out.println(
+                "----------------------------------------------------------------------------------------------");
         UsingArrayListRemoveDuplicateElements
-                .UsingArrayListRemoveDuplicateElementsmethods(new int[] { 10, 20, 10, 30, 20, 40 });
+                .UsingArrayListRemoveDuplicateElementsmethods(new int[] { 10, 20, 10, 30, 20,
+                        40 });
+
+        System.out.println(
+                "----------------------------------------------------------------------------------------------");
         UsingHashSetRemoveDuplicateElements
-                .UsingHashSetRemoveDuplicateElementsMethods(new int[] { 10, 20, 10, 30, 20, 40 });
+                .UsingHashSetRemoveDuplicateElementsMethods(new int[] { 10, 20, 10, 30, 20,
+                        40 });
+
+        System.out.println(
+                "----------------------------------------------------------------------------------------------");
+
+        UsingRecursionRemoveDuplicateElements
+                .UsingRecursionRemoveDuplicateElementsMethods(new int[] { 10, 20, 10, 30, 20,
+                        40 }, 0);
+
     }
 }

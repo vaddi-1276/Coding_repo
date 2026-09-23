@@ -1,6 +1,7 @@
 package Strings;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 // Input:
@@ -22,6 +23,7 @@ class CharacterFrequencyUsingNestedLoop {
         for (int i = 0; i < str.length(); i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
+
                 if (str.charAt(i) == str.charAt(j)) {
                     found = true;
                     break;
@@ -36,12 +38,43 @@ class CharacterFrequencyUsingNestedLoop {
                     count++;
                 }
             }
-
             System.out.println(str.charAt(i) + " = " + count);
         }
     }
 }
 
+class UsingCollectionsFrequencyCharacterFrequencyAnalyzer {
+
+    public static void UsingCollectionsFrequencyCharacterFrequencyAnalyzerMethods(String str) {
+
+        ArrayList<Character> list = new ArrayList<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            list.add(str.charAt(i));
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+
+            boolean found = false;
+
+            for (int j = 0; j < i; j++) {
+
+                if (list.get(i) == list.get(j)) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                continue;
+            }
+
+            int count = Collections.frequency(list, list.get(i));
+
+            System.out.println(list.get(i) + " = " + count);
+        }
+    }
+}
 class CharacterFrequencyUsingArrayList {
     public static void findUsingArrayList(String str) {
         ArrayList<Character> list = new ArrayList<>();
@@ -98,8 +131,18 @@ class HashmapCharacterFrequencyAnalyzer {
 
 public class CharacterFrequencyAnalyzer {
     public static void main(String[] args) {
-        // CharacterFrequencyUsingNestedLoop.findUsingNestedLoop("programming");
+        CharacterFrequencyUsingNestedLoop.findUsingNestedLoop("programming");
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        UsingCollectionsFrequencyCharacterFrequencyAnalyzer
+                .UsingCollectionsFrequencyCharacterFrequencyAnalyzerMethods("programming");
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
         // CharacterFrequencyUsingArrayList.findUsingArrayList("programming");
-        HashmapCharacterFrequencyAnalyzer.HashmapCharacterFrequencyAnalyzerMethods("TestingTeam");
+        // HashmapCharacterFrequencyAnalyzer.HashmapCharacterFrequencyAnalyzerMethods("TestingTeam");
     }
 }

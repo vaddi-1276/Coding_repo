@@ -12,18 +12,16 @@ import java.util.Arrays;
 class UsingNestedForLoopMoveAllZerostoEnd {
     public static void UsingNestedForLoopMoveAllZerostoEndMethods(int arr[]) {
 
-        int index = 0;
         int newarr[] = new int[arr.length];
+        int index = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != 0) {
                 newarr[index++] = arr[i];
             }
         }
-
         while (index < arr.length) {
             newarr[index++] = 0;
         }
-
         System.out.println(Arrays.toString(newarr));
     }
 }
@@ -55,17 +53,13 @@ class UsingArrayListMoveAllZerostoEnd {
 class WithoutUsingExtraArrayMoveAllZerostoEnd {
     public static void WithoutUsingExtraArrayMoveAllZerostoEndMethods(int arr[]) {
 
-        for(int i=0;i<arr.length;i++)
-        {
-            if(arr[i]==0)
-            {
-                for(int j=i+1;j<arr.length;j++)
-                {
-                    if(arr[j]!=0)
-                    {
-                        int temp=arr[i];
-                        arr[i]=arr[j];
-                        arr[j]=temp;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j] != 0) {
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
                         break;
                     }
                 }
@@ -77,9 +71,23 @@ class WithoutUsingExtraArrayMoveAllZerostoEnd {
 
 public class MoveAllZerostoEnd {
     public static void main(String[] args) {
-        // UsingNestedForLoopMoveAllZerostoEnd.UsingNestedForLoopMoveAllZerostoEndMethods(new int[] { 0, 1, 0, 3, 12 });
-        // UsingArrayListMoveAllZerostoEnd.UsingArrayListMoveAllZerostoEndMethods(new int[] { 0, 1, 0, 3, 12 });
+        UsingNestedForLoopMoveAllZerostoEnd.UsingNestedForLoopMoveAllZerostoEndMethods(new
+        int[] { 0, 1, 0, 3, 12 });
+
+        System.out.println(
+        "----------------------------------------------------------------------------------------------");
+
+        UsingArrayListMoveAllZerostoEnd.UsingArrayListMoveAllZerostoEndMethods(new
+        int[] { 0, 1, 0, 3, 12 });
+
+        System.out.println(
+        "----------------------------------------------------------------------------------------------");
+
         WithoutUsingExtraArrayMoveAllZerostoEnd
-                .WithoutUsingExtraArrayMoveAllZerostoEndMethods(new int[] { 0, 1, 0, 3, 12 });
+                .WithoutUsingExtraArrayMoveAllZerostoEndMethods(new int[] { 0, 1, 0, 3, 12
+                });
+
+        System.out.println(
+                "----------------------------------------------------------------------------------------------");
     }
 }

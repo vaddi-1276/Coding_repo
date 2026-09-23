@@ -19,11 +19,13 @@ class UsingStartsWithCheckPrefixofAnotherString {
 class UsingNestedForLoopCheckPrefixofAnotherString {
     public static void UsingNestedForLoopCheckPrefixofAnotherStringMethods(String str, String prefixString) {
 
-        if (str.length() >= prefixString.length() && str.substring(0, prefixString.length()).equals(prefixString)) {
-            System.out.println("Yes");
-        } else {
-            System.err.println("No");
-        }
+       if(str.length()>=prefixString.length() && str.substring(0, prefixString.length()).equals(prefixString))
+       {
+         System.out.println("Yes");
+       }
+       else{
+        System.out.println("No");
+       }
     }
 }
 
@@ -45,10 +47,10 @@ class UsingRecursionCheckPrefixofAnotherString {
 
 public class CheckPrefixofAnotherString {
     public static void main(String[] args) {
-        // UsingStartsWithCheckPrefixofAnotherString.UsingStartsWithCheckPrefixofAnotherStringMethods("Selenium",
-        // "playwright");
-        // UsingNestedForLoopCheckPrefixofAnotherString.UsingNestedForLoopCheckPrefixofAnotherStringMethods("Selenium",
-        // "Selepri");
+        UsingStartsWithCheckPrefixofAnotherString.UsingStartsWithCheckPrefixofAnotherStringMethods("Selenium",
+        "playwright");
+        UsingNestedForLoopCheckPrefixofAnotherString.UsingNestedForLoopCheckPrefixofAnotherStringMethods("Selenium",
+        "Selepri");
         UsingRecursionCheckPrefixofAnotherString
                 .UsingRecursionCheckPrefixofAnotherStringMethods("Selenium", "Selep", 0);
     }
