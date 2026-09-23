@@ -15,23 +15,18 @@ class UsingForLoopCountPositiveandNegativeNumbers {
         int negativecount = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] >= 0) {
+            if (arr[i] > 0) {
                 positivecount++;
-            }
-
-            else if (arr[i] < 0) {
+            } else if (arr[i] < 0) {
                 negativecount++;
             }
         }
-
-        System.out.println(positivecount);
-        System.out.println(negativecount);
+        System.out.println("Positive Count using For Loop = " + positivecount);
+        System.out.println("Negative Count using For Loop = " + negativecount);
     }
 }
 
-class UsingArrayListCountPositiveandNegativeNumbers
-
-{
+class UsingArrayListCountPositiveandNegativeNumbers {
     public static void UsingArrayListCountPositiveandNegativeNumbersMethods(int arr[]) {
 
         ArrayList<Integer> list = new ArrayList<>();
@@ -43,39 +38,33 @@ class UsingArrayListCountPositiveandNegativeNumbers
         int negativecount = 0;
 
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) >= 0) {
+            if (list.get(i) > 0) {
                 positivecount++;
-            }
-
-            else if (list.get(i) < 0) {
+            } else {
                 negativecount++;
             }
         }
-        System.out.println(positivecount);
-        System.out.println(negativecount);
+        System.out.println("Positive Count using ArrayList = " + positivecount);
+        System.out.println("Negative Count using ArrayList = " + negativecount);
     }
 }
 
 class UsingRecursionCountPositiveandNegativeNumbers {
-    public static void UsingRecursionCountPositiveandNegativeNumbersMethods(int arr[], int recursionpositivecount,
-            int recursionnegativecount, int index) {
+    public static void UsingRecursionCountPositiveandNegativeNumbersMethods(int arr[], int index, int positivecount,
+            int negativecount) {
 
         if (index == arr.length) {
-            System.out.println(recursionpositivecount);
-            System.out.println(recursionnegativecount);
+            System.out.println("Positive Count using Recursion = " + positivecount);
+            System.out.println("Negative Count using Recursion = " + negativecount);
             return;
         }
 
-        if (arr[index] >= 0) {
-            recursionpositivecount++;
+        if (arr[index] > 0) {
+            positivecount++;
+        } else if (arr[index] < 0) {
+            negativecount++;
         }
-
-        else if (arr[index] < 0) {
-            recursionnegativecount++;
-        }
-
-        UsingRecursionCountPositiveandNegativeNumbersMethods(arr, recursionpositivecount, recursionnegativecount,
-                index + 1);
+        UsingRecursionCountPositiveandNegativeNumbersMethods(arr, index+1, positivecount, negativecount);
     }
 }
 

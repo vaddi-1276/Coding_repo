@@ -15,23 +15,28 @@ import java.util.Collections;
 class UsingArraysSortCheckAnagramFrequencyMatch {
     public static void UsingArraysSortCheckAnagramFrequencyMatchMethods(String str1, String str2) {
 
-        if (str1.length() != str2.length()) {
+        if(str1.length()!=str2.length())
+        {
             System.out.println("Not Anagram");
             return;
         }
 
-        char arr1[] = str1.toCharArray();
-        char arr2[] = str2.toCharArray();
+        char firstarr[]=str1.toCharArray();
+        char secondarr[]=str2.toCharArray();
 
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
+        Arrays.sort(firstarr);
+        Arrays.sort(secondarr);
 
-        if (Arrays.equals(arr1, arr2)) {
-            System.out.println("Frequency Match = Yes");
-            System.out.println("Anagram = Yes");
-        } else {
-            System.out.println("Anagram = No");
+        for(int i=0;i<firstarr.length;i++)
+        {
+            if(firstarr[i]!=secondarr[i])
+            {
+                System.out.println("Not Anagram");
+                return;
+            }
         }
+        System.out.println("Anagram");
+        
     }
 }
 
@@ -71,6 +76,6 @@ public class CheckAnagramFrequencyMatch {
     public static void main(String[] args) {
         UsingArraysSortCheckAnagramFrequencyMatch.UsingArraysSortCheckAnagramFrequencyMatchMethods("listen",
                 "silent");
-        UsingArrayListCheckAnagramFrequencyMatch.UsingArrayListCheckAnagramFrequencyMatchMethods("listen", "silent");
+        // UsingArrayListCheckAnagramFrequencyMatch.UsingArrayListCheckAnagramFrequencyMatchMethods("listen", "silent");
     }
 }

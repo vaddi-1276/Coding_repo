@@ -12,10 +12,8 @@ import java.util.Arrays;
 class UsingNestedForLoopCopyOneArraytoAnother {
     public static void UsingNestedForLoopCopyOneArraytoAnotherMethods(int arr[]) {
         int newarr[] = new int[arr.length];
-        int index = 0;
-
         for (int i = 0; i < arr.length; i++) {
-            newarr[index++] = arr[i];
+            newarr[i] = arr[i];
         }
         System.out.println(Arrays.toString(newarr));
     }
@@ -23,15 +21,16 @@ class UsingNestedForLoopCopyOneArraytoAnother {
 
 class UsingArrayListCopyOneArraytoAnother {
     public static void UsingArrayListCopyOneArraytoAnotherMethods(int arr[]) {
+
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
 
-        int newarr[] = new int[arr.length];
-        int index = 0;
-        for (int i = 0; i < list.size(); i++) {
-            newarr[index++] = list.get(i);
+        int newarr[]=new int[list.size()];
+        for(int i=0;i<list.size();i++)
+        {
+            newarr[i]=list.get(i);
         }
         System.out.println(Arrays.toString(newarr));
     }
@@ -49,24 +48,28 @@ class UsingRecursionCopyOneArraytoAnother {
     }
 }
 
-class UsingArraysCopy_CopyOneArraytoAnother
-{
+class UsingArraysCopy_CopyOneArraytoAnother {
     public static void UsingArraysCopy_CopyOneArraytoAnotherMethods(int arr[]) {
-        
-        int newarr[]=Arrays.copyOf(arr, arr.length);
+
+        int newarr[] = Arrays.copyOf(arr, arr.length);
         System.out.println(Arrays.toString(newarr));
     }
 }
+
 public class CopyOneArraytoAnother {
     public static void main(String[] args) {
         UsingNestedForLoopCopyOneArraytoAnother
-                .UsingNestedForLoopCopyOneArraytoAnotherMethods(new int[] { 10, 20, 30, 40 });
-        UsingArrayListCopyOneArraytoAnother
-                .UsingArrayListCopyOneArraytoAnotherMethods(new int[] { 10, 50, 20, 30, 40
+                .UsingNestedForLoopCopyOneArraytoAnotherMethods(new int[] { 10, 20, 30, 40
                 });
+        UsingArrayListCopyOneArraytoAnother
+        .UsingArrayListCopyOneArraytoAnotherMethods(new int[] { 10, 50, 20, 30, 40
+        });
         int arr[] = new int[] { 10, 50, 60, 20, 30, 40 };
-        UsingRecursionCopyOneArraytoAnother.UsingRecursionCopyOneArraytoAnotherMethods(arr, new int[arr.length], 0);
+        UsingRecursionCopyOneArraytoAnother.UsingRecursionCopyOneArraytoAnotherMethods(arr,
+        new int[arr.length], 0);
 
-        UsingArraysCopy_CopyOneArraytoAnother.UsingArraysCopy_CopyOneArraytoAnotherMethods(new int[]{ 10, 50, 60, 20, 30});
+        UsingArraysCopy_CopyOneArraytoAnother
+        .UsingArraysCopy_CopyOneArraytoAnotherMethods(new int[] { 10, 50, 60, 20, 30
+        });
     }
 }

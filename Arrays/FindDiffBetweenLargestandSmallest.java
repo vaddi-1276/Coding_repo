@@ -9,10 +9,12 @@ import java.util.Collections;
 
 class UsingArraysSortFindDiffBetweenLargestandSmallest {
     public static void UsingArraysSortFindDiffBetweenLargestandSmallestMethods(int arr[]) {
+
         Arrays.sort(arr);
-        int minvalue = arr[0];
-        int maxvalue = arr[arr.length - 1];
-        int diff = maxvalue - minvalue;
+        int min = arr[0];
+        int max = arr[arr.length - 1];
+
+        int diff = Math.abs(min - max);
         System.out.println(diff);
     }
 }
@@ -29,10 +31,9 @@ class UsingNestedForLoopFindDiffBetweenLargestandSmallest {
                 }
             }
         }
-
-        int minvalue = arr[0];
-        int maxvalue = arr[arr.length - 1];
-        int diff = maxvalue - minvalue;
+        int min = arr[0];
+        int max = arr[arr.length - 1];
+        int diff = Math.abs(min - max);
 
         System.out.println(diff);
     }
@@ -41,14 +42,14 @@ class UsingNestedForLoopFindDiffBetweenLargestandSmallest {
 class UsingRecursionFindDiffBetweenLargestandSmallest {
     public static void UsingRecursionFindDiffBetweenLargestandSmallestMethods(int arr[], int index, int minvalue,
             int maxvalue) {
-
         if (index == arr.length) {
-            System.out.println(maxvalue - minvalue);
+            int diff = Math.abs(minvalue - maxvalue);
+            System.out.println(diff);
             return;
         }
 
-        minvalue = Math.min(minvalue, arr[index]);
-        maxvalue = Math.max(maxvalue, arr[index]);
+        minvalue = Math.min(arr[index], maxvalue);
+        maxvalue = Math.max(arr[index], maxvalue);
         UsingRecursionFindDiffBetweenLargestandSmallestMethods(arr, index + 1, minvalue, maxvalue);
     }
 }
@@ -71,13 +72,17 @@ class UsingCollectionsSortFindDiffBetweenLargestandSmallest {
 public class FindDiffBetweenLargestandSmallest {
     public static void main(String[] args) {
         UsingArraysSortFindDiffBetweenLargestandSmallest
-                .UsingArraysSortFindDiffBetweenLargestandSmallestMethods(new int[] { 10, 25, 5, 40, 15 });
+                .UsingArraysSortFindDiffBetweenLargestandSmallestMethods(new int[] { 10, 25,
+                        5, 40, 15 });
         UsingNestedForLoopFindDiffBetweenLargestandSmallest
-                .UsingNestedForLoopFindDiffBetweenLargestandSmallestMethods(new int[] { 10, 25, 5, 40, 15, 45 });
+                .UsingNestedForLoopFindDiffBetweenLargestandSmallestMethods(new int[] { 10,
+                        25, 5, 40, 15, 45 });
         UsingRecursionFindDiffBetweenLargestandSmallest
-                .UsingRecursionFindDiffBetweenLargestandSmallestMethods(new int[] { 10, 25, 5, 40, 15 }, 0,
+                .UsingRecursionFindDiffBetweenLargestandSmallestMethods(new int[] { 10, 25,
+                        5, 40, 15 }, 0,
                         Integer.MAX_VALUE, Integer.MIN_VALUE);
         UsingCollectionsSortFindDiffBetweenLargestandSmallest
-                .UsingCollectionsSortFindDiffBetweenLargestandSmallestMethods(new int[] { 10, 25, 5, 40, 15 });
+                .UsingCollectionsSortFindDiffBetweenLargestandSmallestMethods(new int[] { 10,
+                        25, 5, 40, 15 });
     }
 }

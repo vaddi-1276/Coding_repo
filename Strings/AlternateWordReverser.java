@@ -10,19 +10,26 @@ import java.util.ArrayList;
 class AlternateWordReversalUsingLoop {
 
     public static void reverseUsingLoop(String str) {
-        String words[] = str.split(" ");
-        String result = "";
-        for (int i = 0; i < words.length; i++) {
-            if (i % 2 == 0) {
-                for (int j = words[i].length() - 1; j >= 0; j--) {
-                    result = result + words[i].charAt(j);
+        
+        String words[]=str.split(" ");
+        String finalresult="";
+        for(int i=0;i<words.length;i++)
+        {
+            if(i%2==0)
+            {
+                for(int j=words[i].length()-1;j>=0;j--)
+                {
+                    finalresult=finalresult+words[i].charAt(j);
                 }
-            } else {
-                result = result + words[i];
             }
-            result = result + " ";
+            else
+            {
+                finalresult=finalresult+words[i];
+            }
+             finalresult=finalresult+" ";
         }
-        System.out.println(result);
+        System.out.print(finalresult);
+        System.out.println();
     }
 }
 
@@ -77,7 +84,7 @@ class AlternateWordReversalUsingArrayList {
 public class AlternateWordReverser {
     public static void main(String[] args) {
         AlternateWordReversalUsingLoop.reverseUsingLoop("Java Selenium Testing Automation");
-        AlternateWordReversalUsingStringBuilder.reverseUsingStringBuilder("Python Selenium Testing Automation");
-        AlternateWordReversalUsingArrayList.reverseUsingArrayList("Javascript Selenium Testing Automation");
+        // AlternateWordReversalUsingStringBuilder.reverseUsingStringBuilder("Python Selenium Testing Automation");
+        // AlternateWordReversalUsingArrayList.reverseUsingArrayList("Javascript Selenium Testing Automation");
     }
 }

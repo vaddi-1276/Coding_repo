@@ -21,7 +21,6 @@ class UsingNestedForLoopAllPossibleSubStrings {
                 temp = temp + str.charAt(j);
                 System.out.println(temp);
             }
-
         }
     }
 }
@@ -39,26 +38,35 @@ class UsingSubstringAllPossibleSubStrings {
 
 class UsingRecursionAllPossibleSubStrings {
 
-    public static void findAllPossibleSubString(String str, int start) {
+    public static void findAllPossibleSubString(String str, int index) {
 
-        if (start == str.length()) {
+        if (index == str.length()) {
             return;
         }
 
         String temp = "";
-        for (int i = start; i < str.length(); i++) {
-
+        for (int i = index; i < str.length(); i++) {
             temp = temp + str.charAt(i);
             System.out.println(temp);
         }
-        findAllPossibleSubString(str, start + 1);
+        findAllPossibleSubString(str, index + 1);
     }
 }
 
 public class AllPossibleSubStrings {
     public static void main(String[] args) {
         UsingNestedForLoopAllPossibleSubStrings.UsingNestedForLoopAllPossibleSubStringsMethods("ABC");
+
+        System.out.println(
+                "-------------------------------------------------------------------------------------------------");
+
         UsingSubstringAllPossibleSubStrings.UsingSubstringAllPossibleSubStringsMethods("DEF");
+        System.out.println(
+                "-------------------------------------------------------------------------------------------------");
+
         UsingRecursionAllPossibleSubStrings.findAllPossibleSubString("defg", 0);
+
+        System.out.println(
+                "-------------------------------------------------------------------------------------------------");
     }
 }

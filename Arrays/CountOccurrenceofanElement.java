@@ -18,7 +18,7 @@ class UsingForLoopCountOccurrenceofanElement {
                 count++;
             }
         }
-        System.out.println(count);
+        System.out.println("Count using Nested For Loop = " + count);
     }
 }
 
@@ -36,20 +36,20 @@ class UsingArrayListCountOccurrenceofanElement {
                 count++;
             }
         }
-        System.out.println(count);
+        System.out.println("Count using ArrayList = " + count);
     }
 }
 
 class UsingCollectionsFrequencyCountOccurrenceofanElement {
     public static void UsingCollectionsFrequencyCountOccurrenceofanElementMethods(int arr[], int searchvalue) {
-        ArrayList<Integer> list = new ArrayList<>();
 
+        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
 
         int count = Collections.frequency(list, searchvalue);
-        System.out.println(searchvalue + " = " + count);
+        System.out.println("Count using Collections Frequency = " + count);
     }
 }
 
@@ -58,7 +58,7 @@ class UsingRecursionCountOccurrenceofanElement {
             int count) {
 
         if (index == arr.length) {
-            System.out.println(count);
+            System.out.println("Count using Recursion = " + count);
             return;
         }
 
@@ -72,14 +72,13 @@ class UsingRecursionCountOccurrenceofanElement {
 public class CountOccurrenceofanElement {
     public static void main(String[] args) {
         UsingForLoopCountOccurrenceofanElement
-                .UsingForLoopCountOccurrenceofanElementMethods(new int[] { 10, 20, 10, 30, 10, 40, 40, 40, 40, 20, 30 },
+                .UsingForLoopCountOccurrenceofanElementMethods(new int[] { 10, 20, 30, 40 },
                         30);
         UsingArrayListCountOccurrenceofanElement
-                .UsingArrayListCountOccurrenceofanElementMethods(new int[] { 10, 20, 10, 30,
-                        10, 40, 30, 30, 30 }, 30);
+                .UsingArrayListCountOccurrenceofanElementMethods(new int[] { 10, 20, 30, 30, 40 }, 30);
         UsingCollectionsFrequencyCountOccurrenceofanElement.UsingCollectionsFrequencyCountOccurrenceofanElementMethods(
-                new int[] { 10, 20, 10, 30, 10, 40, 30, 30 }, 30);
+                new int[] { 10, 20, 30, 30, 30, 40 }, 30);
         UsingRecursionCountOccurrenceofanElement.UsingRecursionCountOccurrenceofanElementMethods(
-                new int[] { 10, 20, 10, 30, 10, 40, 30, 30 }, 30, 0, 0);
+                new int[] { 10, 20, 30, 30, 30, 30, 40 }, 30, 0, 0);
     }
 }

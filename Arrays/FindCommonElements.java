@@ -9,6 +9,19 @@ import java.util.ArrayList;
 // Output:
 // 3, 4, 5
 
+class UsingForloopFindCommonElements {
+    public static void UsingForloopFindCommonElementsMethods(int arr1[], int arr2[]) {
+
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) {
+                    System.out.println(arr1[i]);
+                }
+            }
+        }
+    }
+}
+
 class UsingNestedForLoopFindCommonElements {
     public static void UsingNestedForLoopFindCommonElementsMethods(int arr1[], int arr2[]) {
 
@@ -34,10 +47,9 @@ class UsingNestedForLoopFindCommonElements {
                 }
             }
             if (found) {
-                System.out.print(arr2[i] + " ");
+                System.out.println(arr2[i]);
             }
         }
-        System.out.println();
     }
 }
 
@@ -88,8 +100,18 @@ class UsingArrayListFindCommonElements {
 
 public class FindCommonElements {
     public static void main(String[] args) {
+
+        UsingForloopFindCommonElements.UsingForloopFindCommonElementsMethods(new int[] { 1, 2, 3, 4, 5 },
+                new int[] { 3, 4, 5, 6, 7 });
+
+        System.out
+                .println("------------------------------------------------------------------------------------------");
         UsingNestedForLoopFindCommonElements.UsingNestedForLoopFindCommonElementsMethods(new int[] { 1, 2, 3, 4, 5 },
                 new int[] { 3, 4, 5, 6, 7 });
+
+        System.out
+                .println("------------------------------------------------------------------------------------------");
+
         UsingArrayListFindCommonElements.UsingArrayListFindCommonElementsMethods(new int[] { 1, 2, 3, 4, 5 },
                 new int[] { 3, 4, 5, 6, 7 });
     }

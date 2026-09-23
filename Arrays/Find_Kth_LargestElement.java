@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 class UsingNestedForLoopFind_Kth_LargestElement {
     public static void UsingNestedForLoopFind_Kth_LargestElementMethods(int arr[], int value) {
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -21,9 +20,8 @@ class UsingNestedForLoopFind_Kth_LargestElement {
                 }
             }
         }
-
-        int indexvalue = arr.length - value;
-        System.out.println(arr[indexvalue]);
+        int position = arr.length - value;
+        System.out.println(arr[position]);
     }
 }
 
@@ -52,15 +50,15 @@ class UsingArrayListFind_Kth_LargestElement {
 class UsingSortArrayFind_Kth_LargestElement {
     public static void UsingSortArrayFind_Kth_LargestElementMethods(int arr[], int index) {
 
-        if (index == arr.length - 1) {
+        if (index == arr.length) {
             return;
         }
 
-        for (int j = index + 1; j < arr.length; j++) {
-            if (arr[index] > arr[j]) {
+        for (int i = index + 1; i < arr.length; i++) {
+            if (arr[index] > arr[i]) {
                 int temp = arr[index];
-                arr[index] = arr[j];
-                arr[j] = temp;
+                arr[index] = arr[i];
+                arr[i] = temp;
             }
         }
         UsingSortArrayFind_Kth_LargestElementMethods(arr, index + 1);
@@ -82,8 +80,10 @@ public class Find_Kth_LargestElement {
         UsingNestedForLoopFind_Kth_LargestElement
                 .UsingNestedForLoopFind_Kth_LargestElementMethods(new int[] { 10, 40, 20, 50, 30 }, 2);
         UsingArrayListFind_Kth_LargestElement
-                .UsingArrayListFind_Kth_LargestElementMethods(new int[] { 10, 40, 20, 50, 30 }, 3);
+                .UsingArrayListFind_Kth_LargestElementMethods(new int[] { 10, 40, 20, 50, 30
+                }, 3);
         UsingrecursionFind_Kth_LargestElement
-                .UsingrecursionFind_Kth_LargestElementMethods(new int[] { 10, 40, 20, 50, 30 }, 3);
+                .UsingrecursionFind_Kth_LargestElementMethods(new int[] { 10, 40, 20, 50, 30
+                }, 4);
     }
 }
