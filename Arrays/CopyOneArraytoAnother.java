@@ -11,9 +11,11 @@ import java.util.Arrays;
 
 class UsingNestedForLoopCopyOneArraytoAnother {
     public static void UsingNestedForLoopCopyOneArraytoAnotherMethods(int arr[]) {
+
         int newarr[] = new int[arr.length];
+        int index = 0;
         for (int i = 0; i < arr.length; i++) {
-            newarr[i] = arr[i];
+            newarr[index++] = arr[i];
         }
         System.out.println(Arrays.toString(newarr));
     }
@@ -27,10 +29,9 @@ class UsingArrayListCopyOneArraytoAnother {
             list.add(arr[i]);
         }
 
-        int newarr[]=new int[list.size()];
-        for(int i=0;i<list.size();i++)
-        {
-            newarr[i]=list.get(i);
+        int newarr[] = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            newarr[i] = list.get(i);
         }
         System.out.println(Arrays.toString(newarr));
     }
@@ -61,15 +62,17 @@ public class CopyOneArraytoAnother {
         UsingNestedForLoopCopyOneArraytoAnother
                 .UsingNestedForLoopCopyOneArraytoAnotherMethods(new int[] { 10, 20, 30, 40
                 });
-        UsingArrayListCopyOneArraytoAnother
-        .UsingArrayListCopyOneArraytoAnotherMethods(new int[] { 10, 50, 20, 30, 40
-        });
+
+        // UsingArrayListCopyOneArraytoAnother
+        //         .UsingArrayListCopyOneArraytoAnotherMethods(new int[] { 10, 50, 20, 30, 40
+        //         });
+
         int arr[] = new int[] { 10, 50, 60, 20, 30, 40 };
         UsingRecursionCopyOneArraytoAnother.UsingRecursionCopyOneArraytoAnotherMethods(arr,
-        new int[arr.length], 0);
+                new int[arr.length], 0);
 
-        UsingArraysCopy_CopyOneArraytoAnother
-        .UsingArraysCopy_CopyOneArraytoAnotherMethods(new int[] { 10, 50, 60, 20, 30
-        });
+        // UsingArraysCopy_CopyOneArraytoAnother
+        // .UsingArraysCopy_CopyOneArraytoAnotherMethods(new int[] { 10, 50, 60, 20, 30
+        // });
     }
 }

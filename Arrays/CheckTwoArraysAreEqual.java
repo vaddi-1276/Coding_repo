@@ -14,17 +14,16 @@ class UsingNestedForLoopCheckTwoArraysAreEqual {
     public static void UsingNestedForLoopCheckTwoArraysAreEqualMethods(int arr1[], int arr2[]) {
 
         if (arr1.length != arr2.length) {
-            System.out.println("Arrays size is not Equal");
-            return;
+            System.out.println("Lengths are Not Equals");
         }
 
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] != arr2[i]) {
-                System.out.println("Arrays inside the values are not equals");
+                System.out.println("Values inside values are not Equals");
                 return;
             }
         }
-        System.out.println("Arrays size and inside values are Equals");
+        System.out.println("Equals");
     }
 }
 
@@ -80,16 +79,13 @@ class UsingArraysEqualsCheckTwoArraysAreEqual {
     public static void UsingArraysEqualsCheckTwoArraysAreEqualMethods(int arr1[], int arr2[]) {
 
         if (arr1.length != arr2.length) {
-            System.out.println("Two Arrays Length are not Equal");
+            System.out.println("Array Lengths are not Equal");
             return;
         }
 
-        if(Arrays.equals(arr1, arr2))
-        {
+        if (Arrays.equals(arr1, arr2)) {
             System.out.println("Equals");
-        }
-        else
-        {
+        } else {
             System.out.println("Not Equals");
         }
     }
@@ -97,9 +93,9 @@ class UsingArraysEqualsCheckTwoArraysAreEqual {
 
 public class CheckTwoArraysAreEqual {
     public static void main(String[] args) {
-        // UsingNestedForLoopCheckTwoArraysAreEqual
-        // .UsingNestedForLoopCheckTwoArraysAreEqualMethods(new int[] { 1, 2, 3, 4 },
-        // new int[] { 1, 2, 3, 4 });
+        UsingNestedForLoopCheckTwoArraysAreEqual
+                .UsingNestedForLoopCheckTwoArraysAreEqualMethods(new int[] { 1, 2, 4, 4 },
+                        new int[] { 1, 2, 3, 4 });
         // UsingArrayListCheckTwoArraysAreEqual.UsingArrayListCheckTwoArraysAreEqualMethods(new
         // int[] { 1, 2, 3, 4 },
         // new int[] { 1, 2, 3, 4 });

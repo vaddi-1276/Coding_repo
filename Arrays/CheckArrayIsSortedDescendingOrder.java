@@ -14,36 +14,39 @@ class UsingNestedForLoopCheckArrayIsSortedDescendingOrder {
                 }
             }
         }
-        System.out.println("Sorted in Descending Order");
+        System.out.println("Sorted");
     }
 }
 
 class UsingRecursionCheckArrayIsSortedDescendingOrder {
     public static void UsingRecursionCheckArrayIsSortedDescendingOrderMethods(int arr[], int index) {
 
-        if (index == arr.length) {
+        if(index==arr.length)
+        {
             System.out.println("Sorted in Descending Order");
             return;
         }
 
-        for (int i = index + 1; i < arr.length; i++) {
-            if (arr[index] < arr[i]) {
+        for(int i=index+1;i<arr.length;i++)
+        {
+            if(arr[index]<arr[i])
+            {
                 System.out.println("Not Sorted in Descending Order");
                 return;
             }
         }
-        UsingRecursionCheckArrayIsSortedDescendingOrderMethods(arr, index + 1);
+        UsingRecursionCheckArrayIsSortedDescendingOrderMethods(arr, index+1);
     }
 }
 
 public class CheckArrayIsSortedDescendingOrder {
     public static void main(String[] args) {
         UsingNestedForLoopCheckArrayIsSortedDescendingOrder
-                .UsingNestedForLoopCheckArrayIsSortedDescendingOrderMethods(new int[] { 40,
-                        50, 30, 20, 10 });
+                .UsingNestedForLoopCheckArrayIsSortedDescendingOrderMethods(new int[] { 50,
+                        40, 30, 20, 10 });
 
         UsingRecursionCheckArrayIsSortedDescendingOrder
-                .UsingRecursionCheckArrayIsSortedDescendingOrderMethods(new int[] { 40, 50,
+                .UsingRecursionCheckArrayIsSortedDescendingOrderMethods(new int[] { 50, 40,
                         30, 20, 10 }, 0);
     }
 }
