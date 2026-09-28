@@ -9,9 +9,8 @@ class UsingNestedForLoopCheckArrayIsSorted {
     public static void UsingNestedForLoopCheckArrayIsSortedMethods(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-
                 if (arr[i] > arr[j]) {
-                    System.out.println(" Not Sorted");
+                    System.out.println("Not Sorted");
                     return;
                 }
             }
@@ -28,8 +27,8 @@ class UsingRecursionCheckArrayIsSorted {
             System.out.println("Sorted");
             return;
         }
-
         for (int i = index + 1; i < arr.length; i++) {
+
             if (arr[index] > arr[i]) {
                 System.out.println("Not Sorted");
                 return;
@@ -55,7 +54,7 @@ class UsingArrayCloneCheckArrayIsSorted {
 public class CheckArrayIsSorted {
     public static void main(String[] args) {
         UsingNestedForLoopCheckArrayIsSorted
-                .UsingNestedForLoopCheckArrayIsSortedMethods(new int[] { 10, 30, 20, 40, 50
+                .UsingNestedForLoopCheckArrayIsSortedMethods(new int[] { 10, 20, 30, 40, 50
                 });
         UsingRecursionCheckArrayIsSorted.UsingRecursionCheckArrayIsSortedMethods(new int[] { 10, 20, 30, 40, 50 }, 0);
         UsingArrayCloneCheckArrayIsSorted.UsingArrayCloneCheckArrayIsSortedMethods(new int[] { 10, 20, 30, 40, 50 });
