@@ -5,20 +5,24 @@ package Algorthims;
 // 6
 
 public class ClosestElement {
-    public static void main(String[] args) {
+    public static int ClosestElementMethods(int arr[]) {
+        int value=-1;
+        int target=7;
 
-        int arr[] = { 1, 4, 6, 8, 10 };
-        int target = 7;
-        int value = -1;
-
-        for (int i = 0; i < arr.length; i++) {
-
-            if (arr[i] <= target) {
-                value = arr[i];
-            } else {
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<=target)
+            {
+                value=arr[i];
+            }
+            else
+            {
                 break;
             }
         }
-        System.out.println(value);
+        return  value;
+    }
+    public static void main(String[] args) {
+        System.out.println(ClosestElementMethods(new int[]{1,4,8,10} ));
     }
 }

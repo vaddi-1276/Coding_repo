@@ -9,19 +9,16 @@ import java.util.Arrays;
 public class TwoSum {
     public static int[] TwoSumMethods(int arr[], int value) {
 
-        int firstvalue = arr[0];
-        int secondvalue = arr[0];
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] + arr[j] == value) {
-                    firstvalue=arr[i];
-                    secondvalue=arr[j];
-                    System.out.println("( "+firstvalue+" , "+secondvalue+" )");
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]+arr[j]==value)
+                {
+                    System.out.println("[ "+arr[i]+" , "+arr[j]+" ]");
                 }
             }
         }
-
         return new int[] {};
     }
 

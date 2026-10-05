@@ -13,24 +13,23 @@ package Algorthims;
 
 
 public class Floor {
-    public static void main(String[] args) {
-        
-        int arr[]={1, 2, 4, 6, 10};
-        int value=10;
-        int floor=-1;
-
+    public static int FloorMethods(int arr[],int target) {
+        int value=-1;
         for(int i=0;i<arr.length;i++)
         {
-            if(arr[i]<=value)
+            if(arr[i]<=target)
             {
-               floor=arr[i];
+                value=arr[i];
             }
-
             else
             {
                 break;
             }
         }
-        System.out.println(floor);
+
+        return value;
+    }
+    public static void main(String[] args) {
+        System.out.println(FloorMethods(new int[]{1, 2, 4, 6, 10}, 5));
     }
 }

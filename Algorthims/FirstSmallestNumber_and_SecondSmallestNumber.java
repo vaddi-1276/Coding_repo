@@ -9,16 +9,16 @@ package Algorthims;
 
 public class FirstSmallestNumber_and_SecondSmallestNumber {
     public static int FirstSmallestNumberMethods(int arr[]) {
+       int firstsmallestnumber=Integer.MAX_VALUE;
 
-        int firstsmallestnumber = Integer.MAX_VALUE;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < firstsmallestnumber) {
-                firstsmallestnumber = arr[i];
-            }
+       for(int i=0;i<arr.length;i++)
+       {
+        if(arr[i]<firstsmallestnumber)
+        {
+            firstsmallestnumber=arr[i];
         }
-
-        return firstsmallestnumber;
+       }
+       return firstsmallestnumber;
     }
 
         public static int SecondSmallestNumberMethods(int arr[]) {

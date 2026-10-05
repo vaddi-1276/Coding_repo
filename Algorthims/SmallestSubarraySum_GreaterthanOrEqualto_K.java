@@ -4,11 +4,9 @@ package Algorthims;
 
 // 2
 public class SmallestSubarraySum_GreaterthanOrEqualto_K {
-    public static void main(String[] args) {
+    public static int SmallestSubarraySum_GreaterthanOrEqualto_KMethods(int arr[], int value) {
 
-        int arr[] = { 2, 3, 1, 2, 4, 3 };
-        int value = 7;
-        int minlength = Integer.MAX_VALUE;
+        int minLength = Integer.MAX_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
             int sum = 0;
@@ -19,12 +17,16 @@ public class SmallestSubarraySum_GreaterthanOrEqualto_K {
                 if (sum >= value) {
                     int length = j - i + 1;
 
-                    if (length < minlength) {
-                        minlength = length;
+                    if (length < minLength) {
+                        minLength = length;
                     }
                 }
             }
         }
-        System.out.println(minlength);
+
+        return minLength;
+    }
+    public static void main(String[] args) {
+        System.out.println(SmallestSubarraySum_GreaterthanOrEqualto_KMethods(new int[]{2,3,1,2,4,3}, 7));
     }
 }

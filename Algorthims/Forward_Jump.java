@@ -8,21 +8,19 @@ public class Forward_Jump {
 
     public static boolean Forward_JumpMethods(int arr[]) {
 
-        int maxreach = 0;
-
         for (int i = 0; i < arr.length; i++) {
-            if (i > maxreach) {
-                return false;
-            }
+            for (int j = i + 1;j<=i+arr[i] && j < arr.length; j++) {
 
-            if (i + arr[i] > maxreach) {
-                maxreach = i + arr[i];
+                if(j==arr.length-1)
+                {
+                    return true;
+                }
             }
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
-        System.out.println(Forward_JumpMethods(new int[] { 3, 2, 1, 1, 4 }));
+        System.out.println(Forward_JumpMethods(new int[] { 3, 2, 1, 0, 4 }));
     }
 }

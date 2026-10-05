@@ -1,14 +1,11 @@
 package Algorthims;
 
-// [1, 3, 4, 2, 2, 5, 5, 7, 7, 7, 9, 9, 9, 9]
+// [1,2,2,2,3,4], Target=2
 
-// 2
-// 5
-// 7
-// 9
+// Count of 2 is 3
 
-public class DuplicateNumber {
-    public static int DuplicateNumberMethods(int arr[]) {
+public class CountOccurrences {
+    public static int CountOccurrencesMethods(int arr[], int target) {
 
         for (int i = 0; i < arr.length; i++) {
             boolean found = false;
@@ -18,7 +15,6 @@ public class DuplicateNumber {
                     break;
                 }
             }
-
             if (found) {
                 continue;
             }
@@ -30,14 +26,14 @@ public class DuplicateNumber {
                 }
             }
 
-            if (count > 1) {
-                System.out.println(arr[i] + " ");
+            if (arr[i] == target) {
+                return count;
             }
         }
+
         return -1;
     }
-
     public static void main(String[] args) {
-        DuplicateNumberMethods(new int[] { 1, 3, 4, 2, 2, 5, 5, 7, 7, 7, 9, 9, 9, 9 });
+        System.out.println(CountOccurrencesMethods(new int[]{1,2,2,2,3,4}, 2));
     }
 }

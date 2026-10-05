@@ -10,30 +10,32 @@ import java.util.Arrays;
 
 public class MinimumPlatforms {
     public static int MinimumPlatformsMethods(int arrival[], int departure[]) {
-
         Arrays.sort(arrival);
         Arrays.sort(departure);
 
-        int maxPlatform = 0;
-        int platform = 0;
+        int maxplatform=0;
+        int platform=0;
 
-        int j = 0;
-        for (int i = 0; i < arrival.length;) {
-            if (arrival[i] <= departure[j]) {
+        int j=0;
+        for(int i=0;i<arrival.length;)
+        {
+            if(arrival[i]<=departure[j])
+            {
                 platform++;
 
-                if (platform > maxPlatform) {
-                    maxPlatform = platform;
+                if(platform>maxplatform)
+                {
+                    maxplatform=platform;
                 }
                 i++;
             }
-
-            else {
+            else
+            {
                 platform--;
                 j++;
             }
         }
-        return maxPlatform;
+        return maxplatform;
     }
 
     public static void main(String[] args) {

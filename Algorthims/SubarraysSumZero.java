@@ -20,18 +20,19 @@ package Algorthims;
 public class SubarraysSumZero {
 
     public static int SubarraysSumZeroMethods(int arr[]) {
+        int count=1;
+        for(int i=0;i<arr.length;i++)
+        {
+            int sum=0;
 
-        int count = 1;
+            for(int j=i;j<arr.length;j++)
+            {
+                sum=sum+arr[j];
 
-        for (int i = 0; i < arr.length; i++) {
-            int sum = 0;
-
-            for (int j = i; j < arr.length; j++) {
-                sum = sum + arr[j];
-
-                if (sum == 0) {
-                count++;
-            }
+                if(sum==0)
+                {
+                    count++;
+                }
             }
         }
         return count;
