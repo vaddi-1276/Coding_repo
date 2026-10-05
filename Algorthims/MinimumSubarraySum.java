@@ -8,20 +8,20 @@ public class MinimumSubarraySum {
 
     public static int MinimumSubarraySumMethods(int arr[]) {
 
-        int minsum = Integer.MAX_VALUE;
+        int minimumsum = Integer.MAX_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
             int sum = 0;
-
             for (int j = i; j < arr.length; j++) {
-                sum = sum + arr[j];
 
-                if (sum < minsum) {
-                    minsum = sum;
+                sum = sum + arr[j];
+               
+                if (sum < minimumsum) {
+                    minimumsum = sum;
                 }
             }
         }
-        return minsum;
+        return minimumsum;
     }
 
     public static void main(String[] args) {

@@ -14,19 +14,20 @@ public class EquilibriumIndex {
                 leftsum = leftsum + arr[j];
             }
 
-            for (int j = i + 1; j < arr.length; j++) {
-                rightsum = rightsum + arr[j];
+            for (int k = i + 1; k < arr.length; k++) {
+                rightsum = rightsum + arr[k];
             }
 
-            if (leftsum == rightsum) {
+            if(leftsum==rightsum)
+            {
+                System.out.println(i);
                 return i;
             }
-
         }
         return -1;
     }
 
     public static void main(String[] args) {
-        System.out.println(EquilibriumIndexMethods(new int[] { -7, 1, 5, 2, -4, 3, 0 }));
+        EquilibriumIndexMethods(new int[] { -7, 1, 5, 2, -4, 3, 0 });
     }
 }

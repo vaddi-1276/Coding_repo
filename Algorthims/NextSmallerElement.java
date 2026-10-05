@@ -6,11 +6,12 @@ import java.util.Arrays;
 
 // [2,5,2,-1,-1]
 
+//8<4,5<4,2<4,25<4
+//5<8,2<8,25<8
+//2<5
 public class NextSmallerElement {
     public static int[] NextSmallerElementMethods(int arr[]) {
-
         int newarr[] = new int[arr.length];
-
         for (int i = 0; i < arr.length; i++) {
             newarr[i] = -1;
             for (int j = i + 1; j < arr.length; j++) {

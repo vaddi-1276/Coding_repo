@@ -10,13 +10,15 @@ public class PreviousGreaterElement {
     public static int[] PreviousGreaterElementmethods(int arr[]) {
 
         int newarr[] = new int[arr.length];
+        for(int i=0;i<arr.length;i++)
+        {
+            newarr[i]=-1;
 
-        for (int i = 0; i < arr.length; i++) {
-            newarr[i] = -1;
-
-            for (int j = i - 1; j >= 0; j--) {
-                if (arr[j] > arr[i]) {
-                    newarr[i] = arr[j];
+            for(int j=i-1;j>=0;j--)
+            {
+                if(arr[j]>arr[i])
+                {
+                    newarr[i]=arr[j];
                     break;
                 }
             }
