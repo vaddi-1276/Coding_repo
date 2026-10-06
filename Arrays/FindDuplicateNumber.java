@@ -32,6 +32,7 @@ class UsingNestedForLoopFindDuplicateNumber {
 
         for (int i = 0; i < arr.length; i++) {
             boolean found = false;
+
             for (int j = 0; j < i; j++) {
                 if (arr[i] == arr[j]) {
                     found = true;
@@ -48,10 +49,12 @@ class UsingNestedForLoopFindDuplicateNumber {
                     count++;
                 }
             }
+
             if (count > 1) {
-                System.out.println(arr[i]);
+                System.out.print(arr[i] + " ");
             }
         }
+        System.out.println();
     }
 }
 
@@ -62,89 +65,99 @@ class UsingCollectionsFrequencyFindDuplicateNumber {
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
+
         for (int i = 0; i < list.size(); i++) {
-            boolean found = false;
+            boolean isduplicate = false;
+
             for (int j = 0; j < i; j++) {
                 if (list.get(i) == list.get(j)) {
-                    found = true;
+                    isduplicate = true;
                     break;
                 }
             }
-            if (found) {
+
+            if (isduplicate) {
                 continue;
             }
 
             int count = Collections.frequency(list, list.get(i));
+
             if (count > 1) {
-                System.out.println(list.get(i));
+                System.out.print(list.get(i)+" ");
             }
         }
+        System.out.println();
     }
 }
 
 class UsingRecursionFindDuplicateNumber {
 
     public static void UsingRecursionFindDuplicateNumberMethods(int arr[], int index) {
-
         if (index == arr.length) {
             return;
         }
-
         boolean found = false;
+        for (int j = 0; j < index; j++) {
 
-        // Check whether this element appeared earlier
-        for (int i = 0; i < index; i++) {
-            if (arr[index] == arr[i]) {
+            if (arr[index] == arr[j]) {
                 found = true;
                 break;
             }
         }
-
-        // If already processed, skip it
-        if (!found) {
-
-            int count = 1;
-
-            // Count remaining occurrences
-            for (int k = index + 1; k < arr.length; k++) {
-                if (arr[k] == arr[index]) {
-                    count++;
-                }
-            }
-
-            if (count > 1) {
-                System.out.println(arr[index]);
+        if (found) {
+            UsingRecursionFindDuplicateNumberMethods(arr, index + 1);
+            return;
+        }
+        int count = 1;
+        for (int k = index + 1; k < arr.length; k++) {
+            if (arr[k] == arr[index]) {
+                count++;
             }
         }
-
-        // Recursive call
+        if (count > 1) {
+            System.out.print(arr[index] + " ");
+        }
         UsingRecursionFindDuplicateNumberMethods(arr, index + 1);
     }
+
 }
 
 public class FindDuplicateNumber {
     public static void main(String[] args) {
 
-        UsingForLoopFindDuplicateNumber.UsingForLoopFindDuplicateNumberMethods(new int[] { 1, 3, 4, 2, 2 });
+        // UsingForLoopFindDuplicateNumber.UsingForLoopFindDuplicateNumberMethods(new
+        // int[] { 1, 3, 4, 2, 2 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
 
         UsingNestedForLoopFindDuplicateNumber
                 .UsingNestedForLoopFindDuplicateNumberMethods(new int[] { 1, 3, 4, 2, 2, 3 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         UsingCollectionsFrequencyFindDuplicateNumber
                 .UsingCollectionsFrequencyFindDuplicateNumberMethods(new int[] { 1, 3, 4, 4,
                         5, 2, 2 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
 
-        // UsingRecursionFindDuplicateNumber.UsingRecursionFindDuplicateNumberMethods(new
-        // int[] { 1, 3, 4, 4, 5, 2, 2 },
-        // 0);
+        System.out.println();
+
+        UsingRecursionFindDuplicateNumber.UsingRecursionFindDuplicateNumberMethods(new int[] { 1, 3, 4, 4, 5, 2, 2 },
+                0);
+
+        System.out.println();
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

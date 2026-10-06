@@ -14,8 +14,22 @@ class UsingForLoopFindAverageOfElements {
         for (int i = 0; i < arr.length; i++) {
             sum = sum + arr[i];
         }
+        System.out.println("Sum of Array Values : " + sum);
         int average = sum / arr.length;
-        System.out.println(average);
+        System.out.println("Average of sum of Array Values : " + average);
+    }
+}
+
+class UsingRecursionFindAverageOfElements {
+    public static void UsingRecursionFindAverageOfElementsMethods(int arr[], int index, int sum) {
+        if (index == arr.length) {
+            System.out.println("Sum of Arrays using Recursion " + sum);
+            int average = sum / arr.length;
+            System.out.println("Average of Sum of Array using Recursion " + average);
+            return;
+        }
+        sum = sum + arr[index];
+        UsingRecursionFindAverageOfElementsMethods(arr, index + 1, sum);
     }
 }
 
@@ -55,10 +69,35 @@ public class FindAverageOfElements {
     public static void main(String[] args) {
         UsingForLoopFindAverageOfElements.UsingForLoopFindAverageOfElementsMethods(new int[] { 10, 20, 30, 40, 50 });
 
-        UsingArrayListFindAverageOfElements
-                .UsingArrayListFindAverageOfElementsMethods(new int[] { 10, 20, 30, 40, 50, 60 });
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
 
-        UsingSumOfArrayValuesFindAverageOfElements
-                .UsingSumOfArrayValuesFindAverageOfElementsMethods(new int[] { 10, 20, 30, 40, 50, 60 }, 0, 0);
+        System.out.println();
+
+        UsingRecursionFindAverageOfElements.UsingRecursionFindAverageOfElementsMethods(new int[] { 10, 20, 30, 40, 50 },
+                0, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListFindAverageOfElements
+        // .UsingArrayListFindAverageOfElementsMethods(new int[] { 10, 20, 30, 40, 50,
+        // 60 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
+        // UsingSumOfArrayValuesFindAverageOfElements
+        // .UsingSumOfArrayValuesFindAverageOfElementsMethods(new int[] { 10, 20, 30,
+        // 40, 50, 60 }, 0, 0);
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
     }
 }

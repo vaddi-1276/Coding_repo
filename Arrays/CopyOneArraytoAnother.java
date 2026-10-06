@@ -12,11 +12,14 @@ import java.util.Arrays;
 class UsingNestedForLoopCopyOneArraytoAnother {
     public static void UsingNestedForLoopCopyOneArraytoAnotherMethods(int arr[]) {
 
-        int newarr[] = new int[arr.length];
-        int index = 0;
-        for (int i = 0; i < arr.length; i++) {
-            newarr[index++] = arr[i];
+        int newarr[]=new int[arr.length];
+        int index=0;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            newarr[index++]=arr[i];
         }
+
         System.out.println(Arrays.toString(newarr));
     }
 }
@@ -40,12 +43,15 @@ class UsingArrayListCopyOneArraytoAnother {
 class UsingRecursionCopyOneArraytoAnother {
     public static void UsingRecursionCopyOneArraytoAnotherMethods(int arr[], int newarr[], int index) {
 
-        if (index == arr.length) {
+        if(index==arr.length)
+        {
             System.out.println(Arrays.toString(newarr));
-            return;
+            return ;
         }
-        newarr[index] = arr[index];
-        UsingRecursionCopyOneArraytoAnotherMethods(arr, newarr, index + 1);
+
+        newarr[index]=arr[index];
+
+        UsingRecursionCopyOneArraytoAnotherMethods(arr, newarr, index+1);
     }
 }
 
@@ -63,16 +69,31 @@ public class CopyOneArraytoAnother {
                 .UsingNestedForLoopCopyOneArraytoAnotherMethods(new int[] { 10, 20, 30, 40
                 });
 
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         // UsingArrayListCopyOneArraytoAnother
         //         .UsingArrayListCopyOneArraytoAnotherMethods(new int[] { 10, 50, 20, 30, 40
         //         });
+
+        // System.out.print(
+        //         "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
 
         int arr[] = new int[] { 10, 50, 60, 20, 30, 40 };
         UsingRecursionCopyOneArraytoAnother.UsingRecursionCopyOneArraytoAnotherMethods(arr,
                 new int[arr.length], 0);
 
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         // UsingArraysCopy_CopyOneArraytoAnother
-        // .UsingArraysCopy_CopyOneArraytoAnotherMethods(new int[] { 10, 50, 60, 20, 30
-        // });
+        //         .UsingArraysCopy_CopyOneArraytoAnotherMethods(new int[] { 10, 50, 60, 20, 30
+        //         });
     }
 }

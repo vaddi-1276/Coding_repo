@@ -5,47 +5,59 @@ package Arrays;
 
 class UsingNestedForLoopFindDiffBetweenSumofEvenandOddElements {
     public static void UsingNestedForLoopFindDiffBetweenSumofEvenandOddElementsMethods(int arr[]) {
-        int evenvalue = 0;
-        int oddvalue = 0;
+
+        int evendigit = 0;
+        int odddigit = 0;
+
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 == 0) {
-                evenvalue = evenvalue + arr[i];
+                evendigit = evendigit + arr[i];
             }
 
             else if (arr[i] % 2 != 0) {
-                oddvalue = oddvalue + arr[i];
+                odddigit = odddigit + arr[i];
             }
         }
-        int difference = Math.abs(evenvalue - oddvalue);
-        System.out.println(difference);
+        int difference = Math.abs(odddigit - evendigit);
+        System.out.println("Difference b/w evensum and oddsum using For Loop = " + difference);
     }
 }
 
 class UsingRecursionFindDiffBetweenSumofEvenandOddElements {
-    public static void UsingRecursionFindDiffBetweenSumofEvenandOddElementsMethods(int arr[], int index, int evencount,
-            int oddcount) {
-
+    public static void UsingRecursionFindDiffBetweenSumofEvenandOddElementsMethods(int arr[], int index, int evensum,
+            int oddsum) {
         if (index == arr.length) {
-            System.out.println(Math.abs(evencount - oddcount));
+            int difference = Math.abs(evensum - oddsum);
+            System.out.println("Difference b/w evensum and oddsum using Recursion = " + difference);
             return;
         }
-
         if (arr[index] % 2 == 0) {
-            evencount = evencount + arr[index];
+            evensum = evensum + arr[index];
         } else if (arr[index] % 2 != 0) {
-            oddcount = oddcount + arr[index];
+            oddsum = oddsum + arr[index];
         }
-        UsingRecursionFindDiffBetweenSumofEvenandOddElementsMethods(arr, index + 1, evencount, oddcount);
+        UsingRecursionFindDiffBetweenSumofEvenandOddElementsMethods(arr, index + 1, evensum, oddsum);
     }
 }
 
 public class FindDiffBetweenSumofEvenandOddElements {
     public static void main(String[] args) {
         UsingNestedForLoopFindDiffBetweenSumofEvenandOddElements
-                .UsingNestedForLoopFindDiffBetweenSumofEvenandOddElementsMethods(new int[] { 1, 2, 3, 4, 5, 6 });
+                .UsingNestedForLoopFindDiffBetweenSumofEvenandOddElementsMethods(new int[] {
+                        1, 2, 3, 4, 5, 6 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         UsingRecursionFindDiffBetweenSumofEvenandOddElements
                 .UsingRecursionFindDiffBetweenSumofEvenandOddElementsMethods(new int[] { 1,
-                        2, 3, 4, 5, 6 }, 0, 0, 0);
+                        2, 3, 4, 5, 6,7,8 }, 0, 0, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

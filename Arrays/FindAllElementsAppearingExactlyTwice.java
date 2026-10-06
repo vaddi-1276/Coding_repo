@@ -25,42 +25,70 @@ class UsingNestedForLoopFindAllElementsAppearingExactlyTwice {
                     count++;
                 }
             }
-
             if (count == 2) {
-                System.out.println(arr[i]);
+                System.out.print(arr[i] + " ");
             }
         }
+        System.out.println();
     }
 }
 
 class UsingCollectionsFrequencyFindAllElementsAppearingExactlyTwice {
     public static void UsingCollectionsFrequencyFindAllElementsAppearingExactlyTwiceMethods(int arr[]) {
-
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
-
         for (int i = 0; i < list.size(); i++) {
-
             boolean found = false;
-
             for (int j = 0; j < i; j++) {
                 if (list.get(i) == list.get(j)) {
                     found = true;
                     break;
                 }
             }
-
             if (found) {
                 continue;
             }
+
             int count = Collections.frequency(list, list.get(i));
 
             if (count == 2) {
-                System.out.println(list.get(i));
+                System.out.print(list.get(i) + " ");
             }
         }
+        System.out.println();
+    }
+}
+
+class UsingRecursionFindAllElementsAppearingExactlyTwice {
+    public static void UsingRecursionFindAllElementsAppearingExactlyTwiceMethods(int arr[], int index) {
+
+        if (index == arr.length) {
+            return;
+        }
+
+        boolean found = false;
+        for (int j = 0; j < index; j++) {
+            if (arr[index] == arr[j]) {
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            int count = 1;
+            for (int k = index + 1; k < arr.length; k++) {
+                if (arr[k] == arr[index]) {
+                    count++;
+                }
+            }
+
+            if (count == 2) {
+                System.out.print(arr[index]+" ");
+            }
+        }
+        UsingRecursionFindAllElementsAppearingExactlyTwiceMethods(arr, index + 1);
     }
 }
 
@@ -70,9 +98,23 @@ public class FindAllElementsAppearingExactlyTwice {
                 .UsingNestedForLoopFindAllElementsAppearingExactlyTwiceMethods(
                         new int[] { 10, 20, 10, 30, 30, 20, 40, 50 });
 
-        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingCollectionsFrequencyFindAllElementsAppearingExactlyTwice
                 .UsingCollectionsFrequencyFindAllElementsAppearingExactlyTwiceMethods(
                         new int[] { 10, 20, 10, 30, 30, 20, 40, 40, 50 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        UsingRecursionFindAllElementsAppearingExactlyTwice.UsingRecursionFindAllElementsAppearingExactlyTwiceMethods(
+                new int[] { 10, 20, 10, 30, 30, 20, 40, 40, 50 }, 0);
+
+        System.out.println();
     }
 }

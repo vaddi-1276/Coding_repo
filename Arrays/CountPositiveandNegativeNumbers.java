@@ -17,12 +17,15 @@ class UsingForLoopCountPositiveandNegativeNumbers {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
                 positivecount++;
-            } else if (arr[i] < 0) {
+            }
+
+            else if (arr[i] < 0) {
                 negativecount++;
             }
         }
-        System.out.println("Positive Count using For Loop = " + positivecount);
-        System.out.println("Negative Count using For Loop = " + negativecount);
+
+        System.out.println("Positive = " + positivecount);
+        System.out.println("Negative = " + negativecount);
     }
 }
 
@@ -54,8 +57,8 @@ class UsingRecursionCountPositiveandNegativeNumbers {
             int negativecount) {
 
         if (index == arr.length) {
-            System.out.println("Positive Count using Recursion = " + positivecount);
-            System.out.println("Negative Count using Recursion = " + negativecount);
+            System.out.println("Positive = " + positivecount);
+            System.out.println("negative = " + negativecount);
             return;
         }
 
@@ -64,7 +67,7 @@ class UsingRecursionCountPositiveandNegativeNumbers {
         } else if (arr[index] < 0) {
             negativecount++;
         }
-        UsingRecursionCountPositiveandNegativeNumbersMethods(arr, index+1, positivecount, negativecount);
+        UsingRecursionCountPositiveandNegativeNumbersMethods(arr, index + 1, positivecount, negativecount);
     }
 }
 
@@ -72,11 +75,28 @@ public class CountPositiveandNegativeNumbers {
     public static void main(String[] args) {
         UsingForLoopCountPositiveandNegativeNumbers
                 .UsingForLoopCountPositiveandNegativeNumbersMethods(new int[] { -5, 10, -3, 8, 0, -2 });
-        UsingArrayListCountPositiveandNegativeNumbers
-                .UsingArrayListCountPositiveandNegativeNumbersMethods(new int[] { -5, 10, -3,
-                        8, 0, -2, -9, 11, -10 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListCountPositiveandNegativeNumbers
+        // .UsingArrayListCountPositiveandNegativeNumbersMethods(new int[] { -5, 10, -3,
+        // 8, 0, -2, -9, 11, -10 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingRecursionCountPositiveandNegativeNumbers.UsingRecursionCountPositiveandNegativeNumbersMethods(
-                new int[] { -5, 10, -3, 8, 0, -2, -9, 11, -10 }, 0, 0,
-                0);
+        new int[] { -5, 10, -3, 8, 0, -2, -9, 11, -10 }, 0, 0,
+        0);
+
+        System.out.print(
+        "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

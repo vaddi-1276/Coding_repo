@@ -18,7 +18,8 @@ class UsingForLoopCountOccurrenceofanElement {
                 count++;
             }
         }
-        System.out.println("Count using Nested For Loop = " + count);
+
+        System.out.println(count);
     }
 }
 
@@ -42,14 +43,14 @@ class UsingArrayListCountOccurrenceofanElement {
 
 class UsingCollectionsFrequencyCountOccurrenceofanElement {
     public static void UsingCollectionsFrequencyCountOccurrenceofanElementMethods(int arr[], int searchvalue) {
-
         ArrayList<Integer> list = new ArrayList<>();
+
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
 
         int count = Collections.frequency(list, searchvalue);
-        System.out.println("Count using Collections Frequency = " + count);
+        System.out.println("Count of " + searchvalue + " = " + count);
     }
 }
 
@@ -58,13 +59,14 @@ class UsingRecursionCountOccurrenceofanElement {
             int count) {
 
         if (index == arr.length) {
-            System.out.println("Count using Recursion = " + count);
+            System.out.println("Count of " + searchvalue + " = " + count);
             return;
         }
 
         if (arr[index] == searchvalue) {
             count++;
         }
+
         UsingRecursionCountOccurrenceofanElementMethods(arr, searchvalue, index + 1, count);
     }
 }
@@ -72,13 +74,37 @@ class UsingRecursionCountOccurrenceofanElement {
 public class CountOccurrenceofanElement {
     public static void main(String[] args) {
         UsingForLoopCountOccurrenceofanElement
-                .UsingForLoopCountOccurrenceofanElementMethods(new int[] { 10, 20, 30, 40 },
-                        30);
-        UsingArrayListCountOccurrenceofanElement
-                .UsingArrayListCountOccurrenceofanElementMethods(new int[] { 10, 20, 30, 30, 40 }, 30);
+                .UsingForLoopCountOccurrenceofanElementMethods(new int[] { 10, 20, 10, 30, 10, 40 },
+                        10);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListCountOccurrenceofanElement
+        // .UsingArrayListCountOccurrenceofanElementMethods(new int[] { 10, 20, 30, 30,
+        // 40 }, 30);
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingCollectionsFrequencyCountOccurrenceofanElement.UsingCollectionsFrequencyCountOccurrenceofanElementMethods(
                 new int[] { 10, 20, 30, 30, 30, 40 }, 30);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingRecursionCountOccurrenceofanElement.UsingRecursionCountOccurrenceofanElementMethods(
                 new int[] { 10, 20, 30, 30, 30, 30, 40 }, 30, 0, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

@@ -14,15 +14,17 @@ class UsingNestedForLoopCheckTwoArraysAreEqual {
     public static void UsingNestedForLoopCheckTwoArraysAreEqualMethods(int arr1[], int arr2[]) {
 
         if (arr1.length != arr2.length) {
-            System.out.println("Lengths are Not Equals");
+            System.out.println("Not Equal because of Both Arrays lengths are not equal");
+            return;
         }
 
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] != arr2[i]) {
-                System.out.println("Values inside values are not Equals");
+                System.out.println("Not Equals because values are not Equal");
                 return;
             }
         }
+
         System.out.println("Equals");
     }
 }
@@ -59,16 +61,17 @@ class UsingRecursionCheckTwoArraysAreEqual {
     public static void UsingRecursionCheckTwoArraysAreEqualMethods(int arr1[], int arr2[], int index) {
 
         if (arr1.length != arr2.length) {
-            System.out.println("Arrays Length is not Equal");
+            System.out.println("Not Equals because of length of array");
+            return;
+        }
+
+        if (index == arr1.length) {
+            System.out.println("Equals");
             return;
         }
 
         if (arr1[index] != arr2[index]) {
-            System.out.println("Arrays values are not Equal");
-            return;
-        }
-        if (index == arr1[index]) {
-            System.out.println("Array values are Equals");
+            System.out.println("Not Equals because of values of array");
             return;
         }
         UsingRecursionCheckTwoArraysAreEqualMethods(arr1, arr2, index + 1);
@@ -94,15 +97,36 @@ class UsingArraysEqualsCheckTwoArraysAreEqual {
 public class CheckTwoArraysAreEqual {
     public static void main(String[] args) {
         UsingNestedForLoopCheckTwoArraysAreEqual
-                .UsingNestedForLoopCheckTwoArraysAreEqualMethods(new int[] { 1, 2, 4, 4 },
+                .UsingNestedForLoopCheckTwoArraysAreEqualMethods(new int[] { 1, 2, 3, 4 },
                         new int[] { 1, 2, 3, 4 });
-        // UsingArrayListCheckTwoArraysAreEqual.UsingArrayListCheckTwoArraysAreEqualMethods(new
-        // int[] { 1, 2, 3, 4 },
-        // new int[] { 1, 2, 3, 4 });
-        // UsingRecursionCheckTwoArraysAreEqual.UsingRecursionCheckTwoArraysAreEqualMethods(new
-        // int[] { 1, 2, 3, 4 },
-        // new int[] { 1, 2, 4, 3 }, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        UsingArrayListCheckTwoArraysAreEqual.UsingArrayListCheckTwoArraysAreEqualMethods(new int[] { 1, 2, 3, 4 },
+                new int[] { 1, 2, 3, 4 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        UsingRecursionCheckTwoArraysAreEqual.UsingRecursionCheckTwoArraysAreEqualMethods(new int[] { 1, 2, 3, 4 },
+                new int[] { 1, 2, 3, 4 }, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingArraysEqualsCheckTwoArraysAreEqual.UsingArraysEqualsCheckTwoArraysAreEqualMethods(new int[] { 1, 2, 3, 4 },
                 new int[] { 1, 2, 4, 4 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }
