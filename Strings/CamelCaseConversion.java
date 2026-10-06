@@ -6,18 +6,38 @@ import java.util.ArrayList;
 // java selenium testing
 
 // Output:
-// javaSeleniumTesting
+// JavaSeleniumTesting
 
 class UsingSubstringCamelCaseConversion {
     public static void UsingSubstringCamelCaseConversionMethods(String str) {
 
         String words[] = str.split(" ");
-        String finalresult = "";
+
+        String result = "";
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
-            finalresult = finalresult + word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+
+            result = result + word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
         }
-        System.out.println(finalresult);
+
+        System.out.println(result);
+    }
+}
+
+class UsingRecursionCamelCaseConversion {
+    public static void UsingRecursionCamelCaseConversionMethods(String str, int index, String result) {
+
+        String words[] = str.split(" ");
+        if (index == words.length) {
+            System.out.println(result);
+            return;
+        }
+
+        String word = words[index];
+
+        result = result + word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+
+        UsingRecursionCamelCaseConversionMethods(str, index + 1, result);
     }
 }
 
@@ -42,7 +62,17 @@ class UsingArrayListSubstringCamelCaseConversion {
 public class CamelCaseConversion {
     public static void main(String[] args) {
         UsingSubstringCamelCaseConversion.UsingSubstringCamelCaseConversionMethods("java selenium testing");
+
+        System.out.println(
+                "-------------------------------------------------------------------------------------------------");
+
+        UsingRecursionCamelCaseConversion.UsingRecursionCamelCaseConversionMethods("java selenium testing", 0, "");        
+
+
+        System.out.println(
+                "-------------------------------------------------------------------------------------------------");
+
         // UsingArrayListSubstringCamelCaseConversion
-        //         .UsingArrayListSubstringCamelCaseConversionMethods("java python testing");
+        // .UsingArrayListSubstringCamelCaseConversionMethods("java python testing");
     }
 }

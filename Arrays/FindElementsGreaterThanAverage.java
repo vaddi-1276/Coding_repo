@@ -11,37 +11,39 @@ class UsingNestedForLoopFindElementsGreaterThanAverage {
             sum = sum + arr[i];
         }
         int average = sum / arr.length;
+
+        boolean first = true;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > average) {
-                System.out.println(arr[i]);
+                if (!first) {
+                    System.out.print(", ");
+                }
+                System.out.print(arr[i]);
+                first = false;
             }
         }
+        System.out.println();
     }
 }
 
 class UsingRecursionFindElementsGreaterThanAverage {
 
-    static int sum = 0;
-
-    public static void sumofelements(int arr[], int index) {
+    public static void UsingRecursionFindElementsGreaterThanAverageMethods(int arr[], int index, int sum) {
 
         if (index == arr.length) {
+
+            int average = sum / arr.length;
+
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > average) {
+                    System.out.print(arr[i] + " ");
+                }
+            }
+            System.out.println();
             return;
         }
-
         sum = sum + arr[index];
-        sumofelements(arr, index + 1);
-    }
-
-    public static void averageofelementsgreaterthanaverage(int arr[], int index, int average) {
-
-        if (index == arr.length) {
-            return;
-        }
-        if (arr[index] > average) {
-            System.out.println(arr[index]);
-        }
-        averageofelementsgreaterthanaverage(arr, index + 1, average);
+        UsingRecursionFindElementsGreaterThanAverageMethods(arr, index + 1, sum);
     }
 }
 
@@ -50,17 +52,17 @@ public class FindElementsGreaterThanAverage {
         UsingNestedForLoopFindElementsGreaterThanAverage
                 .UsingNestedForLoopFindElementsGreaterThanAverageMethods(new int[] { 10, 20, 30, 40, 50 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         int arr[] = { 10, 20, 30, 40, 50 };
+        
+        UsingRecursionFindElementsGreaterThanAverage.UsingRecursionFindElementsGreaterThanAverageMethods(arr, 0, 0);        
+        System.out.print(
+        "--------------------------------------------------------------------------------------------------------------");
 
-        UsingRecursionFindElementsGreaterThanAverage.sumofelements(arr, 0);
-
-        int average = UsingRecursionFindElementsGreaterThanAverage.sum / arr.length;
-
-        UsingRecursionFindElementsGreaterThanAverage.averageofelementsgreaterthanaverage(arr,
-                0,
-                average);
+        System.out.println();
     }
 }

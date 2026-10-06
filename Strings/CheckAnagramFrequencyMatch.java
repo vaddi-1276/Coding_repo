@@ -15,28 +15,49 @@ import java.util.Collections;
 class UsingArraysSortCheckAnagramFrequencyMatch {
     public static void UsingArraysSortCheckAnagramFrequencyMatchMethods(String str1, String str2) {
 
-        if(str1.length()!=str2.length())
-        {
-            System.out.println("Not Anagram");
+        if (str1.length() != str2.length()) {
+            System.out.println("Not Anagram because Lengths are not Equal");
             return;
         }
 
-        char firstarr[]=str1.toCharArray();
-        char secondarr[]=str2.toCharArray();
+        char arr1[] = str1.toCharArray();
+        char arr2[] = str2.toCharArray();
 
-        Arrays.sort(firstarr);
-        Arrays.sort(secondarr);
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
 
-        for(int i=0;i<firstarr.length;i++)
-        {
-            if(firstarr[i]!=secondarr[i])
-            {
-                System.out.println("Not Anagram");
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                System.out.println("Not Anagram because values are not Equal");
                 return;
             }
+
         }
         System.out.println("Anagram");
-        
+    }
+}
+
+class UsingRecursionCheckAnagramFrequencyMatch {
+    public static void UsingRecursionCheckAnagramFrequencyMatchMethods(char arr1[], char arr2[], int index) {
+
+        if (arr1.length != arr2.length) {
+            System.out.println("Not Anagram because Length are not Equal");
+            return;
+        }
+
+        if (index == arr1.length) {
+            System.out.println("Anagram");
+            return;
+        }
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        if (arr1[index] != arr2[index]) {
+            System.out.println("Not Anagram because Values are not Equal");
+            return;
+        }
+        UsingRecursionCheckAnagramFrequencyMatchMethods(arr1, arr2, index + 1);
     }
 }
 
@@ -75,7 +96,26 @@ class UsingArrayListCheckAnagramFrequencyMatch {
 public class CheckAnagramFrequencyMatch {
     public static void main(String[] args) {
         UsingArraysSortCheckAnagramFrequencyMatch.UsingArraysSortCheckAnagramFrequencyMatchMethods("listen",
-                "silent");
-        // UsingArrayListCheckAnagramFrequencyMatch.UsingArrayListCheckAnagramFrequencyMatchMethods("listen", "silent");
+                "appear");
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        String str1 = "listen";
+        String str2 = "appear";
+
+        char arr1[] = str1.toCharArray();
+        char arr2[] = str2.toCharArray();
+        UsingRecursionCheckAnagramFrequencyMatch.UsingRecursionCheckAnagramFrequencyMatchMethods(arr1, arr2, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListCheckAnagramFrequencyMatch.UsingArrayListCheckAnagramFrequencyMatchMethods("listen",
+        // "silent");
     }
 }

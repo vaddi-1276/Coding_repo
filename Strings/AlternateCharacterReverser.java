@@ -12,30 +12,34 @@ import java.util.Collections;
 class AlternateCharacterReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
 
-        String onlyalternativeString = "";
+        String onlyevenindexcharacters = "";
         for (int i = 0; i < str.length(); i++) {
             if (i % 2 == 0) {
-                char ch = str.charAt(i);
-                onlyalternativeString = onlyalternativeString + ch;
+                onlyevenindexcharacters = onlyevenindexcharacters + str.charAt(i);
             }
         }
-        String rev_onlyalternativeString = "";
-        for (int i = onlyalternativeString.length() - 1; i >= 0; i--) {
-            rev_onlyalternativeString = rev_onlyalternativeString + onlyalternativeString.charAt(i);
+
+        System.out.println(onlyevenindexcharacters);
+
+        String reverseonlyevenindexcharacters = "";
+        for (int i = onlyevenindexcharacters.length() - 1; i >= 0; i--) {
+            reverseonlyevenindexcharacters = reverseonlyevenindexcharacters + onlyevenindexcharacters.charAt(i);
         }
-        System.out.println(rev_onlyalternativeString);
+
+        System.out.println(reverseonlyevenindexcharacters);
 
         int index = 0;
-        String finalresult = "";
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
-
             if (i % 2 == 0) {
-                finalresult = finalresult + rev_onlyalternativeString.charAt(index++);
-            } else {
-                finalresult = finalresult + str.charAt(i);
+                result = result + reverseonlyevenindexcharacters.charAt(index++);
+            }
+
+            else {
+                result = result + str.charAt(i);
             }
         }
-        System.out.println(finalresult);
+        System.out.println(result);
     }
 }
 
@@ -145,8 +149,8 @@ class AlternateCharacterReverserRecursion {
 public class AlternateCharacterReverser {
     public static void main(String[] args) {
         AlternateCharacterReversalUsingLoop.reverseUsingLoop("abcdefg");
-        // AlternateCharacterReversalUsingArrayList.reverseUsingArrayList("hijklmn");
-        // AlternateCharacterReversalUsingCollections.reverseUsingCollections("nopqrst");
-        // AlternateCharacterReverserRecursion.AlternateCharacterReverserRecursionMethods("abcdefg");
+        AlternateCharacterReversalUsingArrayList.reverseUsingArrayList("hijklmn");
+        AlternateCharacterReversalUsingCollections.reverseUsingCollections("nopqrst");
+        AlternateCharacterReverserRecursion.AlternateCharacterReverserRecursionMethods("abcdefg");
     }
 }

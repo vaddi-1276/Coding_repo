@@ -11,18 +11,22 @@ import java.util.ArrayList;
 
 class UsingForLoopCountEvenandOddNumbers {
     public static void UsingForLoopCountEvenandOddNumbersMethods(int arr[]) {
+
         int evencount = 0;
         int oddcount = 0;
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 == 0) {
                 evencount++;
-            } else {
+            }
+
+            else if (arr[i] % 2 != 0) {
                 oddcount++;
             }
         }
-        System.out.println("Even = " + evencount);
-        System.out.println("Odd = " + oddcount);
+
+        System.out.println("Even Count " + evencount);
+        System.out.println("Odd Count " + oddcount);
     }
 }
 
@@ -51,14 +55,16 @@ class UsingRecursionCountEvenandOddNumbers {
     public static void UsingRecursionCountEvenandOddNumbersMethods(int arr[], int index, int evencount, int oddcount) {
 
         if (index == arr.length) {
-            System.out.println("Even Count using Recursion " + evencount);
-            System.out.println("Odd Count using Recursion " + oddcount);
+            System.out.println("Even Count : " + evencount);
+            System.out.println("Odd Count : " + oddcount);
             return;
         }
 
         if (arr[index] % 2 == 0) {
             evencount++;
-        } else {
+        }
+
+        else if (arr[index] % 2 != 0) {
             oddcount++;
         }
         UsingRecursionCountEvenandOddNumbersMethods(arr, index + 1, evencount, oddcount);
@@ -68,11 +74,28 @@ class UsingRecursionCountEvenandOddNumbers {
 public class CountEvenandOddNumbers {
     public static void main(String[] args) {
         UsingForLoopCountEvenandOddNumbers.UsingForLoopCountEvenandOddNumbersMethods(new int[] { 1, 2, 3, 4, 5, 6, 7 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingArrayListCountEvenandOddNumbers
-                .UsingArrayListCountEvenandOddNumbersMethods(new int[] { 1, 2, 3, 4, 5, 6, 7,
-                        8, 9, 10 });
+        .UsingArrayListCountEvenandOddNumbersMethods(new int[] { 1, 2, 3, 4, 5, 6, 7,
+        8, 9, 10 });
+
+        System.out.print(
+        "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingRecursionCountEvenandOddNumbers
                 .UsingRecursionCountEvenandOddNumbersMethods(new int[] { 1, 2, 3, 4, 5, 6, 7
                 }, 0, 0, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

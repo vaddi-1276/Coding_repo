@@ -40,25 +40,22 @@ class CharacterFrequencyUsingNestedLoop {
             }
             System.out.println(str.charAt(i) + " = " + count);
         }
+
+        System.out.println();
     }
 }
 
 class UsingCollectionsFrequencyCharacterFrequencyAnalyzer {
 
     public static void UsingCollectionsFrequencyCharacterFrequencyAnalyzerMethods(String str) {
-
         ArrayList<Character> list = new ArrayList<>();
-
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
         for (int i = 0; i < list.size(); i++) {
-
             boolean found = false;
-
             for (int j = 0; j < i; j++) {
-
                 if (list.get(i) == list.get(j)) {
                     found = true;
                     break;
@@ -75,6 +72,34 @@ class UsingCollectionsFrequencyCharacterFrequencyAnalyzer {
         }
     }
 }
+
+class UsingRecursionCharacterFrequencyAnalyzer {
+    public static void UsingRecursionCharacterFrequencyAnalyzerMethods(String str, int index) {
+        if (index == str.length()) {
+            return;
+        }
+        boolean found = false;
+        for (int j = 0; j < index; j++) {
+            if (str.charAt(index) == str.charAt(j)) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            UsingRecursionCharacterFrequencyAnalyzerMethods(str, index + 1);
+            return;
+        }
+        int count = 1;
+        for (int k = index + 1; k < str.length(); k++) {
+            if (str.charAt(k) == str.charAt(index)) {
+                count++;
+            }
+        }
+        System.out.println(str.charAt(index) + " = " + count);
+        UsingRecursionCharacterFrequencyAnalyzerMethods(str, index + 1);
+    }
+}
+
 class CharacterFrequencyUsingArrayList {
     public static void findUsingArrayList(String str) {
         ArrayList<Character> list = new ArrayList<>();
@@ -141,6 +166,8 @@ public class CharacterFrequencyAnalyzer {
 
         System.out.print(
                 "--------------------------------------------------------------------------------------------------------------");
+
+        UsingRecursionCharacterFrequencyAnalyzer.UsingRecursionCharacterFrequencyAnalyzerMethods("programming", 0);
 
         // CharacterFrequencyUsingArrayList.findUsingArrayList("programming");
         // HashmapCharacterFrequencyAnalyzer.HashmapCharacterFrequencyAnalyzerMethods("TestingTeam");

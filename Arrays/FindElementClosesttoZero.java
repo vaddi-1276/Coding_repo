@@ -1,7 +1,23 @@
 package Arrays;
 
 // Input: [-10, -3, 5, 8, -2]
+
 // Output: -2
+
+class UsingClosestElement {
+    public static int UsingClosestElementMethods(int arr[]) {
+
+        int value = -1;
+        int target = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= target) {
+                value = arr[i];
+            }
+        }
+        return value;
+    }
+}
 
 class UsingnestedForLoopFindElementClosesttoZero {
 
@@ -17,29 +33,47 @@ class UsingnestedForLoopFindElementClosesttoZero {
 }
 
 class UsingRecursionFindElementClosesttoZero {
-    public static void UsingRecursionFindElementClosesttoZeroMethods(int arr[], int index, int closest) {
+    public static void UsingRecursionFindElementClosesttoZeroMethods(int arr[], int index, int closest, int target) {
 
         if (index == arr.length) {
             System.out.println(closest);
             return;
         }
-        if (Math.abs(arr[index]) < Math.abs(closest)) {
+
+        if (arr[index] <= target) {
             closest = arr[index];
         }
-        UsingRecursionFindElementClosesttoZeroMethods(arr, index + 1, closest);
+
+        UsingRecursionFindElementClosesttoZeroMethods(arr, index + 1, closest, target);
     }
 }
 
 public class FindElementClosesttoZero {
     public static void main(String[] args) {
-        UsingnestedForLoopFindElementClosesttoZero
-                .UsingnestedForLoopFindElementClosesttoZeroMethods(new int[] { -10, -3, 5, 8, -2 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.println(UsingClosestElement.UsingClosestElementMethods(new int[] { -10, -3, 5, 8, -2 }));
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingnestedForLoopFindElementClosesttoZero
+        // .UsingnestedForLoopFindElementClosesttoZeroMethods(new int[] { -10, -3, 5, 8,
+        // -2 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
 
         int arr[] = new int[] { -10, -3, 5, 8, -2 };
         UsingRecursionFindElementClosesttoZero
-                .UsingRecursionFindElementClosesttoZeroMethods(arr, 0, arr[0]);
+                .UsingRecursionFindElementClosesttoZeroMethods(arr, 0, 0, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }
