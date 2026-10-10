@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 // Input:
@@ -11,6 +12,7 @@ import java.util.Collections;
 
 class UsingNestedForLoopFindLastNonRepeatedElement {
     public static void UsingNestedForLoopFindLastNonRepeatedElementMethods(int arr[]) {
+        Arrays.sort(arr);
         for (int i = arr.length - 1; i >= 0; i--) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
@@ -32,7 +34,7 @@ class UsingNestedForLoopFindLastNonRepeatedElement {
 
             if (count == 1) {
                 System.out.println(arr[i]);
-                return;
+                break;
             }
         }
     }
@@ -73,12 +75,10 @@ class UsingArrayListFindLastNonRepeatedElement {
 
 class UsingCollectionsFrequencyFindLastNonRepeatedElement {
     public static void UsingCollectionsFrequencyFindLastNonRepeatedElementMethods(int arr[]) {
-
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
-
         for (int i = list.size() - 1; i >= 0; i--) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
@@ -95,7 +95,7 @@ class UsingCollectionsFrequencyFindLastNonRepeatedElement {
 
             if (count == 1) {
                 System.out.println(list.get(i));
-                return;
+                break;
             }
         }
     }
@@ -105,9 +105,27 @@ public class FindLastNonRepeatedElement {
     public static void main(String[] args) {
         UsingNestedForLoopFindLastNonRepeatedElement
                 .UsingNestedForLoopFindLastNonRepeatedElementMethods(new int[] { 10, 20, 30, 20, 10, 40 });
-        UsingArrayListFindLastNonRepeatedElement
-                .UsingArrayListFindLastNonRepeatedElementMethods(new int[] { 10, 20, 30, 20, 10, 60, 70, 60 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListFindLastNonRepeatedElement
+        // .UsingArrayListFindLastNonRepeatedElementMethods(new int[] { 10, 20, 30, 20,
+        // 10, 60, 70, 60 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingCollectionsFrequencyFindLastNonRepeatedElement.UsingCollectionsFrequencyFindLastNonRepeatedElementMethods(
                 new int[] { 10, 20, 30, 20, 10, 60, 60, 70, 80 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

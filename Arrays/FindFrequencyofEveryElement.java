@@ -13,6 +13,7 @@ import java.util.Collections;
 
 class UsingForLoopFindFrequencyofEveryElement {
     public static void UsingForLoopFindFrequencyofEveryElementMethods(int arr[]) {
+
         for (int i = 0; i < arr.length; i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
@@ -25,6 +26,7 @@ class UsingForLoopFindFrequencyofEveryElement {
             if (found) {
                 continue;
             }
+
             int count = 1;
             for (int k = i + 1; k < arr.length; k++) {
                 if (arr[k] == arr[i]) {
@@ -77,16 +79,17 @@ class UsingCollectionsFrequencyFindFrequencyofEveryElement {
 
         for (int i = 0; i < list.size(); i++) {
             boolean found = false;
+
             for (int j = 0; j < i; j++) {
-                if (list.get(i) == list.get(j)) {
+                if (arr[i] == arr[j]) {
                     found = true;
                     break;
                 }
             }
-
             if (found) {
                 continue;
             }
+
             int count = Collections.frequency(list, list.get(i));
 
             System.out.println(list.get(i) + " = " + count);
@@ -94,13 +97,62 @@ class UsingCollectionsFrequencyFindFrequencyofEveryElement {
     }
 }
 
+class UsingRecursionFindFrequencyofEveryElement {
+    public static void UsingRecursionFindFrequencyofEveryElementMethods(int arr[], int index) {
+        if (index == arr.length) {
+            return;
+        }
+        boolean found = false;
+        for (int j = 0; j < index; j++) {
+            if (arr[index] == arr[j]) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            UsingRecursionFindFrequencyofEveryElementMethods(arr, index + 1);
+            return;
+        }
+        int count = 1;
+        for (int k = index + 1; k < arr.length; k++) {
+            if (arr[k] == arr[index]) {
+                count++;
+            }
+        }
+        System.out.println(arr[index] + " = " + count);
+        UsingRecursionFindFrequencyofEveryElementMethods(arr, index + 1);
+    }
+}
+
 public class FindFrequencyofEveryElement {
     public static void main(String[] args) {
         UsingForLoopFindFrequencyofEveryElement
                 .UsingForLoopFindFrequencyofEveryElementMethods(new int[] { 10, 20, 10, 30, 20, 10 });
-        UsingArrayListFindFrequencyofEveryElement
-                .UsingArrayListFindFrequencyofEveryElementMethods(new int[] { 10, 20, 10, 30, 20, 10 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListFindFrequencyofEveryElement
+        // .UsingArrayListFindFrequencyofEveryElementMethods(new int[] { 10, 20, 10, 30,
+        // 20, 10 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingCollectionsFrequencyFindFrequencyofEveryElement
-                .UsingCollectionsFrequencyFindFrequencyofEveryElementMethods(new int[] { 10, 40, 20, 10, 30, 20, 10 });
+                .UsingCollectionsFrequencyFindFrequencyofEveryElementMethods(new int[] { 10,
+                        40, 20, 10, 30, 20, 10 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        UsingRecursionFindFrequencyofEveryElement.UsingRecursionFindFrequencyofEveryElementMethods(new int[] { 10,
+                40, 20, 10, 30, 20, 10 }, 0);
     }
 }

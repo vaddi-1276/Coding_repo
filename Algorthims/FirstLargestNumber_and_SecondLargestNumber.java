@@ -8,6 +8,7 @@ package Algorthims;
 public class FirstLargestNumber_and_SecondLargestNumber {
 
     public static int FirstLargestNumberMethods(int arr[]) {
+
         int firstlargestnumber = Integer.MIN_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
@@ -21,19 +22,19 @@ public class FirstLargestNumber_and_SecondLargestNumber {
     public static int SecondLargestNumberMethods(int arr[]) {
 
         int firstlargestnumber = Integer.MIN_VALUE;
-        int secondlargestnumber = Integer.MIN_VALUE;
+        int secondlargest = Integer.MIN_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > firstlargestnumber) {
-                secondlargestnumber = firstlargestnumber;
+                secondlargest = firstlargestnumber;
                 firstlargestnumber = arr[i];
             }
 
-            else if (arr[i] > secondlargestnumber && firstlargestnumber != arr[i]) {
-                secondlargestnumber = arr[i];
+            else if (arr[i] > secondlargest && firstlargestnumber != arr[i]) {
+                secondlargest = arr[i];
             }
         }
-        return secondlargestnumber;
+        return secondlargest;
     }
 
     public static void main(String[] args) {

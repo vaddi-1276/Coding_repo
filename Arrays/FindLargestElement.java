@@ -9,15 +9,29 @@ import java.util.Arrays;
 
 class UsingVariablesFindLargestElement {
     public static void UsingVariablesFindLargestElementMethods(int arr[]) {
-
-        int firstLargestnumber = arr[0];
+        int firstlargestnumber = Integer.MIN_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > firstLargestnumber) {
-                firstLargestnumber = arr[i];
+            if (arr[i] > firstlargestnumber) {
+                firstlargestnumber = arr[i];
             }
         }
-        System.out.println(firstLargestnumber);
+        System.out.println(firstlargestnumber);
+    }
+}
+
+class UsingRecursionFindLargestElement {
+    public static void UsingRecursionFindLargestElementMethods(int arr[], int index, int firstlargestnumber) {
+
+        if (index == arr.length) {
+            System.out.println(firstlargestnumber);
+            return;
+        }
+
+        if (arr[index] > firstlargestnumber) {
+            firstlargestnumber = arr[index];
+        }
+        UsingRecursionFindLargestElementMethods(arr, index + 1, firstlargestnumber);
     }
 }
 
@@ -60,8 +74,43 @@ class UsingMathMinFindLargestElement {
 public class FindLargestElement {
     public static void main(String[] args) {
         UsingVariablesFindLargestElement.UsingVariablesFindLargestElementMethods(new int[] { 10, 25, 5, 40, 15 });
-        UsingForLoopFindLargestElement.UsingForLoopFindLargestElementMethods(new int[] { 10, 25, 5, 15 });
-        UsingArraysSortFindLargestElement.UsingArraysSortFindLargestElementMethods(new int[] { 10, 25, 5, 15, 50 });
-        UsingMathMinFindLargestElement.UsingMathMinFindLargestElementMethods(new int[] { 10, 25, 5 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        UsingRecursionFindLargestElement.UsingRecursionFindLargestElementMethods(new int[] { 10, 25, 5, 40, 15 }, 0,
+                Integer.MIN_VALUE);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingForLoopFindLargestElement.UsingForLoopFindLargestElementMethods(new
+        // int[] { 10, 25, 5, 15 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
+        // UsingArraysSortFindLargestElement.UsingArraysSortFindLargestElementMethods(new
+        // int[] { 10, 25, 5, 15, 50 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
+        // UsingMathMinFindLargestElement.UsingMathMinFindLargestElementMethods(new
+        // int[] { 10, 25, 5 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
     }
 }

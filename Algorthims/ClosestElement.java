@@ -6,23 +6,26 @@ package Algorthims;
 
 public class ClosestElement {
     public static int ClosestElementMethods(int arr[]) {
+
         int value=-1;
         int target=7;
-
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i]<=target)
             {
                 value=arr[i];
             }
+
             else
             {
                 break;
             }
+
         }
-        return  value;
+        return value;
     }
+
     public static void main(String[] args) {
-        System.out.println(ClosestElementMethods(new int[]{1,4,8,10} ));
+        System.out.println(ClosestElementMethods(new int[] { 1, 4, 6, 8, 10 }));
     }
 }

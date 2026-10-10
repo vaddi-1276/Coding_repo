@@ -19,6 +19,7 @@ class UsingArraysSort_SortArrayAscending {
 
 class UsingNestedForLoopSortArrayAscending {
     public static void UsingNestedForLoopSortArrayAscendingMethods(int arr[]) {
+
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -28,6 +29,7 @@ class UsingNestedForLoopSortArrayAscending {
                 }
             }
         }
+
         System.out.println(Arrays.toString(arr));
     }
 }
@@ -40,11 +42,11 @@ class UsingRecursionSortArrayAscending {
             return;
         }
 
-        for (int i = index + 1; i < arr.length; i++) {
-            if (arr[index] > arr[i]) {
+        for (int j = index + 1; j < arr.length; j++) {
+            if (arr[index] > arr[j]) {
                 int temp = arr[index];
-                arr[index] = arr[i];
-                arr[i] = temp;
+                arr[index] = arr[j];
+                arr[j] = temp;
             }
         }
         UsingRecursionSortArrayAscendingMethods(arr, index + 1);
@@ -68,6 +70,7 @@ class UsingArrayListSortArrayAscending {
                 }
             }
         }
+
         System.out.println(list);
     }
 }
@@ -76,19 +79,31 @@ public class SortArrayAscending {
     public static void main(String[] args) {
         UsingArraysSort_SortArrayAscending.UsingArraysSort_SortArrayAscendingMethods(new int[] { 40, 10, 30, 20, 50 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         UsingNestedForLoopSortArrayAscending
                 .UsingNestedForLoopSortArrayAscendingMethods(new int[] { 40, 10, 30, 20, 50, 60 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         UsingRecursionSortArrayAscending.UsingRecursionSortArrayAscendingMethods(new int[] { 40, 10, 30, 20, 50 }, 0);
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingArrayListSortArrayAscending.UsingArrayListSortArrayAscendingMethods(new int[] { 60, 40, 10, 30, 20, 50 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

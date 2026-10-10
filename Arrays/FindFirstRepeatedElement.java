@@ -11,14 +11,29 @@ import java.util.ArrayList;
 class UsingNestedForLoopFindFirstRepeatedElement {
     public static void UsingNestedForLoopFindFirstRepeatedElementMethods(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
+            boolean found = false;
             for (int j = 0; j < i; j++) {
                 if (arr[i] == arr[j]) {
-                    System.out.println(arr[i]);
-                    return;
+                    found = true;
+                    break;
                 }
             }
-        }
+            if (found) {
+                continue;
+            }
 
+            int count = 1;
+            for (int k = i + 1; k < arr.length; k++) {
+                if (arr[k] == arr[i]) {
+                    count++;
+                }
+            }
+
+            if (count > 1) {
+                System.out.println(arr[i]);
+                break;
+            }
+        }
     }
 }
 
@@ -47,12 +62,26 @@ class UsingRecursionFindFirstRepeatedElement {
         if (index == arr.length) {
             return;
         }
-
+        boolean found = false;
         for (int j = 0; j < index; j++) {
             if (arr[index] == arr[j]) {
-                System.out.println(arr[index]);
-                return;
+                found = true;
+                break;
             }
+        }
+        if (found) {
+            UsingRecursionFindFirstRepeatedElementMethods(arr, index + 1);
+            return;
+        }
+        int count = 1;
+        for (int k = index + 1; k < arr.length; k++) {
+            if (arr[k] == arr[index]) {
+                count++;
+            }
+        }
+        if (count > 1) {
+            System.out.println(arr[index] + " ");
+            return;
         }
         UsingRecursionFindFirstRepeatedElementMethods(arr, index + 1);
     }
@@ -62,9 +91,28 @@ public class FindFirstRepeatedElement {
     public static void main(String[] args) {
         UsingNestedForLoopFindFirstRepeatedElement
                 .UsingNestedForLoopFindFirstRepeatedElementMethods(new int[] { 10, 20, 30, 20, 40, 10 });
-        UsingArrayListFindFirstRepeatedElement
-                .UsingArrayListFindFirstRepeatedElementMethods(new int[] { 10, 20, 30, 20, 40, 10 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListFindFirstRepeatedElement
+        // .UsingArrayListFindFirstRepeatedElementMethods(new int[] { 10, 20, 30, 20,
+        // 40, 10 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingRecursionFindFirstRepeatedElement
-                .UsingRecursionFindFirstRepeatedElementMethods(new int[] { 10, 20, 30, 20, 40, 10 }, 0);
+                .UsingRecursionFindFirstRepeatedElementMethods(new int[] { 10, 20, 30, 20,
+                        40, 10 }, 0);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

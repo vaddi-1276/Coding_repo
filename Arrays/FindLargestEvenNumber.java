@@ -36,7 +36,18 @@ public class FindLargestEvenNumber {
     public static void main(String[] args) {
         UsingNestedForLoopFindLargestEvenNumber
                 .UsingNestedForLoopFindLargestEvenNumberMethods(new int[] { 15, 22, 8, 31, 44, 19 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingRecursionFindLargestEvenNumber
                 .UsingRecursionFindLargestEvenNumberMethods(new int[] { 15, 22, 8, 31, 19 }, 0, Integer.MIN_VALUE);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

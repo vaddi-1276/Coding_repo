@@ -11,16 +11,36 @@ import java.util.ArrayList;
 
 class UsingNestedForLoopFindIntersectionofTwoArrays {
     public static void UsingNestedForLoopFindIntersectionofTwoArraysMethods(int arr1[], int arr2[]) {
-
         for (int i = 0; i < arr1.length; i++) {
-            for (int j = 0; j < arr2.length; j++) {
-
-                if (arr1[i] == arr2[j]) {
-                    System.out.println(arr1[i]);
+            boolean found = false;
+            for (int j = 0; j < i; j++) {
+                if (arr1[i] == arr1[j]) {
+                    found = true;
                     break;
                 }
             }
+            if (found) {
+                continue;
+            }
+            for (int l = 0; l < arr2.length; l++) {
+                boolean found1 = false;
+
+                for (int m = 0; m < l; m++) {
+                    if (arr2[l] == arr2[m]) {
+                        found1 = true;
+                        break;
+                    }
+                }
+                if (found1) {
+                    continue;
+                }
+
+                if (arr1[i] == arr2[l]) {
+                    System.out.print(arr1[i]+" ");
+                }
+            }
         }
+        System.out.println();
     }
 }
 
@@ -80,9 +100,27 @@ public class FindIntersectionofTwoArrays {
     public static void main(String[] args) {
         UsingNestedForLoopFindIntersectionofTwoArrays.UsingNestedForLoopFindIntersectionofTwoArraysMethods(
                 new int[] { 1, 2, 3, 4 }, new int[] { 3, 4, 5, 6 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingArrayListFindIntersectionofTwoArrays
-                .UsingArrayListFindIntersectionofTwoArraysMethods(new int[] { 1, 2, 7, 8 }, new int[] { 5, 6, 7, 8 });
+        .UsingArrayListFindIntersectionofTwoArraysMethods(new int[] { 1, 2, 7, 8 },
+        new int[] { 5, 6, 7, 8 });
+
+        System.out.print(
+        "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingRecursionFindIntersectionofTwoArrays.UsingRecursionFindIntersectionofTwoArraysMethods(
-                new int[] { 1, 2, 7, 8 }, new int[] { 5, 6, 7, 8 }, 0, 0);
+        new int[] { 1, 2, 7, 8 }, new int[] { 5, 6, 7, 8 }, 0, 0);
+
+        System.out.print(
+        "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

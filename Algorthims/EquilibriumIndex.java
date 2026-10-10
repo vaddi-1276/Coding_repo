@@ -14,14 +14,13 @@ public class EquilibriumIndex {
                 leftsum = leftsum + arr[j];
             }
 
-            for (int k = i + 1; k < arr.length; k++) {
-                rightsum = rightsum + arr[k];
+            for (int j = i + 1; j < arr.length; j++) {
+                rightsum = rightsum + arr[j];
             }
 
-            if(leftsum==rightsum)
-            {
+            if (leftsum == rightsum) {
                 System.out.println(i);
-                return i;
+                break;
             }
         }
         return -1;

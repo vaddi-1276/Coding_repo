@@ -18,7 +18,8 @@ class UsingForLoopFindIndexofanElement {
                 return;
             }
         }
-        System.out.println("Element is not found");
+
+        System.out.println("Element is not FOund");
     }
 }
 
@@ -58,10 +59,28 @@ class UsingRecursionFindIndexofanElement {
 
 public class FindIndexofanElement {
     public static void main(String[] args) {
-        UsingForLoopFindIndexofanElement.UsingForLoopFindIndexofanElementMethods(new int[] { 10, 20, 30, 40, 50 }, 30);
-        UsingArrayListFindIndexofanElement.UsingArrayListFindIndexofanElementMethods(new int[] { 10, 20, 30, 40, 50 },
-                40);
+        UsingForLoopFindIndexofanElement.UsingForLoopFindIndexofanElementMethods(new int[] { 10, 20, 30, 40, 50 }, 40);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListFindIndexofanElement.UsingArrayListFindIndexofanElementMethods(new
+        // int[] { 10, 20, 30, 40, 50 },
+        // 40);
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingRecursionFindIndexofanElement.UsingRecursionFindIndexofanElementMethods(new int[] { 10, 20, 30, 40, 50 },
                 0, 50);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

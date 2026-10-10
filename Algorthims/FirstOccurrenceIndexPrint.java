@@ -10,7 +10,6 @@ import java.util.Arrays;
 // Index : 1
 
 public class FirstOccurrenceIndexPrint {
-
     public static int FirstOccurrenceIndexPrintMethods(int arr[],int value) {
 
         Arrays.sort(arr);
