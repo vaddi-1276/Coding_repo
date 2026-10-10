@@ -22,6 +22,7 @@ class UsingNestedForLoopFindFirstNonRepeatedElement {
             if (found) {
                 continue;
             }
+
             int count = 1;
             for (int k = i + 1; k < arr.length; k++) {
                 if (arr[k] == arr[i]) {
@@ -31,7 +32,7 @@ class UsingNestedForLoopFindFirstNonRepeatedElement {
 
             if (count == 1) {
                 System.out.println(arr[i]);
-                return;
+                break;
             }
         }
     }
@@ -72,6 +73,7 @@ class UsingArrayListFindFirstNonRepeatedElement {
 
 class UsingCollectionsFrequencyFindFirstNonRepeatedElement {
     public static void UsingCollectionsFrequencyFindFirstNonRepeatedElementMethods(int arr[]) {
+
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
@@ -79,8 +81,9 @@ class UsingCollectionsFrequencyFindFirstNonRepeatedElement {
 
         for (int i = 0; i < list.size(); i++) {
             boolean found = false;
+
             for (int j = 0; j < i; j++) {
-                if (list.get(i) == list.get(j)) {
+                if (arr[i] == arr[j]) {
                     found = true;
                     break;
                 }
@@ -93,9 +96,40 @@ class UsingCollectionsFrequencyFindFirstNonRepeatedElement {
 
             if (count == 1) {
                 System.out.println(list.get(i));
-                return;
+                break;
             }
         }
+    }
+}
+
+class UsingRecursionFindFirstNonRepeatedElement {
+    public static void UsingRecursionFindFirstNonRepeatedElementMethods(int arr[], int index) {
+        if (index == arr.length) {
+            return;
+        }
+        boolean found = false;
+        for (int j = 0; j < index; j++) {
+            if (arr[index] == arr[j]) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            UsingRecursionFindFirstNonRepeatedElementMethods(arr, index + 1);
+            return;
+        }
+
+        int count = 1;
+        for (int k = index + 1; k < arr.length; k++) {
+            if (arr[k] == arr[index]) {
+                count++;
+            }
+        }
+        if (count == 1) {
+            System.out.println(arr[index]);
+            return;
+        }
+        UsingRecursionFindFirstNonRepeatedElementMethods(arr, index + 1);
     }
 }
 
@@ -103,9 +137,29 @@ public class FindFirstNonRepeatedElement {
     public static void main(String[] args) {
         UsingNestedForLoopFindFirstNonRepeatedElement
                 .UsingNestedForLoopFindFirstNonRepeatedElementMethods(new int[] { 10, 20, 30, 20, 10, 40 });
-        UsingArrayListFindFirstNonRepeatedElement
-                .UsingArrayListFindFirstNonRepeatedElementMethods(new int[] { 10, 20, 30, 20, 10, 40 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListFindFirstNonRepeatedElement
+        // .UsingArrayListFindFirstNonRepeatedElementMethods(new int[] { 10, 20, 30, 20,
+        // 10, 40 });
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingCollectionsFrequencyFindFirstNonRepeatedElement
                 .UsingCollectionsFrequencyFindFirstNonRepeatedElementMethods(new int[] { 10, 20, 20, 10, 40 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+        
+        UsingRecursionFindFirstNonRepeatedElement.UsingRecursionFindFirstNonRepeatedElementMethods(new int[] { 10, 20, 20, 10, 50 }, 0);
     }
 }

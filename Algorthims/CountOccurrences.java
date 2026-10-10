@@ -9,12 +9,14 @@ public class CountOccurrences {
 
         for (int i = 0; i < arr.length; i++) {
             boolean found = false;
+
             for (int j = 0; j < i; j++) {
                 if (arr[i] == arr[j]) {
                     found = true;
                     break;
                 }
             }
+
             if (found) {
                 continue;
             }
@@ -27,13 +29,13 @@ public class CountOccurrences {
             }
 
             if (arr[i] == target) {
-                return count;
+                System.out.println("Count of " + arr[i] + " is " + count);
             }
         }
-
         return -1;
     }
+
     public static void main(String[] args) {
-        System.out.println(CountOccurrencesMethods(new int[]{1,2,2,2,3,4}, 2));
+        CountOccurrencesMethods(new int[] { 1, 2, 2, 2, 3, 4 }, 2);
     }
 }

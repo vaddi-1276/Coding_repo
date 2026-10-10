@@ -10,28 +10,35 @@ package Algorthims;
 public class DuplicateNumber {
     public static int DuplicateNumberMethods(int arr[]) {
 
-        for (int i = 0; i < arr.length; i++) {
-            boolean found = false;
-            for (int j = 0; j < i; j++) {
-                if (arr[i] == arr[j]) {
-                    found = true;
+        for(int i=0;i<arr.length;i++)
+        {
+            boolean found=false;
+            for(int j=0;j<i;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    found=true;
                     break;
                 }
             }
 
-            if (found) {
+            if(found)
+            {
                 continue;
             }
 
-            int count = 1;
-            for (int k = i + 1; k < arr.length; k++) {
-                if (arr[k] == arr[i]) {
+            int count=1;
+            for(int k=i+1;k<arr.length;k++)
+            {
+                if(arr[k]==arr[i])
+                {
                     count++;
                 }
             }
 
-            if (count > 1) {
-                System.out.println(arr[i] + " ");
+            if(count>1)
+            {
+                System.out.println(arr[i]);
             }
         }
         return -1;

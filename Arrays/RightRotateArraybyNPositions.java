@@ -13,49 +13,82 @@ class UsingNestedForLoopRightRotateArraybyNPositions {
     public static void UsingNestedForLoopRightRotateArraybyNPositionsMethods(int arr[], int value) {
 
         if (value > arr.length) {
-            System.out.println("Value is Exceed");
+            System.out.println("value is Exceed ");
             return;
         }
         int newarr[] = new int[arr.length];
         int index = 0;
+
         for (int i = arr.length - value; i < arr.length; i++) {
             newarr[index++] = arr[i];
         }
+
         for (int i = 0; i < arr.length - value; i++) {
             newarr[index++] = arr[i];
         }
+
         System.out.println(Arrays.toString(newarr));
     }
 }
 
 class WithoutUsingExtraArrayRightRotateArraybyNPositions {
-    public static void WithoutUsingExtraArrayRightRotateArraybyNPositionsMethods(int arr[], int value ) {
+    public static void WithoutUsingExtraArrayRightRotateArraybyNPositionsMethods(int arr[], int value) {
 
         if (value > arr.length) {
             System.out.println("Value is Exceed");
             return;
         }
-
         for (int i = 0; i < value; i++) {
             int last = arr[arr.length - 1];
-            for (int j = arr.length - 1; j > 0; j--) {
-                arr[j] = arr[j - 1];
+
+            for (int k = arr.length - 1; k > 0; k--) {
+                arr[k] = arr[k - 1];
             }
             arr[0] = last;
+
         }
         System.out.println(Arrays.toString(arr));
+    }
+}
+
+class UsingRecursionRightRotateArraybyNPositions {
+    public static void UsingRecursionRightRotateArraybyNPositionsMethods(int arr[], int index,
+            int newarr[], int value) {
+
+        if (index == arr.length) {
+            System.out.println(Arrays.toString(newarr));
+            return;
+        }
+
+        int position = (index + value) % arr.length;
+        
+        newarr[position]=arr[index];
+
+        UsingRecursionRightRotateArraybyNPositionsMethods(arr, index + 1, newarr, value);
     }
 }
 
 public class RightRotateArraybyNPositions {
     public static void main(String[] args) {
         UsingNestedForLoopRightRotateArraybyNPositions
-                .UsingNestedForLoopRightRotateArraybyNPositionsMethods(new int[] { 1, 2, 3, 4, 5 }, 9);
+                .UsingNestedForLoopRightRotateArraybyNPositionsMethods(new int[] { 1, 2, 3, 4, 5 }, 2);
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         WithoutUsingExtraArrayRightRotateArraybyNPositions
-                .WithoutUsingExtraArrayRightRotateArraybyNPositionsMethods(new int[] { 1, 2, 3, 4, 5 }, 9);
+                .WithoutUsingExtraArrayRightRotateArraybyNPositionsMethods(new int[] { 1, 2, 3, 4, 5 }, 2);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        int arr[] = { 1, 2, 3, 4, 5 };
+        int value = 2;
+        UsingRecursionRightRotateArraybyNPositions.UsingRecursionRightRotateArraybyNPositionsMethods(arr, 0,
+                new int[arr.length], value);
     }
 }

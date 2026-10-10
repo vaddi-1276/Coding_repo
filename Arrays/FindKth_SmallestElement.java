@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 class UsingNestedForLoopFindKth_SmallestElement {
     public static void UsingNestedForLoopFindKth_SmallestElementMethods(int arr[], int value) {
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -21,9 +20,8 @@ class UsingNestedForLoopFindKth_SmallestElement {
                 }
             }
         }
-
-        int index = value - 1;
-        System.out.println(arr[index]);
+        int position = value - 1;
+        System.out.println(arr[position]);
     }
 }
 
@@ -50,10 +48,13 @@ class UsingArrayListFindKth_SmallestElement {
     }
 }
 
-class UsingArrayArrangeFindKth_SmallestElement {
-    public static void UsingArrayArrangeFindKth_SmallestElementMethods(int arr[], int index) {
+class UsingRecursionFindKth_SmallestElement {
 
-        if (index == arr.length - 1) {
+    public static void UsingRecursionFindKth_SmallestElementmethods(int arr[], int index, int value) {
+
+        if (index == arr.length) {
+            int position = value - 1;
+            System.out.println(arr[position]);
             return;
         }
 
@@ -64,17 +65,7 @@ class UsingArrayArrangeFindKth_SmallestElement {
                 arr[j] = temp;
             }
         }
-        UsingArrayArrangeFindKth_SmallestElementMethods(arr, index + 1);
-    }
-}
-
-class UsingRecursionFindKth_SmallestElement {
-    public static void UsingRecursionFindKth_SmallestElementmethods(int arr[], int value) {
-
-        UsingArrayArrangeFindKth_SmallestElement.UsingArrayArrangeFindKth_SmallestElementMethods(arr, 0);
-
-        int indexvalue = value - 1;
-        System.out.println(arr[indexvalue]);
+        UsingRecursionFindKth_SmallestElementmethods(arr, index + 1, value);
     }
 }
 
@@ -82,9 +73,28 @@ public class FindKth_SmallestElement {
     public static void main(String[] args) {
         UsingNestedForLoopFindKth_SmallestElement
                 .UsingNestedForLoopFindKth_SmallestElementMethods(new int[] { 10, 40, 20, 50, 30 }, 2);
-        UsingArrayListFindKth_SmallestElement
-                .UsingArrayListFindKth_SmallestElementMethods(new int[] { 10, 40, 20, 50, 30 }, 3);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingArrayListFindKth_SmallestElement
+        // .UsingArrayListFindKth_SmallestElementMethods(new int[] { 10, 40, 20, 50, 30
+        // }, 3);
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
+
         UsingRecursionFindKth_SmallestElement
-                .UsingRecursionFindKth_SmallestElementmethods(new int[] { 10, 40, 20, 50, 30 }, 3);
+                .UsingRecursionFindKth_SmallestElementmethods(new int[] { 10, 40, 20, 50, 30
+                }, 0, 2);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

@@ -12,11 +12,9 @@ class UsingNestedForLoopFindLargestNegativeNumber {
     public static void UsingNestedForLoopFindLargestNegativeNumberMethods(int arr[]) {
 
         int largest = Integer.MIN_VALUE;
-
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < 0 && arr[i] > largest) {
                 largest = arr[i];
-
             }
         }
         System.out.println(largest);
@@ -42,7 +40,18 @@ public class FindLargestNegativeNumber {
     public static void main(String[] args) {
         UsingNestedForLoopFindLargestNegativeNumber
                 .UsingNestedForLoopFindLargestNegativeNumberMethods(new int[] { -15, -3, -20, -8, -10 });
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingRecursionFindLargestNegativeNumber.UsingRecursionFindLargestNegativeNumberMethods(
                 new int[] { -15, -20, -8, -10 }, 0, Integer.MIN_VALUE);
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
     }
 }

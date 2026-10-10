@@ -11,19 +11,21 @@ import java.util.Arrays;
 
 class UsingArraysSort_SortArrayDescending {
     public static void UsingArraysSort_SortArrayDescendingMethods(int arr[]) {
+
         Arrays.sort(arr);
         int newarr[] = new int[arr.length];
         int index = 0;
+
         for (int i = arr.length - 1; i >= 0; i--) {
             newarr[index++] = arr[i];
         }
+
         System.out.println(Arrays.toString(newarr));
     }
 }
 
 class UsingNestedForLoopSortArrayDescending {
     public static void UsingNestedForLoopSortArrayDescendingMethods(int arr[]) {
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] < arr[j]) {
@@ -45,11 +47,11 @@ class UsingRecursionSortArrayDescending {
             return;
         }
 
-        for (int i = index + 1; i < arr.length; i++) {
-            if (arr[index] < arr[i]) {
+        for (int j = index + 1; j < arr.length; j++) {
+            if (arr[index] < arr[j]) {
                 int temp = arr[index];
-                arr[index] = arr[i];
-                arr[i] = temp;
+                arr[index] = arr[j];
+                arr[j] = temp;
             }
         }
         UsingRecursionSortArrayDescendingMethods(arr, index + 1);
@@ -64,12 +66,15 @@ class UsingArrayListSortArrayDescending {
             list.add(arr[i]);
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i) < list.get(j)) {
-                    int temp = list.get(i);
-                    list.set(i, list.get(j));
-                    list.set(j, temp);
+        for(int i=0;i<list.size();i++)
+        {
+            for(int j=i+1;j<list.size();j++)
+            {
+                if(list.get(i)<list.get(j))
+                {
+                    int temp=list.get(i);
+                    list.set(i,list.get(j));
+                    list.set(j,temp);
                 }
             }
         }
@@ -82,23 +87,31 @@ public class SortArrayDescending {
         UsingArraysSort_SortArrayDescending
                 .UsingArraysSort_SortArrayDescendingMethods(new int[] { 40, 10, 30, 20, 50 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         UsingNestedForLoopSortArrayDescending
                 .UsingNestedForLoopSortArrayDescendingMethods(new int[] { 60, 40, 10, 30, 20,
                         50 });
 
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         UsingRecursionSortArrayDescending.UsingRecursionSortArrayDescendingMethods(
                 new int[] { 60, 40, 10, 70, 80, 30, 20, 50 },
                 0);
-        System.out.println(
-                "----------------------------------------------------------------------------------------------");
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
         UsingArrayListSortArrayDescending
-                .UsingArrayListSortArrayDescendingMethods(new int[] { 60, 40, 10, 70, 80, 30, 20, 50 });
+                .UsingArrayListSortArrayDescendingMethods(new int[] { 60, 40, 10, 70, 80, 30,
+                        20, 50 });
     }
 }

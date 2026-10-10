@@ -14,7 +14,6 @@ class UsingNestedForLoopSortWithoutUsingArrays_sort {
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
-
                 if (arr[i] > arr[j]) {
                     int temp = arr[i];
                     arr[i] = arr[j];
@@ -28,17 +27,15 @@ class UsingNestedForLoopSortWithoutUsingArrays_sort {
 
 class UsingRecursionSortWithoutUsingArrays_sort {
     public static void UsingRecursionSortWithoutUsingArrays_sortMethods(int arr[], int index) {
-
         if (index == arr.length) {
             System.out.println(Arrays.toString(arr));
             return;
         }
-
-        for (int i = index + 1; i < arr.length; i++) {
-            if (arr[index] > arr[i]) {
+        for (int j = index + 1; j < arr.length; j++) {
+            if (arr[index] > arr[j]) {
                 int temp = arr[index];
-                arr[index] = arr[i];
-                arr[i] = temp;
+                arr[index] = arr[j];
+                arr[j] = temp;
             }
         }
         UsingRecursionSortWithoutUsingArrays_sortMethods(arr, index + 1);
@@ -47,7 +44,6 @@ class UsingRecursionSortWithoutUsingArrays_sort {
 
 class UsingArrayListSortWithoutUsingArrays_sort {
     public static void UsingArrayListSortWithoutUsingArrays_sortMethods(int arr[]) {
-
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
@@ -62,6 +58,7 @@ class UsingArrayListSortWithoutUsingArrays_sort {
                 }
             }
         }
+
         System.out.println(list);
     }
 }
@@ -71,11 +68,26 @@ public class SortWithoutUsingArrays_sort {
         UsingNestedForLoopSortWithoutUsingArrays_sort
                 .UsingNestedForLoopSortWithoutUsingArrays_sortMethods(new int[] { 5, 2, 8, 1, 3 });
 
-        int arr[] = new int[] { 9, 5, 2, 4, 8, 1, 3 };
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        int arr[] = new int[] { 5, 2, 8, 1, 3 };
         UsingRecursionSortWithoutUsingArrays_sort
                 .UsingRecursionSortWithoutUsingArrays_sortMethods(arr, 0);
 
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
         UsingArrayListSortWithoutUsingArrays_sort.UsingArrayListSortWithoutUsingArrays_sortMethods(arr);
+
+        System.out.print(
+        "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
 
     }
 }
