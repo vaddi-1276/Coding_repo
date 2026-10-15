@@ -14,6 +14,7 @@ package Strings;
 
 class UsingNestedForLoopAllPossibleSubStrings {
     public static void UsingNestedForLoopAllPossibleSubStringsMethods(String str) {
+
         for (int i = 0; i < str.length(); i++) {
             String temp = "";
             for (int j = i; j < str.length(); j++) {
@@ -43,8 +44,8 @@ class UsingRecursionAllPossibleSubStrings {
         }
 
         String temp = "";
-        for (int i = index; i < str.length(); i++) {
-            temp = temp + str.charAt(i);
+        for (int j = index; j < str.length(); j++) {
+            temp = temp + str.charAt(j);
             System.out.println(temp);
         }
         findAllPossibleSubString(str, index + 1);

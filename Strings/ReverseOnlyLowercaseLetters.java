@@ -7,22 +7,26 @@ import java.util.Collections;
 // JavaSelenium
 
 // Output:
-// JmuineleSava
+// JmuiSneleava
 
 class ReverseOnlyLowercaseLettersUsingForLoop {
     public static void ReverseOnlyLowercaseLettersUsingForLoopMethods(String str) {
 
-        String onlylowercasevalue = "";
+        String onlylowercaseString = "";
+
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (ch >= 'a' && ch <= 'z') {
-                onlylowercasevalue = onlylowercasevalue + ch;
+                onlylowercaseString = onlylowercaseString + ch;
             }
         }
-        String reverseonlylowercasevalue = "";
-        for (int i = onlylowercasevalue.length() - 1; i >= 0; i--) {
-            reverseonlylowercasevalue = reverseonlylowercasevalue + onlylowercasevalue.charAt(i);
+
+        String reverseonlylowercaseString = "";
+
+        for (int i = onlylowercaseString.length() - 1; i >= 0; i--) {
+            reverseonlylowercaseString =
+                    reverseonlylowercaseString + onlylowercaseString.charAt(i);
         }
 
         int index = 0;
@@ -32,11 +36,12 @@ class ReverseOnlyLowercaseLettersUsingForLoop {
             char ch = str.charAt(i);
 
             if (ch >= 'a' && ch <= 'z') {
-                result = result + reverseonlylowercasevalue.charAt(index++);
+                result = result + reverseonlylowercaseString.charAt(index++);
             } else {
                 result = result + ch;
             }
         }
+
         System.out.println(result);
     }
 }
@@ -74,8 +79,9 @@ class ReverseOnlyLowercaseLettersUsingArrayListCollectionsReverse {
 
 public class ReverseOnlyLowercaseLetters {
     public static void main(String[] args) {
-        ReverseOnlyLowercaseLettersUsingForLoop.ReverseOnlyLowercaseLettersUsingForLoopMethods("Java Selenium");
-        ReverseOnlyLowercaseLettersUsingArrayListCollectionsReverse
-                .ReverseOnlyLowercaseLettersUsingArrayListCollectionsReverseMethods("Java Selenium");
+        ReverseOnlyLowercaseLettersUsingForLoop.ReverseOnlyLowercaseLettersUsingForLoopMethods("JavaSelenium");
+        // ReverseOnlyLowercaseLettersUsingArrayListCollectionsReverse
+        // .ReverseOnlyLowercaseLettersUsingArrayListCollectionsReverseMethods("Java
+        // Selenium");
     }
 }

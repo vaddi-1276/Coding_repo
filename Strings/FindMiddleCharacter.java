@@ -5,10 +5,12 @@ package Strings;
 
 class UsingNestedForLoopFindMiddleCharacter {
     public static void UsingNestedForLoopFindMiddleCharacterMethods(String str) {
+        int position=str.length()/2;
 
-        int position = str.length() / 2;
-        for (int i = 0; i < str.length(); i++) {
-            if (i == position) {
+        for(int i=0;i<str.length();i++)
+        {
+            if(i==position)
+            {
                 System.out.println(str.charAt(i));
             }
         }
@@ -31,7 +33,7 @@ public class FindMiddleCharacter {
     public static void main(String[] args) {
         UsingNestedForLoopFindMiddleCharacter.UsingNestedForLoopFindMiddleCharacterMethods("Selenium");
 
-        String str="Selenium";
-        UsingRecursionFindMiddleCharacter.UsingRecursionFindMiddleCharacterMethods(str, 0, str.length()/2);
+        // String str="Selenium";
+        // UsingRecursionFindMiddleCharacter.UsingRecursionFindMiddleCharacterMethods(str, 0, str.length()/2);
     }
 }

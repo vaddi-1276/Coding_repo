@@ -5,19 +5,16 @@ package Strings;
 
 class UsingForLoopRemoveFirstOccurrenceCharacter {
     public static void UsingForLoopRemoveFirstOccurrenceCharacterMethods(String str, char letter) {
-
         int position = str.indexOf(letter);
-        String finalString = "";
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
             if (i == position) {
                 continue;
             } else {
-                finalString = finalString + ch;
+                result = result + str.charAt(i);
             }
         }
-        System.out.println(finalString);
+        System.out.println(result);
     }
 }
 
@@ -46,8 +43,8 @@ public class RemoveFirstOccurrenceCharacter {
         UsingForLoopRemoveFirstOccurrenceCharacter.UsingForLoopRemoveFirstOccurrenceCharacterMethods("programming",
                 'm');
 
-        String str = "programming";
-        UsingRecursionRemoveFirstOccurrenceCharacter.UsingRecursionRemoveFirstOccurrenceCharacterMethods(str,
-                0, str.indexOf('m'), 'm', "");
+        // String str = "programming";
+        // UsingRecursionRemoveFirstOccurrenceCharacter.UsingRecursionRemoveFirstOccurrenceCharacterMethods(str,
+        // 0, str.indexOf('m'), 'm', "");
     }
 }

@@ -9,25 +9,30 @@ package Strings;
 class UsingCharFunctionCountEvenandOddDigits {
     public static void UsingCharFunctionCountEvenandOddDigitsMethods(String str) {
 
-        String digitvalue = "";
+        String onlydigitsString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (ch >= '0' && ch <= '9') {
-                digitvalue = digitvalue + ch;
+                onlydigitsString = onlydigitsString + ch;
             }
         }
+
         int evencount = 0;
         int oddcount = 0;
 
-        for (int i = 0; i < digitvalue.length(); i++) {
-            char ch = digitvalue.charAt(i);
+        for (int i = 0; i < onlydigitsString.length(); i++) {
+            char ch = onlydigitsString.charAt(i);
 
             if (ch % 2 == 0) {
                 evencount++;
-            } else {
+            }
+
+            else {
                 oddcount++;
             }
         }
+
         System.out.println("Even = " + evencount);
         System.out.println("Odd = " + oddcount);
     }
@@ -59,7 +64,8 @@ class UsingRecursionCountEvenandOddDigits {
 public class CountEvenandOddDigits {
     public static void main(String[] args) {
         UsingCharFunctionCountEvenandOddDigits.UsingCharFunctionCountEvenandOddDigitsMethods("Java123456Testing");
-        UsingRecursionCountEvenandOddDigits.UsingRecursionCountEvenandOddDigitsMethods("Java123456Testing", 0, "", 0,
-                0);
+        // UsingRecursionCountEvenandOddDigits.UsingRecursionCountEvenandOddDigitsMethods("Java123456Testing",
+        // 0, "", 0,
+        // 0);
     }
 }

@@ -10,10 +10,12 @@ import java.util.ArrayList;
 
 class UsingForLoopSubstringPascalCaseConversion {
     public static void UsingForLoopSubstringPascalCaseConversionMethods(String str) {
-        String result = "";
         String words[] = str.split(" ");
+        String result = "";
+
         for (int i = 0; i < words.length; i++) {
-            result = result + words[i].substring(0, 1).toUpperCase() + words[i].substring(1).toLowerCase();
+            String wordString = words[i];
+            result = result + wordString.substring(0, 1).toUpperCase() + wordString.substring(1).toLowerCase();
         }
         System.out.println(result);
     }
@@ -42,6 +44,7 @@ public class PascalCaseConversion {
     public static void main(String[] args) {
         UsingForLoopSubstringPascalCaseConversion
                 .UsingForLoopSubstringPascalCaseConversionMethods("java selenium testing");
-        UsingArrayListPascalCaseConversion.UsingArrayListPascalCaseConversionMethods("java selenium testing");
+        // UsingArrayListPascalCaseConversion.UsingArrayListPascalCaseConversionMethods("java
+        // selenium testing");
     }
 }

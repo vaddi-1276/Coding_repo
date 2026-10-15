@@ -10,37 +10,22 @@ import java.util.ArrayList;
 
 class UsingNestedForLoopLongestRepeatingCharacter {
     public static void UsingNestedForLoopLongestRepeatingCharacterMethods(String str) {
-
-        int maxCount = 0;
-        char maxchar = '\0';
+        int longestcharacterlength = Integer.MIN_VALUE;
+        char longestchar = ' ';
 
         for (int i = 0; i < str.length(); i++) {
-            boolean found = false;
-            for (int j = 0; j < i; j++) {
-
-                if (str.charAt(i) == str.charAt(j)) {
-                    found = true;
-                    break;
-                }
-            }
-
-            if (found) {
-                continue;
-            }
             int count = 1;
-            for (int k = i + 1; k < str.length(); k++) {
-                if (str.charAt(k) == str.charAt(i)) {
+            for (int j = i + 1; j < str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
                     count++;
                 }
             }
-
-            if (count > maxCount) {
-                maxCount = count;
-                maxchar = str.charAt(i);
+            if (count > longestcharacterlength) {
+                longestchar = str.charAt(i);
+                longestcharacterlength = count;
             }
         }
-
-        System.out.println(maxchar + " = " + maxCount);
+        System.out.println(longestchar + " = " + longestcharacterlength);
     }
 }
 
@@ -113,8 +98,8 @@ public class LongestRepeatingCharacter {
         UsingNestedForLoopLongestRepeatingCharacter
                 .UsingNestedForLoopLongestRepeatingCharacterMethods(
                         "aaabbccccdd");
-        UsingCharArrayForLoopLongestRepeatingCharacter
-                .UsingCharArrayForLoopLongestRepeatingCharacterMethods("aaabbccccdd");
-        UsingArrayListLongestRepeatingCharacter.UsingArrayListLongestRepeatingCharacterMethods("aaaaaabbccccdd");
+        // UsingCharArrayForLoopLongestRepeatingCharacter
+        // .UsingCharArrayForLoopLongestRepeatingCharacterMethods("aaabbccccdd");
+        // UsingArrayListLongestRepeatingCharacter.UsingArrayListLongestRepeatingCharacterMethods("aaaaaabbccccdd");
     }
 }

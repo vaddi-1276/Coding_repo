@@ -12,6 +12,18 @@ class SmallestWordUsingSorting {
     public static void findUsingSortingMethods(String str) {
 
         String words[] = str.split(" ");
+        int firstsmallestwordlength = Integer.MAX_VALUE;
+        String firstsmallestwordString = "";
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() < firstsmallestwordlength) {
+                firstsmallestwordlength = words[i].length();
+                firstsmallestwordString = words[i];
+            }
+        }
+
+        System.out.println("Smallest Word Using Variables = " + firstsmallestwordString);
+
         for (int i = 0; i < words.length; i++) {
             for (int j = i + 1; j < words.length; j++) {
                 if (words[i].length() > words[j].length()) {
@@ -21,8 +33,8 @@ class SmallestWordUsingSorting {
                 }
             }
         }
-        System.out.println(words[0]);
-        System.out.println(words[0].length());
+
+        System.out.println("Smallest Word Using Temp = " + words[0]);
     }
 }
 
@@ -72,7 +84,8 @@ class SmallestWordUsingArrayList {
 public class FindSmallestWord {
     public static void main(String[] args) {
         SmallestWordUsingSorting.findUsingSortingMethods("Java Selenium Automation");
-        SmallestWordUsingLoop.findUsingLoopMethods("Java Selenium Automation");
-        SmallestWordUsingArrayList.SmallestWordUsingArrayListMethods("Java Selenium Automation");
+        // SmallestWordUsingLoop.findUsingLoopMethods("Java Selenium Automation");
+        // SmallestWordUsingArrayList.SmallestWordUsingArrayListMethods("Java Selenium
+        // Automation");
     }
 }

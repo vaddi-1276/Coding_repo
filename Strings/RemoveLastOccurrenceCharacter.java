@@ -7,17 +7,17 @@ class UsingForLoopRemoveLastOccurrenceCharacter {
     public static void UsingForLoopRemoveLastOccurrenceCharacterMethods(String str, char letter) {
 
         int position = str.lastIndexOf(letter);
-        String finalvalue = "";
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
             if (i == position) {
                 continue;
-            } else {
-                finalvalue = finalvalue + ch;
+            }
+
+            else {
+                result = result + str.charAt(i);
             }
         }
-        System.out.println(finalvalue);
+        System.out.println(result);
     }
 }
 
@@ -64,9 +64,11 @@ class UsingBooleanRemoveLastOccurrenceCharacter {
 public class RemoveLastOccurrenceCharacter {
     public static void main(String[] args) {
         UsingForLoopRemoveLastOccurrenceCharacter.UsingForLoopRemoveLastOccurrenceCharacterMethods("programming", 'r');
-        String str = "programming";
-        UsingRecursionRemoveLastOccurrenceCharacter.UsingRecursionRemoveLastOccurrenceCharacterMethods(str, 0, 'r',
-                str.lastIndexOf('r'), "");
-        UsingBooleanRemoveLastOccurrenceCharacter.UsingBooleanRemoveLastOccurrenceCharacterMethods("programming", 'g');
+        // String str = "programming";
+        // UsingRecursionRemoveLastOccurrenceCharacter.UsingRecursionRemoveLastOccurrenceCharacterMethods(str,
+        // 0, 'r',
+        // str.lastIndexOf('r'), "");
+        // UsingBooleanRemoveLastOccurrenceCharacter.UsingBooleanRemoveLastOccurrenceCharacterMethods("programming",
+        // 'g');
     }
 }

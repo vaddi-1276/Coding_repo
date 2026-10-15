@@ -5,22 +5,27 @@ package Strings;
 
 class UsingNestedForLoopFindLargestDigitinString {
     public static void UsingNestedForLoopFindLargestDigitinStringMethods(String str) {
+        String onlyDigitString = "";
 
-        String onlyDigit = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (Character.isDigit(ch)) {
-                onlyDigit = onlyDigit + ch;
+                onlyDigitString = onlyDigitString + ch;
             }
         }
+
         int largestdigit = Integer.MIN_VALUE;
-        for (int i = 0; i < onlyDigit.length(); i++) {
-            if (onlyDigit.charAt(i) - '0' > largestdigit) {
-                largestdigit = onlyDigit.charAt(i) - '0';
+        char largestchar=' ';
+        for (int i = 0; i < onlyDigitString.length(); i++) {
+            char ch = onlyDigitString.charAt(i);
+            int digit=Character.getNumericValue(ch);
+            if (digit > largestdigit) {
+
+                largestdigit=digit;
+                largestchar = ch;
             }
         }
-        System.out.println(largestdigit);
+        System.out.println(largestchar);
     }
 }
 
@@ -47,8 +52,8 @@ public class FindLargestDigitinString {
     public static void main(String[] args) {
         UsingNestedForLoopFindLargestDigitinString
                 .UsingNestedForLoopFindLargestDigitinStringMethods("Java583Testing24");
-        UsingRecursionFindLargestDigitinString
-                .UsingRecursionFindLargestDigitinStringMethods("Java583Testing24", 0, "",
-                        Integer.MIN_VALUE);
+        // UsingRecursionFindLargestDigitinString
+        // .UsingRecursionFindLargestDigitinStringMethods("Java583Testing24", 0, "",
+        // Integer.MIN_VALUE);
     }
 }

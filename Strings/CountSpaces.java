@@ -7,16 +7,17 @@ import java.util.ArrayList;
 
 class UsingNestedForLoopCountSpaces {
     public static void UsingNestedForLoopCountSpacesMethods(String str) {
+        int count=0;
 
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
-            if (ch == ' ') {
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+            if(ch==' ')
+            {
                 count++;
             }
         }
-        System.out.println("Spaces = " + count);
+        System.out.println("Spaces = "+count);
     }
 }
 
@@ -59,7 +60,7 @@ class UsingRecursionCountSpaces
 public class CountSpaces {
     public static void main(String[] args) {
         UsingNestedForLoopCountSpaces.UsingNestedForLoopCountSpacesMethods("Java Selenium Automation");
-        UsingArrayListCountSpaces.UsingArrayListCountSpacesMethods("Java Selenium Automation Learning");
-        UsingRecursionCountSpaces.UsingRecursionCountSpacesMethods("Java Selenium Python Automation Learning", 0, 0);
+        // UsingArrayListCountSpaces.UsingArrayListCountSpacesMethods("Java Selenium Automation Learning");
+        // UsingRecursionCountSpaces.UsingRecursionCountSpacesMethods("Java Selenium Python Automation Learning", 0, 0);
     }
 }

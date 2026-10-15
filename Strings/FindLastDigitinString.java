@@ -7,14 +7,15 @@ import java.util.ArrayList;
 
 class UsingCharFunctionsFindLastDigitinString {
     public static void UsingCharFunctionsFindLastDigitinStringMethods(String str) {
-        String final_value = "";
+        String onlynumbersString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (ch >= '0' && ch <= '9') {
-                final_value = final_value + ch;
+                onlynumbersString = onlynumbersString + ch;
             }
         }
-        System.out.println(final_value.charAt(final_value.length() - 1));
+        System.out.println(onlynumbersString.charAt(onlynumbersString.length() - 1));
     }
 }
 
@@ -36,27 +37,26 @@ class UsingArrayListFindLastDigitinString {
     }
 }
 
-class UsingRecursionFindLastDigitinString
-{
-    public static void UsingRecursionFindLastDigitinStringMethods(String str,int index,String finalvalue) {
-        
-        if(index==str.length())
-        {
-            System.out.println(finalvalue.charAt(finalvalue.length()-1));
+class UsingRecursionFindLastDigitinString {
+    public static void UsingRecursionFindLastDigitinStringMethods(String str, int index, String finalvalue) {
+
+        if (index == str.length()) {
+            System.out.println(finalvalue.charAt(finalvalue.length() - 1));
             return;
         }
-        char ch=str.charAt(index);
-        if(Character.isDigit(ch))
-        {
-            finalvalue=finalvalue+ch;
+        char ch = str.charAt(index);
+        if (Character.isDigit(ch)) {
+            finalvalue = finalvalue + ch;
         }
-        UsingRecursionFindLastDigitinStringMethods(str, index+1, finalvalue);
+        UsingRecursionFindLastDigitinStringMethods(str, index + 1, finalvalue);
     }
 }
+
 public class FindLastDigitinString {
     public static void main(String[] args) {
         UsingCharFunctionsFindLastDigitinString.UsingCharFunctionsFindLastDigitinStringMethods("Java123Testing456");
-        UsingArrayListFindLastDigitinString.UsingArrayListFindLastDigitinStringMethods("Java123Testing456");
-        UsingRecursionFindLastDigitinString.UsingRecursionFindLastDigitinStringMethods("Java123Testing456", 0, " ");
+        // UsingArrayListFindLastDigitinString.UsingArrayListFindLastDigitinStringMethods("Java123Testing456");
+        // UsingRecursionFindLastDigitinString.UsingRecursionFindLastDigitinStringMethods("Java123Testing456",
+        // 0, " ");
     }
 }

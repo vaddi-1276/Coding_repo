@@ -12,16 +12,16 @@ import java.util.Collections;
 
 class UsingForLoopReversePalindromeCheck {
     public static void UsingForLoopReversePalindromeCheckMethods(String str) {
-
         String reverseString = "";
         for (int i = str.length() - 1; i >= 0; i--) {
             reverseString = reverseString + str.charAt(i);
         }
 
         if (str.equals(reverseString)) {
-            System.out.println(str + " Reverse = " + reverseString);
-            System.out.println("Palindrome = Yes ");
+            System.out.println(str+" Reverse = " + reverseString);
+            System.out.println("Palindrome = Yes");
         } else {
+            System.out.println(str+" Reverse = " + reverseString);
             System.out.println("Palindrome = No");
         }
     }
@@ -69,9 +69,9 @@ class UsingArrayListCollectionsReverseBuiltinReversePalindromeCheck {
 
 public class ReversePalindromeCheck {
     public static void main(String[] args) {
-        UsingForLoopReversePalindromeCheck.UsingForLoopReversePalindromeCheckMethods("madam");
-        UsingStringBuilderReversePalindromeCheck.UsingStringBuilderReversePalindromeCheckMethods("like");
-        UsingArrayListCollectionsReverseBuiltinReversePalindromeCheck
-                .UsingArrayListCollectionsReverseBuiltinReversePalindromeCheckMethods("madam");
+        UsingForLoopReversePalindromeCheck.UsingForLoopReversePalindromeCheckMethods("like");
+        // UsingStringBuilderReversePalindromeCheck.UsingStringBuilderReversePalindromeCheckMethods("like");
+        // UsingArrayListCollectionsReverseBuiltinReversePalindromeCheck
+        //         .UsingArrayListCollectionsReverseBuiltinReversePalindromeCheckMethods("madam");
     }
 }

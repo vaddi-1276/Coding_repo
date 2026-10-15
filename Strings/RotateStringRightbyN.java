@@ -10,8 +10,7 @@ import java.util.ArrayList;
 // efabcd
 
 class UsingSubStringRightbyN {
-    public static void UsingSubStringRightbyNMethods(String str) {
-        int position = 2;
+    public static void UsingSubStringRightbyNMethods(String str, int position) {
         String result = "";
         result = result + str.substring(str.length() - position, str.length());
         result = result + str.substring(0, str.length() - position);
@@ -21,10 +20,10 @@ class UsingSubStringRightbyN {
 }
 
 class UsingNestedForLoopRotateStringRightbyN {
-    public static void UsingNestedForLoopRotateStringRightbyNMethods(String str) {
+    public static void UsingNestedForLoopRotateStringRightbyNMethods(String str, int position) {
 
-        int position = 2;
         String result = "";
+
         for (int i = str.length() - position; i < str.length(); i++) {
             result = result + str.charAt(i);
         }
@@ -62,8 +61,8 @@ class UsingArrayListRotateStringRightbyN {
 
 public class RotateStringRightbyN {
     public static void main(String[] args) {
-        UsingSubStringRightbyN.UsingSubStringRightbyNMethods("abcdef");
-        UsingNestedForLoopRotateStringRightbyN.UsingNestedForLoopRotateStringRightbyNMethods("abcdef");
-        UsingArrayListRotateStringRightbyN.UsingArrayListRotateStringRightbyNMethods("abcdef");
+        UsingSubStringRightbyN.UsingSubStringRightbyNMethods("abcdef", 2);
+        UsingNestedForLoopRotateStringRightbyN.UsingNestedForLoopRotateStringRightbyNMethods("abcdef", 2);
+        // UsingArrayListRotateStringRightbyN.UsingArrayListRotateStringRightbyNMethods("abcdef");
     }
 }

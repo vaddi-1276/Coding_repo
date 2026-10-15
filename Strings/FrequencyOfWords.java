@@ -12,14 +12,11 @@ import java.util.Collections;
 // Testing = 1
 
 class UsingNestedForLoopFrequencyOfWords {
-
     public static void UsingNestedForLoopFrequencyOfWordsMethods(String str) {
-
         String words[] = str.split(" ");
         for (int i = 0; i < words.length; i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
-
                 if (words[i].equals(words[j])) {
                     found = true;
                     break;
@@ -36,7 +33,6 @@ class UsingNestedForLoopFrequencyOfWords {
             }
             System.out.println(words[i] + " = " + count);
         }
-
     }
 }
 
@@ -107,8 +103,10 @@ public class FrequencyOfWords {
     public static void main(String[] args) {
         UsingNestedForLoopFrequencyOfWords
                 .UsingNestedForLoopFrequencyOfWordsMethods("Java Selenium Java Testing Selenium Java");
-        UsingArrayListFrequencyofWords
-                .UsingArrayListFrequencyofWordsMethods("Java Selenium Java Testing Selenium Java");
-        UsingCollectionsFrequency.UsingCollectionsFrequencyMethods("Java Selenium Java Testing Selenium Java");
+        // UsingArrayListFrequencyofWords
+        // .UsingArrayListFrequencyofWordsMethods("Java Selenium Java Testing Selenium
+        // Java");
+        // UsingCollectionsFrequency.UsingCollectionsFrequencyMethods("Java Selenium
+        // Java Testing Selenium Java");
     }
 }

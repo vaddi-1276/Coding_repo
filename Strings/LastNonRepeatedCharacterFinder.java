@@ -11,7 +11,6 @@ import java.util.ArrayList;
 class LastNonRepeatedUsingNestedLoop {
 
     public static void findUsingNestedLoop(String str) {
-
         for (int i = str.length() - 1; i >= 0; i--) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
@@ -74,6 +73,7 @@ class LastNonRepeatedUsingArrayList {
 public class LastNonRepeatedCharacterFinder {
     public static void main(String[] args) {
         LastNonRepeatedUsingNestedLoop.findUsingNestedLoop("programming");
-        LastNonRepeatedUsingArrayList.findUsingArrayList("programming");
+        // LastNonRepeatedUsingArrayList.findUsingArrayList("programming");
     }
 }
+

@@ -12,29 +12,33 @@ import java.util.ArrayList;
 
 class CharacterTypeUsingLoop {
     public static void countUsingLoop(String str) {
-        int countofalphabets = 0;
-        int countofdigits = 0;
-        int countofspecialcharacters = 0;
+        int countofalphabets=0;
+        int countofdigits=0;
+        int countofspecialcharacters=0;
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
 
-            if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') {
+            if(ch>='A' && ch<='Z' || ch=='a' && ch<='z')
+            {
                 countofalphabets++;
             }
 
-            else if (ch >= '0' && ch <= '9') {
+            else if(ch>='0' && ch<='9')
+            {
                 countofdigits++;
             }
 
-            else if (!(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9')) {
+            else if(!(ch>='A' && ch<='Z' || ch>='a' && ch<='z' || ch>='0' && ch<='9'))
+            {
                 countofspecialcharacters++;
             }
         }
 
-        System.out.println("Count of Alphabets = " + countofalphabets);
-        System.out.println("Count of Digits = " + countofdigits);
-        System.out.println("Count of Special Charcaters = " + countofspecialcharacters);
+        System.out.println("Count of Alphabets Characaters "+countofalphabets);
+        System.out.println("Count of Digits = "+countofdigits);
+        System.out.println("Count of Special Characters = "+countofspecialcharacters);
     }
 }
 
@@ -136,12 +140,13 @@ public class CharacterTypeCounter {
 
         System.out.println();
 
-        UsingRecursionCharacterTypeCounter.UsingRecursionCharacterTypeCounterMethods("Java123@#", 0, 0, 0, 0);
+        // UsingRecursionCharacterTypeCounter.UsingRecursionCharacterTypeCounterMethods("Java123@#",
+        // 0, 0, 0, 0);
 
-        System.out.print(
-                "--------------------------------------------------------------------------------------------------------------");
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
 
-        System.out.println();
+        // System.out.println();
 
         // CharacterTypeUsingCharacterMethods.countUsingCharacterMethods("JAVA!@#$*(1234567");
         // CharacterTypeUsingArrayList.countUsingArrayList("JAVA!@#$*(1234567");

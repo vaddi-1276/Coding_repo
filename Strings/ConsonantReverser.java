@@ -12,32 +12,35 @@ import java.util.Collections;
 class ConsonantReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
 
-        String consantsString = "";
+        String onlyconsantsString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (ch != 'A' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U' && ch != 'a' && ch != 'e' && ch != 'i'
                     && ch != 'o' && ch != 'u') {
-                consantsString = consantsString + ch;
+
+                onlyconsantsString = onlyconsantsString + ch;
             }
         }
-        System.out.println(consantsString);
-        String reverse_consantsString = "";
-        for (int i = consantsString.length() - 1; i >= 0; i--) {
-            reverse_consantsString = reverse_consantsString + consantsString.charAt(i);
-        }
-        System.out.println(reverse_consantsString);
 
-        String result = "";
+        String reverseonlyconsantsString = "";
+        for (int i = onlyconsantsString.length() - 1; i >= 0; i--) {
+            reverseonlyconsantsString = reverseonlyconsantsString + onlyconsantsString.charAt(i);
+        }
+
         int index = 0;
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (ch != 'A' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U' && ch != 'a' && ch != 'e' && ch != 'i'
-                    && ch != 'o' && ch != 'u') {
-                result = result + reverse_consantsString.charAt(index++);
+                    && ch != 'o' && ch != 'u')
+
+            {
+                result = result + reverseonlyconsantsString.charAt(index++);
             } else {
                 result = result + ch;
             }
-
         }
         System.out.println(result);
     }
@@ -116,7 +119,7 @@ class ConsonantReversalUsingCollections {
 public class ConsonantReverser {
     public static void main(String[] args) {
         ConsonantReversalUsingLoop.reverseUsingLoop("Automation");
-        ConsonantReversalUsingArrayList.reverseUsingArrayList("Automation");
-        ConsonantReversalUsingCollections.reverseUsingCollections("Automation");
+        // ConsonantReversalUsingArrayList.reverseUsingArrayList("Automation");
+        // ConsonantReversalUsingCollections.reverseUsingCollections("Automation");
     }
 }

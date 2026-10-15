@@ -10,14 +10,16 @@ import java.util.ArrayList;
 class UsingNestedForLoopFindNumberOccurrencesCharacter {
     public static void UsingNestedForLoopFindNumberOccurrencesCharacterMethods(String str) {
 
-        char ch = 'a';
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == ch) {
+        char ch='a';
+        int count=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)==ch)
+            {
                 count++;
             }
         }
-        System.out.println(ch + " = " + count);
+        System.out.println(count);
     }
 }
 
@@ -56,8 +58,8 @@ public class FindNumberOccurrencesCharacter {
     public static void main(String[] args) {
         UsingNestedForLoopFindNumberOccurrencesCharacter
                 .UsingNestedForLoopFindNumberOccurrencesCharacterMethods("automation");
-        UsingArrayListFindNumberOccurrencesCharacter.UsingArrayListFindNumberOccurrencesCharacterMethods("automation");
-        UsingRecursionFindNumberOccurrencesCharacter.UsingRecursionFindNumberOccurrencesCharacterMethods("automation",
-                0, 'a',0);
+        // UsingArrayListFindNumberOccurrencesCharacter.UsingArrayListFindNumberOccurrencesCharacterMethods("automation");
+        // UsingRecursionFindNumberOccurrencesCharacter.UsingRecursionFindNumberOccurrencesCharacterMethods("automation",
+        //         0, 'a',0);
     }
 }

@@ -5,13 +5,12 @@ package Strings;
 
 class UsingNestedForLoopPrintCharactersatOddPositions {
     public static void UsingNestedForLoopPrintCharactersatOddPositionsMethods(String str) {
-        String finalvalue = "";
         for (int i = 0; i < str.length(); i++) {
             if (i % 2 != 0) {
-                finalvalue = finalvalue + str.charAt(i);
+                System.out.print(str.charAt(i));
             }
         }
-        System.out.println(finalvalue);
+        System.out.println();
     }
 }
 
@@ -35,7 +34,8 @@ public class PrintCharactersatOddPositions {
         UsingNestedForLoopPrintCharactersatOddPositions
                 .UsingNestedForLoopPrintCharactersatOddPositionsMethods("Selenium");
 
-        UsingRecursionPrintCharactersatOddPositions.UsingRecursionPrintCharactersatOddPositionsMethods("Selenium", 0,
-                "");
+        // UsingRecursionPrintCharactersatOddPositions.UsingRecursionPrintCharactersatOddPositionsMethods("Selenium",
+        // 0,
+        // "");
     }
 }

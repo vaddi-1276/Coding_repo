@@ -5,18 +5,20 @@ package Strings;
 
 class UsingNestedForLoopFindSumofDigitsinString {
     public static void UsingNestedForLoopFindSumofDigitsinStringMethods(String str) {
+        String onlydigitsString = "";
 
-        String onlydigit = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (Character.isDigit(ch)) {
-                onlydigit = onlydigit + ch;
+                onlydigitsString = onlydigitsString + ch;
             }
         }
+
         int sum = 0;
-        for (int i = 0; i < onlydigit.length(); i++) {
-            char ch = onlydigit.charAt(i);
+        for (int i = 0; i < onlydigitsString.length(); i++) {
+            char ch = onlydigitsString.charAt(i);
+
             sum = sum + ch - '0';
         }
         System.out.println(sum);
@@ -32,7 +34,7 @@ class UsingRecursionFindSumofDigitsinString {
         char ch = str.charAt(index);
         if (Character.isDigit(ch)) {
             onlydigit = onlydigit + ch;
-            sum=sum+ch-'0';
+            sum = sum + ch - '0';
         }
         UsingRecursionFindSumofDigitsinStringMethods(str, index + 1, onlydigit, sum);
     }
@@ -42,8 +44,8 @@ public class FindSumofDigitsinString {
     public static void main(String[] args) {
         UsingNestedForLoopFindSumofDigitsinString
                 .UsingNestedForLoopFindSumofDigitsinStringMethods("Java123Testing45");
-        UsingRecursionFindSumofDigitsinString.UsingRecursionFindSumofDigitsinStringMethods("Java123Testing45",
-         0, "",
-                0);
+        // UsingRecursionFindSumofDigitsinString.UsingRecursionFindSumofDigitsinStringMethods("Java123Testing45",
+        // 0, "",
+        // 0);
     }
 }

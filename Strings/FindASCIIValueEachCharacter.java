@@ -10,9 +10,12 @@ import java.util.ArrayList;
 
 class UsingForLoopFindASCIIValueEachCharacter {
     public static void UsingForLoopFindASCIIValueEachCharacterMethods(String str) {
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            System.out.println(ch + " = " + (int) ch);
+       
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+
+            System.out.println(ch+" = "+(int)ch);
         }
     }
 }
@@ -47,8 +50,8 @@ public class FindASCIIValueEachCharacter {
     public static void main(String[] args) {
         UsingForLoopFindASCIIValueEachCharacter.UsingForLoopFindASCIIValueEachCharacterMethods("ABC");
         System.out.println("----------------------------------------------------------------------");
-        UsingArrayListFindASCIIValueEachCharacter.UsingArrayListFindASCIIValueEachCharacterMethods("ABCD");
-        System.out.println("----------------------------------------------------------------------");
-        UsingRecursionFindASCIIValueEachCharacter.UsingRecursionFindASCIIValueEachCharacterMethods("ABCDE", 0);
+        // UsingArrayListFindASCIIValueEachCharacter.UsingArrayListFindASCIIValueEachCharacterMethods("ABCD");
+        // System.out.println("----------------------------------------------------------------------");
+        // UsingRecursionFindASCIIValueEachCharacter.UsingRecursionFindASCIIValueEachCharacterMethods("ABCDE", 0);
     }
 }

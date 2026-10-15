@@ -10,32 +10,35 @@ import java.util.ArrayList;
 
 class UsingchReverseEveryWordAndToggleCase {
     public static void UsingchReverseEveryWordAndToggleCaseMethods(String str) {
-
         String words[] = str.split(" ");
         String reverseString = "";
+
         for (int i = 0; i < words.length; i++) {
             for (int j = words[i].length() - 1; j >= 0; j--) {
                 reverseString = reverseString + words[i].charAt(j);
             }
+
             reverseString = reverseString + " ";
         }
-        String finalvalue = "";
+
+        String finalresult = "";
         for (int i = 0; i < reverseString.length(); i++) {
             char ch = reverseString.charAt(i);
 
             if (ch == ' ') {
-                finalvalue = finalvalue + " ";
-            }
-
-            else if (ch >= 'A' && ch <= 'Z') {
-                finalvalue = finalvalue + (char) (ch + 32);
+                finalresult = finalresult + " ";
             }
 
             else if (ch >= 'a' && ch <= 'z') {
-                finalvalue = finalvalue + (char) (ch - 32);
+                finalresult = finalresult + (char) (ch - 32);
+            }
+
+            else if (ch >= 'A' && ch <= 'Z') {
+                finalresult = finalresult + (char) (ch + 32);
             }
         }
-        System.out.println(finalvalue);
+
+        System.out.println(finalresult);
     }
 }
 
@@ -100,9 +103,10 @@ class UsingArrayListReverseEveryWordAndToggleCase {
 public class ReverseEveryWordAndToggleCase {
     public static void main(String[] args) {
         UsingchReverseEveryWordAndToggleCase.UsingchReverseEveryWordAndToggleCaseMethods("Java Selenium Testing");
-        UsingStringBuilderReverseEveryWordAndToggleCase
-                .UsingStringBuilderReverseEveryWordAndToggleCaseMethods("Java Selenium Testing");
-        UsingArrayListReverseEveryWordAndToggleCase
-                .UsingArrayListReverseEveryWordAndToggleCaseMethods("Java Selenium Testing");
+        // UsingStringBuilderReverseEveryWordAndToggleCase
+        // .UsingStringBuilderReverseEveryWordAndToggleCaseMethods("Java Selenium
+        // Testing");
+        // UsingArrayListReverseEveryWordAndToggleCase
+        // .UsingArrayListReverseEveryWordAndToggleCaseMethods("Java Selenium Testing");
     }
 }

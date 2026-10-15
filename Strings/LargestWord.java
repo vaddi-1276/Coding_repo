@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 class UsingTempVariableClass {
     public static void UsingTempVariableMethods(String str) {
-
         String words[] = str.split(" ");
         for (int i = 0; i < words.length; i++) {
             for (int j = i + 1; j < words.length; j++) {
@@ -22,28 +21,22 @@ class UsingTempVariableClass {
             }
         }
 
-        System.out.println(words[words.length - 1]);
+        System.out.println("Largest Word Using Temp = " + words[words.length - 1]);
     }
 }
 
 class UsingStoreVariableClass {
-
     public static void UsingStoreVariableMethods(String str) {
-
+        int largestwordlength = Integer.MIN_VALUE;
+        String largestwordString = "";
         String words[] = str.split(" ");
-        String LargestWord = "";
-        int LargestWordLength = Integer.MIN_VALUE;
         for (int i = 0; i < words.length; i++) {
-
-            if (words[i].length() > LargestWordLength) {
-                LargestWordLength = words[i].length();
-                LargestWord = words[i];
-
+            if (words[i].length() > largestwordlength) {
+                largestwordlength = words[i].length();
+                largestwordString = words[i];
             }
-
         }
-        System.out.println(LargestWord);
-        System.out.println(LargestWordLength);
+        System.out.println("Largest Word Using Extra Variables = " + largestwordString);
     }
 }
 
@@ -73,7 +66,7 @@ public class LargestWord {
     public static void main(String[] args) {
         UsingTempVariableClass.UsingTempVariableMethods("Java Selenium Automation");
         UsingStoreVariableClass.UsingStoreVariableMethods("Java Selenium Automation");
-        UsingArrayListForLargestWord
-                .UsingArrayListForLargestWordMethods("Java Selenium Automation");
+        // UsingArrayListForLargestWord
+        // .UsingArrayListForLargestWordMethods("Java Selenium Automation");
     }
 }

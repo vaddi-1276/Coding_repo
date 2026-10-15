@@ -11,22 +11,24 @@ import java.util.Collections;
 
 class ReverseAndToggleUsingLoop {
     public static void transformUsingLoop(String str) {
-        String reverseString = "";
+        String ReverseString = "";
         for (int i = str.length() - 1; i >= 0; i--) {
-            reverseString = reverseString + str.charAt(i);
+            ReverseString = ReverseString + str.charAt(i);
         }
 
-        String finalvalue = "";
-        for (int i = 0; i < reverseString.length(); i++) {
-            char ch = reverseString.charAt(i);
+        String result = "";
+        for (int i = 0; i < ReverseString.length(); i++) {
+            char ch = ReverseString.charAt(i);
 
             if (i % 2 == 0) {
-                finalvalue = finalvalue + Character.toUpperCase(ch);
-            } else {
-                finalvalue = finalvalue + ch;
+                result = result + (char) (ch - 32);
+            }
+
+            else {
+                result = result + ch;
             }
         }
-        System.out.println(finalvalue);
+        System.out.println(result);
     }
 }
 
@@ -76,7 +78,7 @@ class ReverseAndToggleUsingASCII {
 public class ReverseAndToggleCase {
     public static void main(String[] args) {
         ReverseAndToggleUsingLoop.transformUsingLoop("abcdef");
-        ReverseAndToggleUsingArrayList.transformUsingArrayList("defghi");
-        ReverseAndToggleUsingASCII.transformUsingASCII("abcdef");
+        // ReverseAndToggleUsingArrayList.transformUsingArrayList("defghi");
+        // ReverseAndToggleUsingASCII.transformUsingASCII("abcdef");
     }
 }

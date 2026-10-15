@@ -6,16 +6,15 @@ package Strings;
 
 class UsingForLoopRemoveFirstCharacter {
     public static void UsingForLoopRemoveFirstCharacterMethods(String str) {
-
-        String finalvalue = "";
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
             if (i == 0) {
                 continue;
             } else {
-                finalvalue = finalvalue + str.charAt(i);
+                result = result + str.charAt(i);
             }
         }
-        System.out.println(finalvalue);
+        System.out.println(result);
     }
 }
 
@@ -39,6 +38,7 @@ class UsingRecursionRemoveFirstCharacter {
 public class RemoveFirstCharacter {
     public static void main(String[] args) {
         UsingForLoopRemoveFirstCharacter.UsingForLoopRemoveFirstCharacterMethods("Selenium");
-        UsingRecursionRemoveFirstCharacter.UsingRecursionRemoveFirstCharacterMethods("Selenium", 0, "");
+        // UsingRecursionRemoveFirstCharacter.UsingRecursionRemoveFirstCharacterMethods("Selenium",
+        // 0, "");
     }
 }

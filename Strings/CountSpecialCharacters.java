@@ -6,11 +6,10 @@ package Strings;
 
 class UsingCharCountSpecialCharacters {
     public static void UsingCharCountSpecialCharactersMethods(String str) {
+
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
-            if (!(ch >= 'A' && ch <= 'Z') && !(ch >= 'a' && ch <= 'z') && !(ch >= '0' && ch <= '9')) {
+            if (!(Character.isLetterOrDigit(str.charAt(i)))) {
                 count++;
             }
         }
@@ -50,8 +49,8 @@ class UsingRecursionCountSpecialCharacters {
 public class CountSpecialCharacters {
     public static void main(String[] args) {
         UsingCharCountSpecialCharacters.UsingCharCountSpecialCharactersMethods("Java@123#Selenium!");
-        UsingCharacterCountSpecialCharacters.UsingCharacterCountSpecialCharactersMethods("Java@123#Selenium!!@#$%^&*(");
-        UsingRecursionCountSpecialCharacters.UsingRecursionCountSpecialCharactersMethods("Java@123#Selenium!!@#$%^&*()",
-                0, 0);
+        // UsingCharacterCountSpecialCharacters.UsingCharacterCountSpecialCharactersMethods("Java@123#Selenium!!@#$%^&*(");
+        // UsingRecursionCountSpecialCharacters.UsingRecursionCountSpecialCharactersMethods("Java@123#Selenium!!@#$%^&*()",
+        // 0, 0);
     }
 }

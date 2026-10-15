@@ -12,18 +12,21 @@ class UsingNestedForLoopReverseWordsSortWords {
 
     public static void UsingNestedForLoopReverseWordsSortWordsMethods(String str) {
 
-        String result = "";
-        String words[] = str.split(" ");
+        String resultString="";
+        for(int i=str.length()-1;i>=0;i--)
+        {
+            char ch=str.charAt(i);
 
-        for (int i = words.length - 1; i >= 0; i--) {
-            for (int j = words[i].length() - 1; j >= 0; j--) {
-                result = result + words[i].charAt(j);
+            if(ch==' ')
+            {
+                resultString=resultString+" ";
             }
-            result = result + " ";
+            else 
+            {
+                resultString=resultString+ch;
+            }
         }
-        System.out.print(result);
-
-        System.out.println();
+        System.out.println(resultString);
     }
 }
 
@@ -56,7 +59,7 @@ class UsingArrayListCollectionsReverseSortWords {
 public class ReverseWordsSortWords {
     public static void main(String[] args) {
        UsingNestedForLoopReverseWordsSortWords.UsingNestedForLoopReverseWordsSortWordsMethods("Java Selenium Testing");
-        UsingArrayListCollectionsReverseSortWords
-        .UsingArrayListCollectionsReverseSortWordsMethods("Java Selenium Testing");
+        // UsingArrayListCollectionsReverseSortWords
+        // .UsingArrayListCollectionsReverseSortWordsMethods("Java Selenium Testing");
     }
 }

@@ -19,35 +19,35 @@ import java.util.HashMap;
 
 class CharacterFrequencyUsingNestedLoop {
     public static void findUsingNestedLoop(String str) {
-
         for (int i = 0; i < str.length(); i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
-
                 if (str.charAt(i) == str.charAt(j)) {
                     found = true;
                     break;
                 }
             }
+
             if (found) {
                 continue;
             }
+
             int count = 1;
             for (int k = i + 1; k < str.length(); k++) {
                 if (str.charAt(k) == str.charAt(i)) {
                     count++;
                 }
             }
+
             System.out.println(str.charAt(i) + " = " + count);
         }
-
-        System.out.println();
     }
 }
 
 class UsingCollectionsFrequencyCharacterFrequencyAnalyzer {
 
     public static void UsingCollectionsFrequencyCharacterFrequencyAnalyzerMethods(String str) {
+
         ArrayList<Character> list = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
@@ -62,13 +62,14 @@ class UsingCollectionsFrequencyCharacterFrequencyAnalyzer {
                 }
             }
 
-            if (found) {
+            if(found)
+            {
                 continue;
             }
 
-            int count = Collections.frequency(list, list.get(i));
+            int count=Collections.frequency(list, list.get(i));
 
-            System.out.println(list.get(i) + " = " + count);
+            System.out.println(list.get(i)+" = "+count);
         }
     }
 }
@@ -167,7 +168,8 @@ public class CharacterFrequencyAnalyzer {
         System.out.print(
                 "--------------------------------------------------------------------------------------------------------------");
 
-        UsingRecursionCharacterFrequencyAnalyzer.UsingRecursionCharacterFrequencyAnalyzerMethods("programming", 0);
+        // UsingRecursionCharacterFrequencyAnalyzer.UsingRecursionCharacterFrequencyAnalyzerMethods("programming",
+        // 0);
 
         // CharacterFrequencyUsingArrayList.findUsingArrayList("programming");
         // HashmapCharacterFrequencyAnalyzer.HashmapCharacterFrequencyAnalyzerMethods("TestingTeam");

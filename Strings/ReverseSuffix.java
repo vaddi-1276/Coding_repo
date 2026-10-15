@@ -11,12 +11,9 @@ import java.util.Collections;
 // abcfed
 
 class ReverseSuffixUsingLoop{
+    public static void reverseUsingLoop(String str,int position) {
 
-    public static void reverseUsingLoop(String str) {
-        
-        int position=3;
         String result="";
-
         for(int i=0;i<position;i++)
         {
             result=result+str.charAt(i);
@@ -83,8 +80,8 @@ class ReverseSuffixUsingArrayList{
 
 public class ReverseSuffix {
     public static void main(String[] args) {
-        ReverseSuffixUsingLoop.reverseUsingLoop("abcdef");
-        ReverseSuffixUsingSubstring.reverseUsingSubstring("abcdefg");
-        ReverseSuffixUsingArrayList.reverseUsingArrayList("123456");
+        ReverseSuffixUsingLoop.reverseUsingLoop("abcdef",3);
+        // ReverseSuffixUsingSubstring.reverseUsingSubstring("abcdefg");
+        // ReverseSuffixUsingArrayList.reverseUsingArrayList("123456");
     }
 }

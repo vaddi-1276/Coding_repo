@@ -9,29 +9,23 @@ import java.util.ArrayList;
 // Java Selenium Testing
 
 class UsingNestedForLoopRemoveDuplicateWords {
-
     public static void UsingNestedForLoopRemoveDuplicateWordsMethods(String str) {
-
         String words[] = str.split(" ");
-        String result = "";
         for (int i = 0; i < words.length; i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
-
                 if (words[i].equals(words[j])) {
                     found = true;
                     break;
                 }
             }
-
             if (found) {
                 continue;
             }
 
-            result = result + words[i];
-            result = result + " ";
+            System.out.print(words[i] + " ");
         }
-        System.out.println(result);
+        System.out.println();
     }
 }
 
@@ -68,7 +62,8 @@ public class RemoveDuplicateWords {
     public static void main(String[] args) {
         UsingNestedForLoopRemoveDuplicateWords
                 .UsingNestedForLoopRemoveDuplicateWordsMethods("Java Selenium Java Testing Selenium");
-        UsingArrayListRemoveDuplicateWords
-                .UsingArrayListRemoveDuplicateWordsMethods("Java Selenium Java Testing Selenium");
+        // UsingArrayListRemoveDuplicateWords
+        // .UsingArrayListRemoveDuplicateWordsMethods("Java Selenium Java Testing
+        // Selenium");
     }
 }

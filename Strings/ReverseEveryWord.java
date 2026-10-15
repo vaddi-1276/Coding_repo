@@ -10,18 +10,17 @@ import java.util.ArrayList;
 
 class ReverseWordsUsingNestedLoop {
     public static void reverseUsingNestedLoop(String str) {
-
         String words[] = str.split(" ");
         String result = "";
+
         for (int i = 0; i < words.length; i++) {
             for (int j = words[i].length() - 1; j >= 0; j--) {
                 result = result + words[i].charAt(j);
             }
-            result = result + " ";
+            result=result+" ";
         }
         System.out.println(result);
     }
-
 }
 
 class ReverseWordsUsingStringBuilder {
@@ -58,7 +57,7 @@ class ReverseWordsUsingArrayList {
 public class ReverseEveryWord {
     public static void main(String[] args) {
         ReverseWordsUsingNestedLoop.reverseUsingNestedLoop("Java Selenium Testing");
-        ReverseWordsUsingStringBuilder.reverseUsingStringBuilder("Python Java");
-        ReverseWordsUsingArrayList.reverseUsingArrayList("Selenium Testing");
+        // ReverseWordsUsingStringBuilder.reverseUsingStringBuilder("Python Java");
+        // ReverseWordsUsingArrayList.reverseUsingArrayList("Selenium Testing");
     }
 }

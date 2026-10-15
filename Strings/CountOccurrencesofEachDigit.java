@@ -16,6 +16,7 @@ class UsingNestedForLoopCountOccurrencesofEachDigit {
 
         for (int i = 0; i < str.length(); i++) {
             boolean found = false;
+
             for (int j = 0; j < i; j++) {
                 if (str.charAt(i) == str.charAt(j)) {
                     found = true;
@@ -25,12 +26,14 @@ class UsingNestedForLoopCountOccurrencesofEachDigit {
             if (found) {
                 continue;
             }
+
             int count = 1;
             for (int k = i + 1; k < str.length(); k++) {
                 if (str.charAt(k) == str.charAt(i)) {
                     count++;
                 }
             }
+
             System.out.println(str.charAt(i) + " = " + count);
         }
     }
@@ -70,7 +73,7 @@ public class CountOccurrencesofEachDigit {
     public static void main(String[] args) {
         UsingNestedForLoopCountOccurrencesofEachDigit
                 .UsingNestedForLoopCountOccurrencesofEachDigitMethods("111222333444555");
-        UsingArrayListCountOccurrencesofEachDigit
-                .UsingArrayListCountOccurrencesofEachDigitMethods("11112222333344445555");
+        // UsingArrayListCountOccurrencesofEachDigit
+        // .UsingArrayListCountOccurrencesofEachDigitMethods("11112222333344445555");
     }
 }

@@ -11,22 +11,26 @@ import java.util.ArrayList;
 
 class VowelConsonantUsingLoop {
     public static void countUsingLoop(String str) {
-        int countofVowels = 0;
-        int countofConsants = 0;
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
-                    || ch == 'o' || ch == 'u') {
-                countofVowels++;
+
+        int vowelscount=0;
+        int constantscount=0;
+
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+
+            if("aeiouAEIOU".indexOf(ch)!=-1)
+            {
+                vowelscount++;
             }
 
-            else if (ch != 'A' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U' && ch != 'a' && ch != 'e'
-                    && ch != 'i' && ch != 'o' && ch != 'u') {
-                countofConsants++;
+            else if("aeiouAEIOU".indexOf(ch)==-1)
+            {
+                constantscount++;
             }
         }
-        System.out.println("Count of Vowels = " + countofVowels);
-        System.out.println("Count of Consants = " + countofConsants);
+        System.out.println("Vowels Count "+vowelscount);
+        System.out.println("Consonants Count "+constantscount);
     }
 }
 
@@ -58,6 +62,6 @@ class VowelConsonantUsingArrayList {
 public class VowelConsonantCounter {
     public static void main(String[] args) {
         VowelConsonantUsingLoop.countUsingLoop("automation");
-        VowelConsonantUsingArrayList.countUsingArrayList("abcdefghijklmnopqrstuvwxyz");
+        // VowelConsonantUsingArrayList.countUsingArrayList("abcdefghijklmnopqrstuvwxyz");
     }
 }

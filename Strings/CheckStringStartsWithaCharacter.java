@@ -10,6 +10,7 @@ class UsingForLoopCheckStringStartsWithaCharacter {
 
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (i == 0) {
                 if (ch == letter) {
                     System.out.println("Yes");
@@ -43,6 +44,7 @@ class UsingRecursionCheckStringStartsWithaCharacter {
 public class CheckStringStartsWithaCharacter {
     public static void main(String[] args) {
         UsingForLoopCheckStringStartsWithaCharacter.UsingForLoopCheckStringStartsWithaCharacterMethods("Selenium", 'S');
-        UsingRecursionCheckStringStartsWithaCharacter.UsingRecursionCheckStringStartsWithaCharacterMethods("Selenium", 0, 'L');
+        // UsingRecursionCheckStringStartsWithaCharacter.UsingRecursionCheckStringStartsWithaCharacterMethods("Selenium",
+        //         0, 'L');
     }
 }

@@ -10,10 +10,8 @@ import java.util.ArrayList;
 class AlternateWordReversalUsingLoop {
 
     public static void reverseUsingLoop(String str) {
-
         String words[] = str.split(" ");
         String result = "";
-
         for (int i = 0; i < words.length; i++) {
             if (i % 2 == 0) {
                 for (int j = words[i].length() - 1; j >= 0; j--) {
@@ -22,10 +20,8 @@ class AlternateWordReversalUsingLoop {
             } else {
                 result = result + words[i];
             }
-
-            result = result + " ";
+            result=result+" ";
         }
-
         System.out.println(result);
     }
 }
@@ -99,11 +95,12 @@ public class AlternateWordReverser {
         System.out.println(
                 "-------------------------------------------------------------------------------------------------");
 
-        UsingRecursionAlternateWordReverser
-                .UsingRecursionAlternateWordReverserMethods("Java Selenium Testing Automation", 0, "");
+        // UsingRecursionAlternateWordReverser
+        // .UsingRecursionAlternateWordReverserMethods("Java Selenium Testing
+        // Automation", 0, "");
 
-        System.out.println(
-                "-------------------------------------------------------------------------------------------------");
+        // System.out.println(
+        // "-------------------------------------------------------------------------------------------------");
         // AlternateWordReversalUsingStringBuilder.reverseUsingStringBuilder("Python
         // Selenium Testing Automation");
         // AlternateWordReversalUsingArrayList.reverseUsingArrayList("Javascript

@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 class UsingNestedForLoopSortWithoutUsingArrays_sort {
     public static void UsingNestedForLoopSortWithoutUsingArrays_sortMethods(int arr[]) {
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -27,10 +26,12 @@ class UsingNestedForLoopSortWithoutUsingArrays_sort {
 
 class UsingRecursionSortWithoutUsingArrays_sort {
     public static void UsingRecursionSortWithoutUsingArrays_sortMethods(int arr[], int index) {
+
         if (index == arr.length) {
             System.out.println(Arrays.toString(arr));
             return;
         }
+
         for (int j = index + 1; j < arr.length; j++) {
             if (arr[index] > arr[j]) {
                 int temp = arr[index];
@@ -82,12 +83,12 @@ public class SortWithoutUsingArrays_sort {
 
         System.out.println();
 
-        UsingArrayListSortWithoutUsingArrays_sort.UsingArrayListSortWithoutUsingArrays_sortMethods(arr);
+        // UsingArrayListSortWithoutUsingArrays_sort.UsingArrayListSortWithoutUsingArrays_sortMethods(arr);
 
-        System.out.print(
-        "--------------------------------------------------------------------------------------------------------------");
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
 
-        System.out.println();
+        // System.out.println();
 
     }
 }

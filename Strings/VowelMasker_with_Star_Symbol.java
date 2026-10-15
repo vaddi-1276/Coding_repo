@@ -10,16 +10,19 @@ import java.util.ArrayList;
 
 class VowelMaskingUsingLoop {
     public static void maskUsingLoop(String str) {
+        String result="";
 
-        String result = "";
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
 
-            if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
-                    || ch == 'o' || ch == 'u') {
-                result = result + "*";
-            } else {
-                result = result + ch;
+            if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+            {
+                result=result+"*";
+            }
+            else
+            {
+                result=result+ch;
             }
         }
         System.out.println(result);
@@ -53,6 +56,6 @@ class VowelMaskingUsingArrayList {
 public class VowelMasker_with_Star_Symbol {
     public static void main(String[] args) {
         VowelMaskingUsingLoop.maskUsingLoop("automation");
-        VowelMaskingUsingArrayList.maskUsingArrayList("automation");
+       // VowelMaskingUsingArrayList.maskUsingArrayList("automation");
     }
 }

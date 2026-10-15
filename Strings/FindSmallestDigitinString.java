@@ -6,20 +6,25 @@ package Strings;
 class UsingNestedForLoopFindSmallestDigitinString {
     public static void UsingNestedForLoopFindSmallestDigitinStringMethods(String str) {
 
-        String onlyDigit = "";
+        String onlynumbersString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (Character.isDigit(ch)) {
-                onlyDigit = onlyDigit + ch;
+                onlynumbersString = onlynumbersString + ch;
             }
         }
-        int firstsmallest = Integer.MAX_VALUE;
-        for (int i = 0; i < onlyDigit.length(); i++) {
-            if (onlyDigit.charAt(i) - '0' < firstsmallest) {
-                firstsmallest = onlyDigit.charAt(i) - '0';
+        System.out.println(onlynumbersString);
+        int smallestdigit = Integer.MAX_VALUE;
+
+        for (int i = 0; i < onlynumbersString.length(); i++) {
+            char ch = onlynumbersString.charAt(i);
+
+            if (ch - '0' < smallestdigit) {
+                smallestdigit = ch-'0';
             }
         }
-        System.out.println(firstsmallest);
+        System.out.println(smallestdigit);
     }
 }
 
@@ -45,7 +50,8 @@ public class FindSmallestDigitinString {
     public static void main(String[] args) {
         UsingNestedForLoopFindSmallestDigitinString
                 .UsingNestedForLoopFindSmallestDigitinStringMethods("Java583Testing24");
-        UsingRecursionFindSmallestDigitinString.UsingRecursionFindSmallestDigitinStringMethods("Java583Testing24", 0,
-                Integer.MAX_VALUE);
+        // UsingRecursionFindSmallestDigitinString.UsingRecursionFindSmallestDigitinStringMethods("Java583Testing24",
+        // 0,
+        // Integer.MAX_VALUE);
     }
 }

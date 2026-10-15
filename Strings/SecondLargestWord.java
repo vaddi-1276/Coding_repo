@@ -36,33 +36,27 @@ class UsingTwoVariablesForSecondLargestWord {
     public static void UsingTwoVariablesForSecondLargestWordMethods(String str) {
 
         String words[] = str.split(" ");
-        String firstlargestword = words[0];
-        String secondlargestword = words[0];
+
+        String firstlargestwordString = words[0];
+        String secondlargestwordString = words[0];
 
         int firstlargestwordlength = Integer.MIN_VALUE;
         int secondlargestwordlength = Integer.MIN_VALUE;
 
         for (int i = 0; i < words.length; i++) {
-
             if (words[i].length() > firstlargestwordlength) {
                 secondlargestwordlength = firstlargestwordlength;
-                secondlargestword = firstlargestword;
-
+                secondlargestwordString = firstlargestwordString;
                 firstlargestwordlength = words[i].length();
-                firstlargestword = words[i];
-            }
 
-            else if (words[i].length() > secondlargestwordlength) {
+                firstlargestwordString = words[i];
+            } else if (words[i].length() > secondlargestwordlength && firstlargestwordlength != words[i].length()) {
                 secondlargestwordlength = words[i].length();
-                secondlargestword = words[i];
+                secondlargestwordString = words[i];
             }
         }
-
-        System.out.println("First Largest Word Length " + firstlargestwordlength);
-        System.out.println("First Largest Word " + firstlargestword);
-
-        System.out.println("Second Largest Word Length " + secondlargestwordlength);
-        System.out.println("First Largest Word " + secondlargestword);
+        System.out.println("First Largest Word = " + firstlargestwordString);
+        System.out.println("Second Largest Word = " + secondlargestwordString);
     }
 }
 
@@ -105,11 +99,13 @@ class UsingArrayListForSecondLargestWord {
 
 public class SecondLargestWord {
     public static void main(String[] args) {
-        UsingTempVariableForSecondLargestWord
-                .UsingTempVariableForSecondLargestWordMethods("Java Selenium Automation Testing");
+        // UsingTempVariableForSecondLargestWord
+        // .UsingTempVariableForSecondLargestWordMethods("Java Selenium Automation
+        // Testing");
         UsingTwoVariablesForSecondLargestWord
                 .UsingTwoVariablesForSecondLargestWordMethods("Java Selenium Automation Testing");
-        UsingArrayListForSecondLargestWord
-                .UsingArrayListForSecondLargestWordMethods("Java Selenium Automation Testing");
+        // UsingArrayListForSecondLargestWord
+        // .UsingArrayListForSecondLargestWordMethods("Java Selenium Automation
+        // Testing");
     }
 }

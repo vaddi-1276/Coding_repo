@@ -8,22 +8,26 @@ import java.util.ArrayList;
 // Apple
 // is
 // an
+// and
 // Orange
 
 class UsingNestedForLoopExtractWordsStartingWithaVowel {
     public static void UsingNestedForLoopExtractWordsStartingWithaVowelMethods(String str) {
 
         String words[] = str.split(" ");
+        String resultString="";
+
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
 
             if (word.charAt(0) == 'A' || word.charAt(0) == 'E' || word.charAt(0) == 'I' || word.charAt(0) == 'O'
                     || word.charAt(0) == 'U' || word.charAt(0) == 'a' || word.charAt(0) == 'e' || word.charAt(0) == 'i'
-                    || word.charAt(0) == 'o' || word.charAt(0) == 'u') {
-                System.out.print(word + " ");
+                    || word.charAt(0) == 'o'||word.charAt(0)=='u') {
+                        resultString=resultString+words[i];
             }
+            resultString=resultString+" ";
         }
-        System.out.println();
+        System.out.println(resultString);
     }
 }
 
@@ -61,7 +65,7 @@ class UsingRecursionExtractWordsStartingWithaVowel {
                 || word.charAt(0) == 'U' || word.charAt(0) == 'a' || word.charAt(0) == 'e' || word.charAt(0) == 'i'
                 || word.charAt(0) == 'o' || word.charAt(0) == 'u') {
 
-            System.out.print(word+" ");
+            System.out.print(word + " ");
         }
         UsingRecursionExtractWordsStartingWithaVowelMethods(str, words, index + 1);
     }
@@ -71,10 +75,12 @@ public class ExtractWordsStartingWithaVowel {
     public static void main(String[] args) {
         UsingNestedForLoopExtractWordsStartingWithaVowel
                 .UsingNestedForLoopExtractWordsStartingWithaVowelMethods("Apple is an Orange and Banana");
-        UsingArrayListExtractWordsStartingWithaVowel
-                .UsingArrayListExtractWordsStartingWithaVowelMethods("Apple is an Orange and Banana");
-        UsingRecursionExtractWordsStartingWithaVowel.UsingRecursionExtractWordsStartingWithaVowelMethods(
-                "Apple is an Orange and Banana", "Apple is an Orange and Banana".split(" "), 0);
-        System.out.println();
+        // UsingArrayListExtractWordsStartingWithaVowel
+        // .UsingArrayListExtractWordsStartingWithaVowelMethods("Apple is an Orange and
+        // Banana");
+        // UsingRecursionExtractWordsStartingWithaVowel.UsingRecursionExtractWordsStartingWithaVowelMethods(
+        // "Apple is an Orange and Banana", "Apple is an Orange and Banana".split(" "),
+        // 0);
+        // System.out.println();
     }
 }

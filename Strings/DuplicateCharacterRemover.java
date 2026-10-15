@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 class DuplicateRemovalUsingNestedLoop {
     public static void removeUsingNestedLoop(String str) {
+
         for (int i = 0; i < str.length(); i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
@@ -74,7 +75,7 @@ class for_loop_class {
 public class DuplicateCharacterRemover {
     public static void main(String[] args) {
         DuplicateRemovalUsingNestedLoop.removeUsingNestedLoop("programming");
-        DuplicateRemovalUsingArrayList.removeUsingArrayList("programming");
-        for_loop_class.for_loop_methods("programming");
+        // DuplicateRemovalUsingArrayList.removeUsingArrayList("programming");
+        // for_loop_class.for_loop_methods("programming");
     }
 }

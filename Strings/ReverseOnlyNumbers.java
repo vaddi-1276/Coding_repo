@@ -11,29 +11,26 @@ import java.util.Collections;
 
 class ReverseNumbersOnlyUsingForLoop {
     public static void ReverseNumbersOnlyUsingForLoopMethods(String str) {
-
-        String onlydigitvalue = "";
+        String onlydigitString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (ch >= '0' && ch <= '9') {
-                onlydigitvalue = onlydigitvalue + str.charAt(i);
+                onlydigitString = onlydigitString + ch;
             }
         }
-        String reverseonlydigitvalue = "";
-        for (int i = onlydigitvalue.length() - 1; i >= 0; i--) {
-            reverseonlydigitvalue = reverseonlydigitvalue + onlydigitvalue.charAt(i);
+        String reverseonlydigitString = "";
+        for (int i = onlydigitString.length() - 1; i >= 0; i--) {
+            reverseonlydigitString = reverseonlydigitString + onlydigitString.charAt(i);
         }
-
         int index = 0;
         String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (ch >= '0' && ch <= '9') {
-                result = result + reverseonlydigitvalue.charAt(index++);
-            }
-
-            else {
+                result = result + reverseonlydigitString.charAt(index++);
+            } else {
                 result = result + ch;
             }
         }
@@ -77,7 +74,7 @@ class ReverseNumberOnlyUsingArrayListCollectionsReverse {
 public class ReverseOnlyNumbers {
     public static void main(String[] args) {
         ReverseNumbersOnlyUsingForLoop.ReverseNumbersOnlyUsingForLoopMethods("Java123Selenium456");
-        ReverseNumberOnlyUsingArrayListCollectionsReverse
-                .ReverseNumberOnlyUsingArrayListCollectionsReverseMethods("Java123Selenium456");
+        // ReverseNumberOnlyUsingArrayListCollectionsReverse
+        // .ReverseNumberOnlyUsingArrayListCollectionsReverseMethods("Java123Selenium456");
     }
 }

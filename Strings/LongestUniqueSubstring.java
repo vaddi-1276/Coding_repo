@@ -9,8 +9,22 @@ package Strings;
 
 class UsingForLoopLongestUniqueSubstring {
     public static void UsingForLoopLongestUniqueSubstringMethods(String str) {
-
+        int longestlength=Integer.MIN_VALUE;
+        String longestuniqueString="";
         
+        for(int i=0;i<str.length();i++)
+        {
+            String uniqueString="";
+            boolean found=false;
+            for(int j=i;j<str.length();j++)
+            {
+                if(str.charAt(i)==str.charAt(j))
+                {
+                    found=true;
+                    break;
+                }
+            }
+        }
     }
 }
 

@@ -31,7 +31,6 @@ class UsingArraysSortCheckAnagramFrequencyMatch {
                 System.out.println("Not Anagram because values are not Equal");
                 return;
             }
-
         }
         System.out.println("Anagram");
     }
@@ -96,24 +95,25 @@ class UsingArrayListCheckAnagramFrequencyMatch {
 public class CheckAnagramFrequencyMatch {
     public static void main(String[] args) {
         UsingArraysSortCheckAnagramFrequencyMatch.UsingArraysSortCheckAnagramFrequencyMatchMethods("listen",
-                "appear");
+                "silent");
 
         System.out.print(
                 "--------------------------------------------------------------------------------------------------------------");
 
         System.out.println();
 
-        String str1 = "listen";
-        String str2 = "appear";
+        // String str1 = "listen";
+        // String str2 = "appear";
 
-        char arr1[] = str1.toCharArray();
-        char arr2[] = str2.toCharArray();
-        UsingRecursionCheckAnagramFrequencyMatch.UsingRecursionCheckAnagramFrequencyMatchMethods(arr1, arr2, 0);
+        // char arr1[] = str1.toCharArray();
+        // char arr2[] = str2.toCharArray();
+        // UsingRecursionCheckAnagramFrequencyMatch.UsingRecursionCheckAnagramFrequencyMatchMethods(arr1,
+        // arr2, 0);
 
-        System.out.print(
-                "--------------------------------------------------------------------------------------------------------------");
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
 
-        System.out.println();
+        // System.out.println();
 
         // UsingArrayListCheckAnagramFrequencyMatch.UsingArrayListCheckAnagramFrequencyMatchMethods("listen",
         // "silent");

@@ -7,11 +7,12 @@ package Strings;
 
 class UsingLoopCheckTwoStringsHaveSameLength {
     public static void UsingLoopCheckTwoStringsHaveSameLengthMethods(String str1, String str2) {
-
-        if (str1.length() != str2.length()) {
+        if(str1.length()!=str2.length())
+        {
             System.out.println("No");
-            return;
+            return ;
         }
+
         System.out.println("Yes");
     }
 }
@@ -31,8 +32,8 @@ class UsingMathabsCheckTwoStringsHaveSameLength {
 public class CheckTwoStringsHaveSameLength {
     public static void main(String[] args) {
         UsingLoopCheckTwoStringsHaveSameLength.UsingLoopCheckTwoStringsHaveSameLengthMethods("Java",
-                "Python");
-        UsingMathabsCheckTwoStringsHaveSameLength.UsingMathabsCheckTwoStringsHaveSameLengthMethods("Java", "Java");
+                "easy");
+        //UsingMathabsCheckTwoStringsHaveSameLength.UsingMathabsCheckTwoStringsHaveSameLengthMethods("Java", "Java");
 
     }
 }

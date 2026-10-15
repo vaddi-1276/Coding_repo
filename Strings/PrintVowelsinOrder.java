@@ -9,19 +9,19 @@ class UsingForLoopPrintVowelsinOrder {
     public static void UsingForLoopPrintVowelsinOrderMethods(String str) {
 
         char vowels[] = { 'a', 'e', 'i', 'o', 'u' };
-        for (int i = 0; i < vowels.length; i++) {
+        for (int i = 0; i < str.length(); i++) {
             boolean found = false;
-            for (int j = 0; j < str.length(); j++) {
-                if (str.charAt(j) == vowels[i]) {
+            for (int j = 0; j < vowels.length; j++) {
+                if (str.charAt(i) == vowels[j]) {
                     found = true;
                     break;
                 }
             }
-            if (found) {
-                System.out.print(vowels[i]);
+            if (found == true) {
+                System.out.println(str.charAt(i));
             }
+
         }
-        System.out.println();
     }
 }
 
@@ -70,7 +70,8 @@ class UsingRecursionPrintVowelsinOrder {
 public class PrintVowelsinOrder {
     public static void main(String[] args) {
         UsingForLoopPrintVowelsinOrder.UsingForLoopPrintVowelsinOrderMethods("programming");
-        UsingArrayListPrintVowelsinOrder.UsingArrayListPrintVowelsinOrderMethods("programming");
-        UsingRecursionPrintVowelsinOrder.UsingRecursionPrintVowelsinOrderMethods("programming", 0);
+        // UsingArrayListPrintVowelsinOrder.UsingArrayListPrintVowelsinOrderMethods("programming");
+        // UsingRecursionPrintVowelsinOrder.UsingRecursionPrintVowelsinOrderMethods("programming",
+        // 0);
     }
 }
