@@ -12,22 +12,24 @@ import java.util.Collections;
 
 class UsingForLoopReverseCountVowels {
     public static void UsingForLoopReverseCountVowelsMethods(String str) {
-
-        String reverseString = "";
+        String ReverseString = "";
         for (int i = str.length() - 1; i >= 0; i--) {
-            reverseString = reverseString + str.charAt(i);
+            ReverseString = ReverseString + str.charAt(i);
         }
-        System.out.println("Reverse = " + reverseString);
-        int countofVowels = 0;
-        for (int i = 0; i < reverseString.length(); i++) {
-            char ch = str.charAt(i);
+        System.out.println("Reverse = "+ReverseString);
 
-            if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
-                    || ch == 'o' || ch == 'u') {
-                countofVowels++;
+        int countofvowels=0;
+
+        for(int i=0;i<ReverseString.length();i++)
+        {
+            char ch=ReverseString.charAt(i);
+
+            if("AEIOUaeiou".indexOf(ch)!=-1)
+            {
+                countofvowels++;
             }
         }
-        System.out.println(countofVowels);
+        System.out.println("Vowels Count = "+countofvowels);
     }
 }
 
@@ -60,7 +62,7 @@ class UsingArrayListCollectionsReverseBuiltinReverseCountVowels {
 public class ReverseCountVowels {
     public static void main(String[] args) {
         UsingForLoopReverseCountVowels.UsingForLoopReverseCountVowelsMethods("automationaeiouAEIOU");
-        UsingArrayListCollectionsReverseBuiltinReverseCountVowels
-                .UsingArrayListCollectionsReverseBuiltinReverseCountVowelsMethods("automationaeiouAEIOU");
+        // UsingArrayListCollectionsReverseBuiltinReverseCountVowels
+        // .UsingArrayListCollectionsReverseBuiltinReverseCountVowelsMethods("automationaeiouAEIOU");
     }
 }

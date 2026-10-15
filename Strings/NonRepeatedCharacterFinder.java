@@ -16,7 +16,6 @@ class NonRepeatedUsingNestedLoops {
     public static void findUsingNestedLoops(String str) {
         for (int i = 0; i < str.length(); i++) {
             boolean found = false;
-
             for (int j = 0; j < i; j++) {
                 if (str.charAt(i) == str.charAt(j)) {
                     found = true;
@@ -26,6 +25,7 @@ class NonRepeatedUsingNestedLoops {
             if (found) {
                 continue;
             }
+
             int count = 1;
             for (int k = i + 1; k < str.length(); k++) {
                 if (str.charAt(k) == str.charAt(i)) {
@@ -34,10 +34,9 @@ class NonRepeatedUsingNestedLoops {
             }
 
             if (count == 1) {
-                System.out.print(str.charAt(i));
+                System.out.println(str.charAt(i));
             }
         }
-        System.out.println();
     }
 }
 
@@ -78,6 +77,6 @@ class NonRepeatedUsingArrayList {
 public class NonRepeatedCharacterFinder {
     public static void main(String[] args) {
         NonRepeatedUsingNestedLoops.findUsingNestedLoops("programming");
-        NonRepeatedUsingArrayList.findUsingArrayList("programming");
+        // NonRepeatedUsingArrayList.findUsingArrayList("programming");
     }
 }

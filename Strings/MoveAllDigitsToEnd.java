@@ -10,20 +10,20 @@ import java.util.ArrayList;
 
 class UsingForLoopMoveAllDigitsToEnd {
     public static void UsingForLoopMoveAllDigitsToEndMethods(String str) {
-
         String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
-            if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') {
+            if (Character.isLetter(ch)) {
                 result = result + ch;
             }
         }
-
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            if (Character.isDigit(ch)) {
-                result = result + ch;
+        
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+            if(Character.isDigit(ch))
+            {
+                result=result+ch;
             }
         }
         System.out.println(result);
@@ -61,6 +61,6 @@ class UsingArrayListMoveAllDigitsToEnd {
 public class MoveAllDigitsToEnd {
     public static void main(String[] args) {
         UsingForLoopMoveAllDigitsToEnd.UsingForLoopMoveAllDigitsToEndMethods("Java123Selenium456");
-        UsingArrayListMoveAllDigitsToEnd.UsingArrayListMoveAllDigitsToEndMethods("Java123Selenium456");
+        // UsingArrayListMoveAllDigitsToEnd.UsingArrayListMoveAllDigitsToEndMethods("Java123Selenium456");
     }
 }

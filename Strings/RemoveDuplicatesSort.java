@@ -12,12 +12,10 @@ import java.util.Arrays;
 
 class UsingForLoopRemoveDuplicatesSort {
     public static void UsingForLoopRemoveDuplicatesSortMethods(String str) {
-
-        String result = "";
+        String UniqueString = "";
         for (int i = 0; i < str.length(); i++) {
             boolean found = false;
             for (int j = 0; j < i; j++) {
-
                 if (str.charAt(i) == str.charAt(j)) {
                     found = true;
                     break;
@@ -26,18 +24,18 @@ class UsingForLoopRemoveDuplicatesSort {
             if (found) {
                 continue;
             }
-
-            result = result + str.charAt(i);
+            UniqueString = UniqueString + str.charAt(i);
         }
-        System.out.println("Unique = " + result);
-        char arr[] = result.toCharArray();
+        System.out.println("Unique = " + UniqueString);
+
+        String SortedString = "";
+        char arr[] = UniqueString.toCharArray();
         Arrays.sort(arr);
 
-        String sortedString = "";
         for (int i = 0; i < arr.length; i++) {
-            sortedString = sortedString + arr[i];
+            SortedString = SortedString + arr[i];
         }
-        System.out.println("Sorted = " + sortedString);
+        System.out.println("Sorted = " + SortedString);
     }
 }
 
@@ -85,6 +83,6 @@ class UsingArrayListRemoveDuplicatesSort {
 public class RemoveDuplicatesSort {
     public static void main(String[] args) {
         UsingForLoopRemoveDuplicatesSort.UsingForLoopRemoveDuplicatesSortMethods("programming");
-        UsingArrayListRemoveDuplicatesSort.UsingArrayListRemoveDuplicatesSortMethods("programming");
+        // UsingArrayListRemoveDuplicatesSort.UsingArrayListRemoveDuplicatesSortMethods("programming");
     }
 }

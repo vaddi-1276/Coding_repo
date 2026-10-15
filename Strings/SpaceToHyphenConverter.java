@@ -21,10 +21,11 @@ class SpaceToHyphenUsingLoop {
         String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
             if (ch == ' ') {
                 result = result + "-";
-            } else {
+            }
+
+            else {
                 result = result + ch;
             }
         }
@@ -57,6 +58,7 @@ public class SpaceToHyphenConverter {
     public static void main(String[] args) {
         SpaceToHyphenUsingReplace.convertUsingReplace("Java Selenium Testing");
         SpaceToHyphenUsingLoop.convertUsingLoop("Python Selenium Testing");
-        UsingArrayListSpaceToHyphenConverter.UsingArrayListSpaceToHyphenConverterMethods("Java Selenium Python");
+        // UsingArrayListSpaceToHyphenConverter.UsingArrayListSpaceToHyphenConverterMethods("Java
+        // Selenium Python");
     }
 }

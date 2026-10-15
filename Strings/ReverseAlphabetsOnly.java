@@ -11,35 +11,34 @@ import java.util.Collections;
 
 class ReverseAlphabetsUsingLoop {
     public static void reverseUsingLoop(String str) {
-
-        String alphabetsString = "";
-
+        String onlyalphabets = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
-            if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') {
-                alphabetsString = alphabetsString + ch;
+            if (Character.isLetter(ch)) {
+                onlyalphabets = onlyalphabets + ch;
             }
         }
-        String reversealphabetsString = "";
-
-        for (int i = alphabetsString.length() - 1; i >= 0; i--) {
-            char ch = alphabetsString.charAt(i);
-            reversealphabetsString = reversealphabetsString + ch;
+        String Reverseonlyalphabets = "";
+        for (int i = onlyalphabets.length() - 1; i >= 0; i--) {
+            Reverseonlyalphabets = Reverseonlyalphabets + onlyalphabets.charAt(i);
         }
 
         int index = 0;
-        String result = "";
+        String resultString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
-            if (ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z') {
-                result = result + reversealphabetsString.charAt(index++);
-            } else {
-                result = result + ch;
+            if (Character.isLetter(ch)) {
+                resultString = resultString + Reverseonlyalphabets.charAt(index++);
+            }
+
+            else {
+                resultString = resultString + ch;
             }
         }
-        System.out.println(result);
+
+        System.out.println(resultString);
     }
 }
 
@@ -77,6 +76,6 @@ class ReverseAlphabetsUsingArrayList {
 public class ReverseAlphabetsOnly {
     public static void main(String[] args) {
         ReverseAlphabetsUsingLoop.reverseUsingLoop("Java123@Selenium");
-        ReverseAlphabetsUsingArrayList.reverseUsingArrayList("Java123@Selenium");
+        // ReverseAlphabetsUsingArrayList.reverseUsingArrayList("Java123@Selenium");
     }
 }

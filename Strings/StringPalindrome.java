@@ -12,15 +12,19 @@ import java.util.Collections;
 class PalindromeUsingLoop {
 
     public static void isPalindromeUsingLoop(String str) {
-
-        String result = "";
-        for (int i = str.length() - 1; i >= 0; i--) {
-            result = result + str.charAt(i);
+        String result="";
+        for(int i=str.length()-1;i>=0;i--)
+        {
+            result=result+str.charAt(i);
         }
-        if (str.equals(result)) {
-            System.out.println(result + " is Palindrome");
-        } else {
-            System.out.println(result + " is not Palindrome");
+
+        if(str.equals(result))
+        {
+            System.out.println("Palindrome");
+        }
+        else
+        {
+            System.out.println("Not Palindrome");
         }
     }
 }
@@ -105,11 +109,11 @@ class PalindromeRecursion {
 public class StringPalindrome {
     public static void main(String[] args) {
         PalindromeUsingLoop.isPalindromeUsingLoop("madam");
-        PalindromeUsingStringBuilder.isPalindromeUsingStringBuilder("madam");
-        PalindromeUsingArrayList.isPalindromeUsingArrayList("madam");
-        PalindromeUsingCollections.isPalindromeUsingCollections("madam");
-        PalindromeReverse.PalindromeReverseMethods("like", "like".length() - 1);
-        PalindromeRecursion.PalindromeRecursionMethods("like");
+        // PalindromeUsingStringBuilder.isPalindromeUsingStringBuilder("madam");
+        // PalindromeUsingArrayList.isPalindromeUsingArrayList("madam");
+        // PalindromeUsingCollections.isPalindromeUsingCollections("madam");
+        // PalindromeReverse.PalindromeReverseMethods("like", "like".length() - 1);
+        // PalindromeRecursion.PalindromeRecursionMethods("like");
 
     }
 }

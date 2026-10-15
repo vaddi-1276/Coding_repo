@@ -8,10 +8,12 @@ package Strings;
 class UsingForLoopFindAllPositionsCharacter {
     public static void UsingForLoopFindAllPositionsCharacterMethods(String str, char letter) {
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
 
-            if (ch == letter) {
+            if(ch==letter)
+            {
                 System.out.println(i);
             }
         }
@@ -36,6 +38,6 @@ class UsingRecursionFindAllPositionsCharacter {
 public class FindAllPositionsCharacter {
     public static void main(String[] args) {
         UsingForLoopFindAllPositionsCharacter.UsingForLoopFindAllPositionsCharacterMethods("programming", 'g');
-        UsingRecursionFindAllPositionsCharacter.UsingRecursionFindAllPositionsCharacterMethods("programming", 0, 'g');
+        //UsingRecursionFindAllPositionsCharacter.UsingRecursionFindAllPositionsCharacterMethods("programming", 0, 'g');
     }
 }

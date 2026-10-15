@@ -8,23 +8,28 @@ import java.util.ArrayList;
 class UsingNestedForLoopFindMostFrequentVowel {
     public static void UsingNestedForLoopFindMostFrequentVowelMethods(String str) {
 
-        char vowels[] = { 'a', 'e', 'i', 'o', 'u' };
-        int maximumcount = Integer.MIN_VALUE;
-        char maximumchar = ' ';
+        char vowels[]={'a','e','i','o','u'};
+        int maximumcount=Integer.MIN_VALUE;
+        char maximumchar=' ';
 
-        for (int i = 0; i < vowels.length; i++) {
-            int count = 0;
-            for (int j = 0; j < str.length(); j++) {
-                if (vowels[i] == str.charAt(j)) {
+        for(int i=0;i<vowels.length;i++)
+        {
+            int count=0;
+            for(int j=0;j<str.length();j++)
+            {
+                if(vowels[i]==str.charAt(j))
+                {
                     count++;
                 }
             }
-            if (count > maximumcount) {
-                maximumcount = count;
-                maximumchar = vowels[i];
+
+            if(count>maximumcount)
+            {
+                maximumcount=count;
+                maximumchar=vowels[i];
             }
         }
-        System.out.println(maximumchar + " = " + maximumcount);
+        System.out.println(maximumchar+" = "+maximumcount);
     }
 }
 
@@ -83,8 +88,8 @@ class UsingRecursionFindMostFrequentVowel {
 public class FindMostFrequentVowel {
     public static void main(String[] args) {
         UsingNestedForLoopFindMostFrequentVowel.UsingNestedForLoopFindMostFrequentVowelMethods("automation");
-        UsingArrayListFindMostFrequentVowel.UsingArrayListFindMostFrequentVowelMethods("automation");
-        UsingRecursionFindMostFrequentVowel.UsingRecursionFindMostFrequentVowelMethods("automation", 0,
-                Integer.MIN_VALUE, ' ');
+        // UsingArrayListFindMostFrequentVowel.UsingArrayListFindMostFrequentVowelMethods("automation");
+        // UsingRecursionFindMostFrequentVowel.UsingRecursionFindMostFrequentVowelMethods("automation", 0,
+        //         Integer.MIN_VALUE, ' ');
     }
 }

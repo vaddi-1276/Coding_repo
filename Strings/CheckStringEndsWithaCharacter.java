@@ -9,18 +9,20 @@ import java.util.ArrayList;
 
 class UsingForLoopCheckStringEndsWithaCharacter {
     public static void UsingForLoopCheckStringEndsWithaCharacterMethods(String str, char letter) {
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
-            if (i == str.length() - 1) {
-                if (ch == letter) {
+            if(i==str.length()-1)
+            {
+                if(ch==letter)
+                {
                     System.out.println("Yes");
-                } else {
-                    System.out.println("No");
+                    return ;
                 }
             }
         }
+        System.out.println("No");
     }
 }
 
@@ -65,8 +67,8 @@ class UsingRecursionCheckStringEndsWithaCharacter {
 
 public class CheckStringEndsWithaCharacter {
     public static void main(String[] args) {
-        UsingForLoopCheckStringEndsWithaCharacter.UsingForLoopCheckStringEndsWithaCharacterMethods("Selenium", 'm');
-        UsingArrayListCheckStringEndsWithaCharacter.UsingArrayListCheckStringEndsWithaCharacterMethods("Selenium", 'm');
-        UsingRecursionCheckStringEndsWithaCharacter.UsingRecursionCheckStringEndsWithaCharacterMethods("Selenium", 0, 'm');
+        UsingForLoopCheckStringEndsWithaCharacter.UsingForLoopCheckStringEndsWithaCharacterMethods("Selenium", 'p');
+        // UsingArrayListCheckStringEndsWithaCharacter.UsingArrayListCheckStringEndsWithaCharacterMethods("Selenium", 'm');
+        // UsingRecursionCheckStringEndsWithaCharacter.UsingRecursionCheckStringEndsWithaCharacterMethods("Selenium", 0, 'm');
     }
 }

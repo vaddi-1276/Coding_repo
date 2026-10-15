@@ -5,16 +5,16 @@ package Strings;
 
 class UsingForLoopRemoveLastCharacter {
     public static void UsingForLoopRemoveLastCharacterMethods(String str) {
+        String result = "";
 
-        String finalvalue = "";
         for (int i = 0; i < str.length(); i++) {
             if (i == str.length() - 1) {
                 continue;
             } else {
-                finalvalue = finalvalue + str.charAt(i);
+                result = result + str.charAt(i);
             }
         }
-        System.out.println(finalvalue);
+        System.out.println(result);
     }
 }
 
@@ -38,7 +38,7 @@ class UsingRecursionRemoveLastCharacter {
 public class RemoveLastCharacter {
     public static void main(String[] args) {
         UsingForLoopRemoveLastCharacter.UsingForLoopRemoveLastCharacterMethods("Selenium");
-        UsingRecursionRemoveLastCharacter
-                .UsingRecursionRemoveLastCharacterMethods("Selenium", 0, "");
+        // UsingRecursionRemoveLastCharacter
+        // .UsingRecursionRemoveLastCharacterMethods("Selenium", 0, "");
     }
 }

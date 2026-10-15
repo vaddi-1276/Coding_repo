@@ -11,7 +11,9 @@ class UsingForLoopCheckStringStartsandEndsWithSameCharacter {
 
         if (firstchar == lastchar) {
             System.out.println("Yes");
-        } else {
+        }
+
+        else {
             System.out.println("No");
         }
     }
@@ -34,9 +36,9 @@ class UsingstartswithandendswithCheckStringStartsandEndsWithSameCharacter {
 public class CheckStringStartsandEndsWithSameCharacter {
     public static void main(String[] args) {
         UsingForLoopCheckStringStartsandEndsWithSameCharacter
-                .UsingForLoopCheckStringStartsandEndsWithSameCharacterMethods("abc");
-        UsingstartswithandendswithCheckStringStartsandEndsWithSameCharacter
-                .UsingstartswithandendswithCheckStringStartsandEndsWithSameCharacterMethods("level");
-       
+                .UsingForLoopCheckStringStartsandEndsWithSameCharacterMethods("level");
+        // UsingstartswithandendswithCheckStringStartsandEndsWithSameCharacter
+        //         .UsingstartswithandendswithCheckStringStartsandEndsWithSameCharacterMethods("level");
+
     }
 }

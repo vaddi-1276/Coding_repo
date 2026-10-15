@@ -17,7 +17,7 @@ class UsingCharCountLowercaseLetters {
                 count++;
             }
         }
-        System.out.println("Lower Case = " + count);
+        System.out.println("Lowercase = " + count);
     }
 }
 
@@ -58,7 +58,9 @@ class UsingRecursionCountLowercaseLetters {
 public class CountLowercaseLetters {
     public static void main(String[] args) {
         UsingCharCountLowercaseLetters.UsingCharCountLowercaseLettersMethods("Java SELENIUM Testing");
-        UsingArrayListCountLowercaseLetters.UsingArrayListCountLowercaseLettersMethods("Java SELENIUM Testing");
-        UsingRecursionCountLowercaseLetters.UsingRecursionCountLowercaseLettersMethods("Java SELENIUM Testing", 0, 0);
+        // UsingArrayListCountLowercaseLetters.UsingArrayListCountLowercaseLettersMethods("Java
+        // SELENIUM Testing");
+        // UsingRecursionCountLowercaseLetters.UsingRecursionCountLowercaseLettersMethods("Java
+        // SELENIUM Testing", 0, 0);
     }
 }

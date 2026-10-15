@@ -7,25 +7,28 @@ import java.util.ArrayList;
 
 class UsingForLoopFindLeastFrequentVowel {
     public static void UsingForLoopFindLeastFrequentVowelMethods(String str) {
+        int minimumcount=Integer.MAX_VALUE;
+        char vowels[]={'a','e','i','o','u'};
+        char leastchar=' ';
 
-        int minimum = Integer.MAX_VALUE;
-        char vowels[] = { 'a', 'e', 'i', 'o', 'u' };
-        char onlyvowel = ' ';
-
-        for (int i = 0; i < vowels.length; i++) {
-
-            int count = 0;
-            for (int j = 0; j < str.length(); j++) {
-                if (str.charAt(j) == vowels[i]) {
+        for(int i=0;i<vowels.length;i++)
+        {
+            int count=0;
+            for(int j=0;j<str.length();j++)
+            {
+                if(vowels[i]==str.charAt(j))
+                {
                     count++;
                 }
             }
-            if (count < minimum) {
-                minimum = count;
-                onlyvowel = vowels[i];
+
+            if(count<minimumcount)
+            {
+                minimumcount=count;
+                leastchar=vowels[i];
             }
         }
-        System.out.println(onlyvowel + " = " + minimum);
+        System.out.println(leastchar+" = "+minimumcount);
     }
 }
 
@@ -85,9 +88,9 @@ class UsingRecursionFindLeastFrequentVowel {
 
 public class FindLeastFrequentVowel {
     public static void main(String[] args) {
-        UsingForLoopFindLeastFrequentVowel.UsingForLoopFindLeastFrequentVowelMethods("automation");
-        UsingArrayListFindLeastFrequentVowel.UsingArrayListFindLeastFrequentVowelMethods("automation");
-        UsingRecursionFindLeastFrequentVowel.UsingRecursionFindLeastFrequentVowelMethods("automation", 0,
-                Integer.MAX_VALUE, ' ');
+        UsingForLoopFindLeastFrequentVowel.UsingForLoopFindLeastFrequentVowelMethods("automatione");
+        // UsingArrayListFindLeastFrequentVowel.UsingArrayListFindLeastFrequentVowelMethods("automation");
+        // UsingRecursionFindLeastFrequentVowel.UsingRecursionFindLeastFrequentVowelMethods("automation", 0,
+        //         Integer.MAX_VALUE, ' ');
     }
 }

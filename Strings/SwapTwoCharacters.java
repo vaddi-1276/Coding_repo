@@ -8,22 +8,27 @@ package Strings;
 class UsingForLoopSwapTwoCharacters {
     public static void UsingForLoopSwapTwoCharactersMethods(String str, int firstposition, int secondposition) {
 
-        char firstpositionchar = str.charAt(firstposition);
-        char secondpositionchar = str.charAt(secondposition);
-        String finalvalue = "";
+        char firstpositionchar=str.charAt(firstposition);
+        char secondpositionchar=str.charAt(secondposition);
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+        String result="";
+        for(int i=0;i<str.length();i++)
+        {
+            if(i==firstposition)
+            {
+                result=result+secondpositionchar;
+            }
 
-            if (i == firstposition) {
-                finalvalue = finalvalue + secondpositionchar;
-            } else if (i == secondposition) {
-                finalvalue = finalvalue + firstpositionchar;
-            } else {
-                finalvalue = finalvalue + ch;
+            else if(i==secondposition)
+            {
+                result=result+firstpositionchar;
+            }
+            else
+            {
+                result=result+str.charAt(i);
             }
         }
-        System.out.println(finalvalue);
+        System.out.println(result);
     }
 }
 
@@ -52,8 +57,8 @@ public class SwapTwoCharacters {
     public static void main(String[] args) {
         UsingForLoopSwapTwoCharacters.UsingForLoopSwapTwoCharactersMethods("Java", 0, 2);
 
-        String str = "Java";
-        UsingRecursionSwapTwoCharacters.UsingRecursionSwapTwoCharactersMethods(str, "", 0, 0, 2, str.charAt(0),
-                str.charAt(2));
+        // String str = "Java";
+        // UsingRecursionSwapTwoCharacters.UsingRecursionSwapTwoCharactersMethods(str, "", 0, 0, 2, str.charAt(0),
+        //         str.charAt(2));
     }
 }

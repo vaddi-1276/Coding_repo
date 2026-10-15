@@ -9,9 +9,10 @@ class UsingForLoopFindCharacterGivenPosition {
     public static void UsingForLoopFindCharacterGivenPositionMethods(String str, int position) {
 
         for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
             if (i == position - 1) {
-                System.out.println(str.charAt(i));
-                break;
+                System.out.println(ch);
             }
         }
     }
@@ -34,7 +35,8 @@ class UsingRecursionFindCharacterGivenPosition {
 
 public class FindCharacterGivenPosition {
     public static void main(String[] args) {
-        UsingForLoopFindCharacterGivenPosition.UsingForLoopFindCharacterGivenPositionMethods("Selenium", 6);
-        UsingRecursionFindCharacterGivenPosition.UsingRecursionFindCharacterGivenPositionMethods("Selenium", 0, 4);
+        UsingForLoopFindCharacterGivenPosition.UsingForLoopFindCharacterGivenPositionMethods("Selenium", 4);
+        // UsingRecursionFindCharacterGivenPosition.UsingRecursionFindCharacterGivenPositionMethods("Selenium",
+        // 0, 4);
     }
 }

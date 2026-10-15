@@ -7,13 +7,10 @@ package Strings;
 
 class UsingStartsWithCheckPrefixofAnotherString {
     public static void UsingStartsWithCheckPrefixofAnotherStringMethods(String str, String prefixString) {
-
-       
         if(str.startsWith(prefixString))
         {
             System.out.println("Yes");
         }
-
         else
         {
             System.out.println("No");
@@ -23,10 +20,13 @@ class UsingStartsWithCheckPrefixofAnotherString {
 
 class UsingNestedForLoopCheckPrefixofAnotherString {
     public static void UsingNestedForLoopCheckPrefixofAnotherStringMethods(String str, String prefixString) {
-
-        if (str.length() >= prefixString.length() && str.substring(0, prefixString.length()).equals(prefixString)) {
+        if(str.length()>=prefixString.length() && str.substring(0, prefixString.length()).equals(prefixString))
+        {
             System.out.println("Yes");
-        } else {
+        }
+
+        else
+        {
             System.out.println("No");
         }
     }
@@ -54,27 +54,27 @@ class UsingRecursionCheckPrefixofAnotherString {
 public class CheckPrefixofAnotherString {
     public static void main(String[] args) {
         UsingStartsWithCheckPrefixofAnotherString.UsingStartsWithCheckPrefixofAnotherStringMethods("Selenium",
-                "Sele");
+                "Selepri");
 
         System.out.print(
                 "--------------------------------------------------------------------------------------------------------------");
 
         System.out.println();
 
-        // UsingNestedForLoopCheckPrefixofAnotherString.UsingNestedForLoopCheckPrefixofAnotherStringMethods("Selenium",
-        //         "Selepri");
+        UsingNestedForLoopCheckPrefixofAnotherString.UsingNestedForLoopCheckPrefixofAnotherStringMethods("Selenium",
+                "Selepri");
+
+        System.out.print(
+                "--------------------------------------------------------------------------------------------------------------");
+
+        System.out.println();
+
+        // UsingRecursionCheckPrefixofAnotherString
+        //         .UsingRecursionCheckPrefixofAnotherStringMethods("Selenium", "Selep", 0);
 
         // System.out.print(
         //         "--------------------------------------------------------------------------------------------------------------");
 
         // System.out.println();
-
-        UsingRecursionCheckPrefixofAnotherString
-                .UsingRecursionCheckPrefixofAnotherStringMethods("Selenium", "Selep", 0);
-
-        System.out.print(
-                "--------------------------------------------------------------------------------------------------------------");
-
-        System.out.println();
     }
 }

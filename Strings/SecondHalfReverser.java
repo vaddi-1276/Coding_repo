@@ -11,26 +11,23 @@ import java.util.Collections;
 
 class SecondHalfReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
-
-        int mid = str.length() / 2;
-
-        String midString = "";
-        for (int i = mid; i < str.length(); i++) {
-            midString = midString + str.charAt(i);
+        int midposition = str.length() / 2;
+        String midpositionString = "";
+        for (int i = midposition; i < str.length(); i++) {
+            midpositionString = midpositionString + str.charAt(i);
+        }
+        String reversemidposition = "";
+        for (int i = midpositionString.length() - 1; i >= 0; i--) {
+            reversemidposition = reversemidposition + midpositionString.charAt(i);
         }
 
-        String reversemidString = "";
-        for (int i = midString.length() - 1; i >= 0; i--) {
-            reversemidString = reversemidString + midString.charAt(i);
-        }
         int index = 0;
         String result = "";
-
-        for (int i = 0; i < mid; i++) {
+        for (int i = 0; i < midposition; i++) {
             result = result + str.charAt(i);
         }
-        for (int i = mid; i < str.length(); i++) {
-            result = result + reversemidString.charAt(index++);
+        for (int i = midposition; i < str.length(); i++) {
+            result = result + reversemidposition.charAt(index++);
         }
 
         System.out.println(result);
@@ -106,7 +103,7 @@ class SecondHalfReversalUsingCollections {
 public class SecondHalfReverser {
     public static void main(String[] args) {
         SecondHalfReversalUsingLoop.reverseUsingLoop("abcdef");
-        SecondHalfReversalUsingArrayList.reverseUsingArrayList("defghi");
-        SecondHalfReversalUsingCollections.reverseUsingCollections("ghijkl");
+        // SecondHalfReversalUsingArrayList.reverseUsingArrayList("defghi");
+        // SecondHalfReversalUsingCollections.reverseUsingCollections("ghijkl");
     }
 }

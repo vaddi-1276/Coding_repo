@@ -9,34 +9,29 @@ import java.util.Collections;
 // Output:
 // afcdeb
 
-class UsingNestedForLoopReverseOnlyOddIndexCharacters
-
-{
+class UsingNestedForLoopReverseOnlyOddIndexCharacters {
     public static void UsingNestedForLoopReverseOnlyOddIndexCharactersMethods(String str) {
-
-        String onlyoddindexvalueString = "";
+        String onlyoddindexString = "";
         for (int i = 0; i < str.length(); i++) {
-
             if (i % 2 != 0) {
-                char ch = str.charAt(i);
-                onlyoddindexvalueString = onlyoddindexvalueString + ch;
+                onlyoddindexString = onlyoddindexString + str.charAt(i);
             }
         }
-
-        String reverseonlyoddindexvalueString = "";
-
-        for (int i = onlyoddindexvalueString.length() - 1; i >= 0; i--) {
-            reverseonlyoddindexvalueString = reverseonlyoddindexvalueString + onlyoddindexvalueString.charAt(i);
+        String reverseonlyoddindexString = "";
+        for (int i = onlyoddindexString.length() - 1; i >= 0; i--) {
+            reverseonlyoddindexString=reverseonlyoddindexString+onlyoddindexString.charAt(i);
         }
-
-        int index = 0;
-        String result = "";
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            if (i % 2 != 0) {
-                result = result + reverseonlyoddindexvalueString.charAt(index++);
-            } else {
-                result = result + ch;
+        int index=0;
+        String result="";
+        for(int i=0;i<str.length();i++)
+        {
+            if(i%2!=0)
+            {
+                result=result+reverseonlyoddindexString.charAt(index++);
+            }
+            else
+            {
+                result=result+str.charAt(i);
             }
         }
         System.out.println(result);
@@ -76,7 +71,7 @@ public class ReverseOnlyOddIndexCharacters {
     public static void main(String[] args) {
         UsingNestedForLoopReverseOnlyOddIndexCharacters
                 .UsingNestedForLoopReverseOnlyOddIndexCharactersMethods("abcdef");
-        UsingArrayListCollectionsReverseReverseOnlyOddIndexCharacters
-                .UsingArrayListCollectionsReverseReverseOnlyOddIndexCharactersMethods("abcdef");
+        // UsingArrayListCollectionsReverseReverseOnlyOddIndexCharacters
+        // .UsingArrayListCollectionsReverseReverseOnlyOddIndexCharactersMethods("abcdef");
     }
 }

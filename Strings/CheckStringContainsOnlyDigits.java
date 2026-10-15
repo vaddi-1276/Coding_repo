@@ -5,7 +5,6 @@ package Strings;
 
 class UsingCharCheckStringContainsOnlyDigits {
     public static void UsingCharCheckStringContainsOnlyDigitsMethods(String str) {
-
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
@@ -52,8 +51,9 @@ class UsingRecursionCheckStringContainsOnlyDigits {
 
 public class CheckStringContainsOnlyDigits {
     public static void main(String[] args) {
-        UsingCharCheckStringContainsOnlyDigits.UsingCharCheckStringContainsOnlyDigitsMethods("123456!!!!@@#$");
-        UsingCharacterCheckStringContainsOnlyDigits.UsingCharacterCheckStringContainsOnlyDigitsMethods("12345678QWER");
-        UsingRecursionCheckStringContainsOnlyDigits.UsingRecursionCheckStringContainsOnlyDigitsMethods("12345678QW", 0);
+        UsingCharCheckStringContainsOnlyDigits.UsingCharCheckStringContainsOnlyDigitsMethods("123456Q");
+        UsingCharacterCheckStringContainsOnlyDigits.UsingCharacterCheckStringContainsOnlyDigitsMethods("12345678Q");
+        // UsingRecursionCheckStringContainsOnlyDigits.UsingRecursionCheckStringContainsOnlyDigitsMethods("12345678QW",
+        // 0);
     }
 }

@@ -11,15 +11,12 @@ import java.util.Collections;
 // cbadef
 
 class ReversePrefixUsingLoop {
-
-    public static void reverseUsingLoop(String str) {
-
-        int position = 3;
-        String firsthalf = "";
+    public static void reverseUsingLoop(String str, int position) {
+        String result = "";
         for (int i = position - 1; i >= 0; i--) {
-            firsthalf = firsthalf + str.charAt(i);
+            result = result + str.charAt(i);
         }
-        String result = firsthalf;
+
         for (int i = position; i < str.length(); i++) {
             result = result + str.charAt(i);
         }
@@ -73,8 +70,8 @@ class ReversePrefixUsingArrayList {
 
 public class ReversePrefix {
     public static void main(String[] args) {
-        ReversePrefixUsingLoop.reverseUsingLoop("abcdef");
-        ReversePrefixUsingSubstring.reverseUsingSubstring("12345678");
-        ReversePrefixUsingArrayList.reverseUsingArrayList("abcdef");
+        ReversePrefixUsingLoop.reverseUsingLoop("abcdef", 3);
+        // ReversePrefixUsingSubstring.reverseUsingSubstring("12345678");
+        // ReversePrefixUsingArrayList.reverseUsingArrayList("abcdef");
     }
 }

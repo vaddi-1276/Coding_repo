@@ -6,14 +6,15 @@ package Strings;
 class UsingCharFunctionsFindFirstDigitinString {
     public static void UsingCharFunctionsFindFirstDigitinStringMethods(String str) {
 
-        String finalvalueString = "";
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            if (ch >= '0' && ch <= '9') {
-                finalvalueString = finalvalueString + ch;
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+            if(Character.isDigit(ch))
+            {
+                System.out.println(ch);
+                break;
             }
         }
-        System.out.println(finalvalueString.charAt(0));
     }
 }
 
@@ -36,6 +37,6 @@ class UsingRecursionFindFirstDigitinString {
 public class FindFirstDigitinString {
     public static void main(String[] args) {
         UsingCharFunctionsFindFirstDigitinString.UsingCharFunctionsFindFirstDigitinStringMethods("Java123Testing");
-        UsingRecursionFindFirstDigitinString.UsingRecursionFindFirstDigitinStringMethods("Java123Testing", 0, "");
+        //UsingRecursionFindFirstDigitinString.UsingRecursionFindFirstDigitinStringMethods("Java123Testing", 0, "");
     }
 }

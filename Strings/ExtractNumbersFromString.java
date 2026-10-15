@@ -6,16 +6,15 @@ package Strings;
 
 class WithoutUsingCharExtractNumbersFromString {
     public static void WithoutUsingCharExtractNumbersFromStringMethods(String str) {
-
-        String onlyextractnumber = "";
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (ch >= '0' && ch <= '9') {
-                onlyextractnumber = onlyextractnumber + ch;
+                result = result + ch;
             }
         }
-        System.out.println(onlyextractnumber);
+        System.out.println(result);
     }
 }
 
@@ -52,9 +51,10 @@ class UsingRecursionExtractNumbersFromString {
 public class ExtractNumbersFromString {
     public static void main(String[] args) {
         WithoutUsingCharExtractNumbersFromString.WithoutUsingCharExtractNumbersFromStringMethods("Java123Testing456");
-        UsingCharacterisDigitFunctionExtractNumbersFromString
-                .UsingCharacterisDigitFunctionExtractNumbersFromStringMethods("Java123Testing456");
-        UsingRecursionExtractNumbersFromString.UsingRecursionExtractNumbersFromStringMethods("Java123Testing456", 0,
-                "");
+        // UsingCharacterisDigitFunctionExtractNumbersFromString
+        // .UsingCharacterisDigitFunctionExtractNumbersFromStringMethods("Java123Testing456");
+        // UsingRecursionExtractNumbersFromString.UsingRecursionExtractNumbersFromStringMethods("Java123Testing456",
+        // 0,
+        // "");
     }
 }

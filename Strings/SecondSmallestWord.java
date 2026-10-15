@@ -32,34 +32,25 @@ class UsingTwoVariablesForSecondSmallestWord {
     public static void UsingTwoVariablesForSecondSmallestWordMethods(String str) {
 
         String words[] = str.split(" ");
+        String firstwordString = words[0];
+        String secondwordString = words[0];
 
-        String firstsmallestword = words[0];
-        String secondsmallestword = words[0];
-
-        int firstsmallestwordlength = Integer.MAX_VALUE;
-        int secondsmallestwordlength = Integer.MAX_VALUE;
+        int firstsmallestword = Integer.MAX_VALUE;
+        int secondsmallestword = Integer.MAX_VALUE;
 
         for (int i = 0; i < words.length; i++) {
-
-            if (words[i].length() < firstsmallestwordlength) {
-                secondsmallestwordlength = firstsmallestwordlength;
+            if (words[i].length() < firstsmallestword) {
                 secondsmallestword = firstsmallestword;
-
-                firstsmallestwordlength = words[i].length();
-                firstsmallestword = words[i];
+                firstsmallestword = words[i].length();
             }
 
-            else if (words[i].length() < secondsmallestwordlength) {
-                secondsmallestwordlength = words[i].length();
-                secondsmallestword = words[i];
+            else if (words[i].length() < secondsmallestword && firstsmallestword != words[i].length()) {
+                secondsmallestword = words[i].length();
+                secondwordString = words[i];
             }
         }
-
-        System.out.println("First Smallest word Length " + firstsmallestwordlength);
-        System.out.println("First Smallest Word " + firstsmallestword);
-
-        System.out.println("Second Smallest word Length " + secondsmallestwordlength);
-        System.out.println("Second Smallest Word " + secondsmallestword);
+        System.out.println("First Smallest Word = " + firstwordString);
+        System.out.println("Second Smallest Word = " + secondwordString);
     }
 }
 
@@ -99,11 +90,13 @@ class UsingArrayListForSecondSmallestWord {
 
 public class SecondSmallestWord {
     public static void main(String[] args) {
-        UsingTempVariableForSmallestLargestWord
-                .UsingTempVariableForSecondSmallestWordMethods("Java Selenium Automation Testing");
+        // UsingTempVariableForSmallestLargestWord
+        // .UsingTempVariableForSecondSmallestWordMethods("Java Selenium Automation
+        // Testing");
         UsingTwoVariablesForSecondSmallestWord
                 .UsingTwoVariablesForSecondSmallestWordMethods("Java Selenium Automation Testing");
-        UsingArrayListForSecondSmallestWord
-                .UsingArrayListForSecondSmallestWordMethods("Java Selenium Automation Testing");
+        // UsingArrayListForSecondSmallestWord
+        // .UsingArrayListForSecondSmallestWordMethods("Java Selenium Automation
+        // Testing");
     }
 }

@@ -13,6 +13,7 @@ class LastRepeatedUsingNestedLoop {
 
         for (int i = str.length() - 1; i >= 0; i--) {
             boolean found = false;
+
             for (int j = 0; j < i; j++) {
                 if (str.charAt(i) == str.charAt(j)) {
                     found = true;
@@ -22,6 +23,7 @@ class LastRepeatedUsingNestedLoop {
             if (found) {
                 continue;
             }
+
             int count = 1;
             for (int k = i + 1; k < str.length(); k++) {
                 if (str.charAt(k) == str.charAt(i)) {
@@ -73,6 +75,6 @@ class LastRepeatedUsingArrayList {
 public class LastRepeatedCharacterFinder {
     public static void main(String[] args) {
         LastRepeatedUsingNestedLoop.findUsingNestedLoop("programming");
-        LastRepeatedUsingArrayList.findUsingArrayList("programming");
+        //LastRepeatedUsingArrayList.findUsingArrayList("programming");
     }
 }

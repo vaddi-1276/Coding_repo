@@ -11,20 +11,16 @@ import java.util.Collections;
 // abfedcghi
 
 class ReverseRangeUsingLoop {
-    public static void reverseUsingLoop(String str) {
+    public static void reverseUsingLoop(String str, int startposition, int endposition) {
 
-        int start = 2;
-        int end = 6;
         String result = "";
-        for (int i = 0; i < start; i++) {
+        for (int i = 0; i < startposition; i++) {
             result = result + str.charAt(i);
         }
-
-        for (int i = end - 1; i >= start; i--) {
+        for (int i = endposition - 1; i >= startposition; i--) {
             result = result + str.charAt(i);
         }
-
-        for (int i = end; i < str.length(); i++) {
+        for (int i = endposition; i < str.length(); i++) {
             result = result + str.charAt(i);
         }
         System.out.println(result);
@@ -85,8 +81,8 @@ class ReverseRangeUsingArrayList {
 
 public class ReverseBetweenPositions {
     public static void main(String[] args) {
-        ReverseRangeUsingLoop.reverseUsingLoop("abcdefghi");
-        ReverseRangeUsingSubstring.reverseUsingSubstring("abcdefghi");
-        ReverseRangeUsingArrayList.reverseUsingArrayList("abcdefghi");
+        ReverseRangeUsingLoop.reverseUsingLoop("abcdefghi", 2, 6);
+        // ReverseRangeUsingSubstring.reverseUsingSubstring("abcdefghi");
+        // ReverseRangeUsingArrayList.reverseUsingArrayList("abcdefghi");
     }
 }

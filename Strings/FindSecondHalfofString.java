@@ -5,12 +5,13 @@ package Strings;
 
 class UsingForLoopFindSecondHalfofString {
     public static void UsingForLoopFindSecondHalfofStringMethods(String str) {
-
-        int position = str.length() / 2;
-        for (int i = position; i < str.length(); i++) {
-            System.out.print(str.charAt(i));
+        int position=str.length()/2;
+        String result="";
+        for(int i=position;i<str.length();i++)
+        {
+            result=result+str.charAt(i);
         }
-        System.out.println();
+        System.out.println(result);
     }
 }
 
@@ -29,8 +30,8 @@ class UsingRecursionFindSecondHalfofString {
 public class FindSecondHalfofString {
     public static void main(String[] args) {
         UsingForLoopFindSecondHalfofString.UsingForLoopFindSecondHalfofStringMethods("Selenium");
-        String str = "Selenium";
-        UsingRecursionFindSecondHalfofString.UsingRecursionFindSecondHalfofStringMethods(str, str.length() / 2);
-        System.out.println();
+        // String str = "Selenium";
+        // UsingRecursionFindSecondHalfofString.UsingRecursionFindSecondHalfofStringMethods(str, str.length() / 2);
+        // System.out.println();
     }
 }

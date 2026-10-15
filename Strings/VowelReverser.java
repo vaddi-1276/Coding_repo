@@ -11,33 +11,34 @@ import java.util.Collections;
 
 class VowelReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
-        String onlyVowelsString = "";
+
+        String onlyvowelString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                onlyVowelsString = onlyVowelsString + ch;
+                onlyvowelString = onlyvowelString + ch;
             }
         }
-        String reverseonlyVowels = "";
-        for (int i = onlyVowelsString.length() - 1; i >= 0; i--) {
-            reverseonlyVowels = reverseonlyVowels + onlyVowelsString.charAt(i);
+
+        String reverseonlyvowelString = "";
+        for (int i = onlyvowelString.length() - 1; i >= 0; i--) {
+            reverseonlyvowelString = reverseonlyvowelString + onlyvowelString.charAt(i);
         }
-        // System.out.println(reverseonlyVowels);
 
         int index = 0;
-        String finalvalue = "";
-
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'a' || ch == 'e' || ch == 'i'
                     || ch == 'o' || ch == 'u') {
-                finalvalue = finalvalue + reverseonlyVowels.charAt(index++);
+                result = result + reverseonlyvowelString.charAt(index++);
             } else {
-                finalvalue = finalvalue + ch;
+                result = result + ch;
             }
         }
-        System.out.println(finalvalue);
+
+        System.out.println(result);
     }
 }
 
@@ -111,7 +112,7 @@ class VowelReversalUsingCollections {
 public class VowelReverser {
     public static void main(String[] args) {
         VowelReversalUsingLoop.reverseUsingLoop("Automation");
-        VowelReversalUsingArrayList.reverseUsingArrayList("Automation");
-        VowelReversalUsingCollections.reverseUsingCollections("Automation");
+        // VowelReversalUsingArrayList.reverseUsingArrayList("Automation");
+        // VowelReversalUsingCollections.reverseUsingCollections("Automation");
     }
 }

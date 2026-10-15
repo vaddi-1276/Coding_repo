@@ -8,10 +8,11 @@ package Strings;
 
 class UsingForLoopPrintASCIIValuesDigits {
     public static void UsingForLoopPrintASCIIValuesDigitsMethods(int num) {
+        String str = String.valueOf(num);
 
-        String value = String.valueOf(num);
-        for (int i = 0; i < value.length(); i++) {
-            char ch = value.charAt(i);
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
             System.out.println(ch + " = " + (int) ch);
         }
     }
@@ -27,13 +28,14 @@ class UsingRecursionPrintASCIIValuesDigits {
         }
         char ch = value.charAt(index);
         System.out.println(ch + " = " + (int) ch);
-        UsingRecursionPrintASCIIValuesDigitsMethods(num, index+1);
+        UsingRecursionPrintASCIIValuesDigitsMethods(num, index + 1);
     }
 }
 
 public class PrintASCIIValuesDigits {
     public static void main(String[] args) {
         UsingForLoopPrintASCIIValuesDigits.UsingForLoopPrintASCIIValuesDigitsMethods(123);
-        UsingRecursionPrintASCIIValuesDigits.UsingRecursionPrintASCIIValuesDigitsMethods(456, 0);
+        // UsingRecursionPrintASCIIValuesDigits.UsingRecursionPrintASCIIValuesDigitsMethods(456,
+        // 0);
     }
 }

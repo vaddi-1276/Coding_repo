@@ -12,15 +12,18 @@ import java.util.Collections;
 
 class CharacterSortingUsingArrayList {
     public static void sortUsingArrayList(String str) {
+
         ArrayList<Character> list = new ArrayList<>();
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
         Collections.sort(list);
+
         String result = "";
         for (int i = 0; i < list.size(); i++) {
             result = result + list.get(i);
         }
+
         System.out.println(result);
     }
 }
@@ -46,6 +49,7 @@ class WithoutUsingSortingCharacterSorter {
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
+
                 if (arr[i] > arr[j]) {
                     char temp = arr[i];
                     arr[i] = arr[j];
@@ -82,17 +86,18 @@ class UsingRecursionCharacterSorter {
 
 public class CharacterSorter {
     public static void main(String[] args) {
-        // CharacterSortingUsingArrayList.sortUsingArrayList("programming");
-
-        // System.out.print(
-        // "--------------------------------------------------------------------------------------------------------------");
-
-        CharacterSortingUsingArray.sortUsingArray("programming");
+        CharacterSortingUsingArrayList.sortUsingArrayList("programming");
 
         System.out.print(
                 "--------------------------------------------------------------------------------------------------------------");
 
         System.out.println();
+        // CharacterSortingUsingArray.sortUsingArray("programming");
+
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
+
+        // System.out.println();
 
         WithoutUsingSortingCharacterSorter.WithoutUsingSortingCharacterSorterMethods("programming");
 
@@ -101,13 +106,13 @@ public class CharacterSorter {
 
         System.out.println();
 
-        String str="programming";
-        char arr[]=str.toCharArray();
-        UsingRecursionCharacterSorter.UsingRecursionCharacterSorterMethods(arr, 0);
+        // String str = "programming";
+        // char arr[] = str.toCharArray();
+        // UsingRecursionCharacterSorter.UsingRecursionCharacterSorterMethods(arr, 0);
 
-        System.out.print(
-                "--------------------------------------------------------------------------------------------------------------");
+        // System.out.print(
+        // "--------------------------------------------------------------------------------------------------------------");
 
-        System.out.println();
+        // System.out.println();
     }
 }

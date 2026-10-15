@@ -12,33 +12,34 @@ import java.util.Collections;
 class ReverseSpecialCharactersUsingLoop {
     public static void reverseUsingLoop(String str) {
 
-        String onlyStringvalue = "";
+        String onlyspecialcharactersString = "";
+
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-
-            if (!(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9')) {
-                onlyStringvalue = onlyStringvalue + ch;
+            if (!(Character.isLetterOrDigit(ch))) {
+                onlyspecialcharactersString = onlyspecialcharactersString + ch;
             }
         }
+        String reverseonlyspecialcharactersString = "";
 
-        String reverseonlyStringvalue = "";
-        for (int i = onlyStringvalue.length() - 1; i >= 0; i--) {
-            reverseonlyStringvalue = reverseonlyStringvalue + onlyStringvalue.charAt(i);
+        for (int i = onlyspecialcharactersString.length() - 1; i >= 0; i--) {
+            reverseonlyspecialcharactersString = reverseonlyspecialcharactersString
+                    + onlyspecialcharactersString.charAt(i);
         }
-
         int index = 0;
-        String finalvalue = "";
-
+        String resultString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
-            if (!(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z' || ch >= '0' && ch <= '9')) {
-                finalvalue = finalvalue + reverseonlyStringvalue.charAt(index++);
-            } else {
-                finalvalue = finalvalue + ch;
+
+            if (!(Character.isLetterOrDigit(ch))) {
+                resultString = resultString + reverseonlyspecialcharactersString.charAt(index++);
+            }
+
+            else {
+                resultString = resultString + ch;
             }
         }
-        System.out.println(finalvalue);
-
+        System.out.println(resultString);
     }
 }
 
@@ -78,6 +79,6 @@ class ReverseSpecialCharactersUsingArrayList {
 public class ReverseSpecialCharacters {
     public static void main(String[] args) {
         ReverseSpecialCharactersUsingLoop.reverseUsingLoop("Java@#123$%");
-        ReverseSpecialCharactersUsingArrayList.reverseUsingArrayList("Java@#123$%");
+        // ReverseSpecialCharactersUsingArrayList.reverseUsingArrayList("Java@#123$%");
     }
 }

@@ -10,15 +10,17 @@ import java.util.ArrayList;
 
 class UsingchSnakeCaseConversion {
     public static void UsingchSnakeCaseConversionMethods(String str) {
-
         String result = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             if (ch == ' ') {
                 result = result + "_";
-            } else if (ch >= 'A' && ch <= 'Z') {
+            }
+
+            else if (ch >= 'A' && ch <= 'Z') {
                 result = result + (char) (ch + 32);
-            } else if (ch >= 'a' && ch <= 'z') {
+            } else {
                 result = result + ch;
             }
         }
@@ -52,22 +54,17 @@ class UsingArrayListSnakeCaseConversion {
         for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        StringBuilder result=new StringBuilder();
-        for(int i=0;i<list.size();i++)
-        {
-            char ch=list.get(i);
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
+            char ch = list.get(i);
 
-            if(ch==' ')
-            {
+            if (ch == ' ') {
                 result.append("_");
             }
 
-            else if(Character.isUpperCase(ch))
-            {
+            else if (Character.isUpperCase(ch)) {
                 result.append(Character.toLowerCase(ch));
-            }
-            else if(Character.isLowerCase(ch))
-            {
+            } else if (Character.isLowerCase(ch)) {
                 result.append(ch);
             }
         }
@@ -78,7 +75,9 @@ class UsingArrayListSnakeCaseConversion {
 public class SnakeCaseConversion {
     public static void main(String[] args) {
         UsingchSnakeCaseConversion.UsingchSnakeCaseConversionMethods("Java Selenium Testing");
-        UsingBuiltinFunctionSnakeCaseConversion.UsingBuiltinFunctionSnakeCaseConversionMethods("Java Selenium Testing");
-        UsingArrayListSnakeCaseConversion.UsingArrayListSnakeCaseConversionMethods("Java Selenium Testing");
+        // UsingBuiltinFunctionSnakeCaseConversion.UsingBuiltinFunctionSnakeCaseConversionMethods("Java
+        // Selenium Testing");
+        // UsingArrayListSnakeCaseConversion.UsingArrayListSnakeCaseConversionMethods("Java
+        // Selenium Testing");
     }
 }

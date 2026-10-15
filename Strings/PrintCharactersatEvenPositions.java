@@ -5,14 +5,14 @@ package Strings;
 
 class UsingNestedForLoopPrintCharactersatEvenPositions {
     public static void UsingNestedForLoopPrintCharactersatEvenPositionsMethods(String str) {
-
-        String finalvalue = "";
-        for (int i = 0; i < str.length(); i++) {
-            if (i % 2 == 0) {
-                finalvalue = finalvalue + str.charAt(i);
+        for(int i=0;i<str.length();i++)
+        {
+            if(i%2==0)
+            {
+                System.out.print(str.charAt(i));
             }
         }
-        System.out.println(finalvalue);
+        System.out.println();
     }
 }
 
@@ -37,7 +37,7 @@ public class PrintCharactersatEvenPositions {
     public static void main(String[] args) {
         UsingNestedForLoopPrintCharactersatEvenPositions
                 .UsingNestedForLoopPrintCharactersatEvenPositionsMethods("Selenium");
-        UsingRecursionPrintCharactersatEvenPositions.UsingRecursionPrintCharactersatEvenPositionsMethods("Selenium", 0,
-                "");
+        // UsingRecursionPrintCharactersatEvenPositions.UsingRecursionPrintCharactersatEvenPositionsMethods("Selenium", 0,
+        //         "");
     }
 }

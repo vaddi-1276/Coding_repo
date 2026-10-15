@@ -11,31 +11,25 @@ import java.util.Collections;
 
 class FirstHalfReversalUsingLoop {
     public static void reverseUsingLoop(String str) {
-        int n = str.length() / 2;
-        String firsthalf = "";
+        int first_half = str.length() / 2;
+        String firsthalfString = "";
 
-        for (int i = 0; i < n; i++) {
-            char ch = str.charAt(i);
-            firsthalf = firsthalf + ch;
+        for (int i = 0; i < first_half; i++) {
+            firsthalfString = firsthalfString + str.charAt(i);
         }
-
-        String rev_firsthalf = "";
-        for (int j = firsthalf.length() - 1; j >= 0; j--) {
-            char ch = str.charAt(j);
-            rev_firsthalf = rev_firsthalf + ch;
+        String reversefirsthalfString = "";
+        for (int i = firsthalfString.length() - 1; i >= 0; i--) {
+            reversefirsthalfString = reversefirsthalfString + firsthalfString.charAt(i);
         }
-        System.out.println(rev_firsthalf);
-
-        String final_value = "";
-
-        for (int i = 0; i < n; i++) {
-            final_value = final_value + rev_firsthalf.charAt(i);
+        String finalvalueString = "";
+        int index = 0;
+        for (int i = 0; i < first_half; i++) {
+            finalvalueString = finalvalueString + reversefirsthalfString.charAt(index++);
         }
-        for (int j = n; j < str.length(); j++) {
-            final_value = final_value + str.charAt(j);
+        for (int i = first_half; i < str.length(); i++) {
+            finalvalueString = finalvalueString + str.charAt(i);
         }
-
-        System.out.println(final_value);
+        System.out.println(finalvalueString);
     }
 }
 
@@ -98,7 +92,7 @@ class FirstHalfReversalUsingCollections {
 public class FirstHalfReverser {
     public static void main(String[] args) {
         FirstHalfReversalUsingLoop.reverseUsingLoop("abcdef");
-        FirstHalfReversalUsingArrayList.reverseUsingArrayList("defghi");
-        FirstHalfReversalUsingCollections.reverseUsingCollections("ghijlm");
+        // FirstHalfReversalUsingArrayList.reverseUsingArrayList("defghi");
+        // FirstHalfReversalUsingCollections.reverseUsingCollections("ghijlm");
     }
 }

@@ -10,16 +10,13 @@ import java.util.ArrayList;
 
 class UsingSubstringCamelCaseConversion {
     public static void UsingSubstringCamelCaseConversionMethods(String str) {
-
-        String words[] = str.split(" ");
-
-        String result = "";
-        for (int i = 0; i < words.length; i++) {
-            String word = words[i];
-
-            result = result + word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+        String words[]=str.split(" ");
+        String result="";
+        for(int i=0;i<words.length;i++)
+        {
+            String word=words[i];
+            result=result+word.substring(0, 1).toUpperCase()+word.substring(1).toLowerCase();
         }
-
         System.out.println(result);
     }
 }
@@ -66,11 +63,11 @@ public class CamelCaseConversion {
         System.out.println(
                 "-------------------------------------------------------------------------------------------------");
 
-        UsingRecursionCamelCaseConversion.UsingRecursionCamelCaseConversionMethods("java selenium testing", 0, "");        
+        // UsingRecursionCamelCaseConversion.UsingRecursionCamelCaseConversionMethods("java selenium testing", 0, "");        
 
 
-        System.out.println(
-                "-------------------------------------------------------------------------------------------------");
+        // System.out.println(
+        //         "-------------------------------------------------------------------------------------------------");
 
         // UsingArrayListSubstringCamelCaseConversion
         // .UsingArrayListSubstringCamelCaseConversionMethods("java python testing");

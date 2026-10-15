@@ -11,30 +11,28 @@ import java.util.Collections;
 
 class UsingNestedForLoopReverseOnlyEvenIndexCharacters {
     public static void UsingNestedForLoopReverseOnlyEvenIndexCharactersMethods(String str) {
-
-        String onlyevenindexvalue = "";
+        String onlyevenindexString = "";
         for (int i = 0; i < str.length(); i++) {
             if (i % 2 == 0) {
-                onlyevenindexvalue = onlyevenindexvalue + str.charAt(i);
+                onlyevenindexString = onlyevenindexString + str.charAt(i);
             }
         }
-
-        String reverseonlyevenindexvalue = "";
-
-        for (int i = onlyevenindexvalue.length() - 1; i >= 0; i--) {
-            reverseonlyevenindexvalue = reverseonlyevenindexvalue + onlyevenindexvalue.charAt(i);
+        String reverseonlyevenindexString = "";
+        for (int i = onlyevenindexString.length() - 1; i >= 0; i--) {
+            reverseonlyevenindexString = reverseonlyevenindexString + onlyevenindexString.charAt(i);
         }
-
         int index = 0;
-        String result = "";
+        String resultString = "";
         for (int i = 0; i < str.length(); i++) {
             if (i % 2 == 0) {
-                result = result + reverseonlyevenindexvalue.charAt(index++);
-            } else {
-                result = result + str.charAt(i);
+                resultString = resultString + reverseonlyevenindexString.charAt(index++);
+            }
+
+            else {
+                resultString = resultString + str.charAt(i);
             }
         }
-        System.out.println(result);
+        System.out.println(resultString);
     }
 }
 
@@ -71,7 +69,7 @@ public class ReverseOnlyEvenIndexCharacters {
     public static void main(String[] args) {
         UsingNestedForLoopReverseOnlyEvenIndexCharacters
                 .UsingNestedForLoopReverseOnlyEvenIndexCharactersMethods("abcdef");
-        UsingArrayListCollectionsReverseOnlyEvenIndexCharacters
-                .UsingArrayListCollectionsReverseOnlyEvenIndexCharactersMethods("abcdef");
+        // UsingArrayListCollectionsReverseOnlyEvenIndexCharacters
+        // .UsingArrayListCollectionsReverseOnlyEvenIndexCharactersMethods("abcdef");
     }
 }

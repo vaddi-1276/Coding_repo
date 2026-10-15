@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 class UsingForLoopExpandString {
     public static void UsingForLoopExpandStringMethods(String str) {
-
-        String result = "";
+        String resultString = "";
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             int count = 0;
@@ -22,37 +21,32 @@ class UsingForLoopExpandString {
             }
 
             for (int j = 0; j < count; j++) {
-                result = result + ch;
+                resultString = resultString + ch;
             }
         }
-        System.out.println(result);
+        System.out.println(resultString);
     }
 }
 
-class UsingArrayListExpandString
-{
+class UsingArrayListExpandString {
     public static void UsingArrayListExpandStringMethods(String str) {
-        
-        ArrayList<Character>list=new ArrayList<>();
-        for(int i=0;i<str.length();i++)
-        {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
 
-        StringBuilder result=new StringBuilder();
-        for(int i=0;i<list.size();i++)
-        {
-            char ch=list.get(i);
-            int count=0;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
+            char ch = list.get(i);
+            int count = 0;
 
-            while(i+1<list.size() && Character.isDigit(list.get(i+1)))
-            {
-                count=count*10+Character.getNumericValue(list.get(i+1));
+            while (i + 1 < list.size() && Character.isDigit(list.get(i + 1))) {
+                count = count * 10 + Character.getNumericValue(list.get(i + 1));
                 i++;
             }
 
-            for(int j=0;j<count;j++)
-            {
+            for (int j = 0; j < count; j++) {
                 result.append(ch);
             }
         }
@@ -63,6 +57,6 @@ class UsingArrayListExpandString
 public class ExpandString {
     public static void main(String[] args) {
         UsingForLoopExpandString.UsingForLoopExpandStringMethods("a3b2c12d4");
-        UsingArrayListExpandString.UsingArrayListExpandStringMethods("a3b3c12");
+        // UsingArrayListExpandString.UsingArrayListExpandStringMethods("a3b3c12");
     }
 }

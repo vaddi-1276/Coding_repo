@@ -10,17 +10,24 @@ import java.util.ArrayList;
 
 class UsingchForLoopToggleCase {
     public static void UsingchForLoopToggleCaseMethods(String str) {
+        String result="";
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
 
-        String result = "";
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+            if(ch==' ')
+            {
+                result=result+" ";
+            }
 
-            if (ch >= 'A' && ch <= 'Z') {
-                result = result + (char) (ch + 32);
-            } else if (ch >= 'a' && ch <= 'z') {
-                result = result + (char) (ch - 32);
-            } else if (ch == ' ') {
-                result = result + " ";
+            else if(ch>='A' && ch<='Z')
+            {
+                result=result+(char)(ch+32);
+            }
+
+            else if(ch>='a' && ch<='z')
+            {
+                result=result+(char)(ch-32);
             }
         }
         System.out.println(result);
@@ -80,8 +87,10 @@ class UsingArrayListToggleCase {
 
 public class ToggleCase {
     public static void main(String[] args) {
-        UsingchForLoopToggleCase.UsingchForLoopToggleCaseMethods("JaVa SeleNiuM");
-        UsingBuiltinFunctionsToggleCase.UsingBuiltinFunctionsToggleCaseMethods("JavA PyThon");
-        UsingArrayListToggleCase.UsingArrayListToggleCaseMethods("Java Selenium");
+        // JaVa SeleNiuM
+
+        UsingchForLoopToggleCase.UsingchForLoopToggleCaseMethods("Java Selenium");
+        // UsingBuiltinFunctionsToggleCase.UsingBuiltinFunctionsToggleCaseMethods("JavA PyThon");
+        // UsingArrayListToggleCase.UsingArrayListToggleCaseMethods("Java Selenium");
     }
 }

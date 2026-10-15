@@ -19,9 +19,11 @@ class UsingForLoopCompressString {
                     break;
                 }
             }
+
             if (found) {
                 continue;
             }
+
             int count = 1;
             for (int k = i + 1; k < str.length(); k++) {
                 if (str.charAt(k) == str.charAt(i)) {
@@ -30,41 +32,34 @@ class UsingForLoopCompressString {
             }
             result = result + str.charAt(i) + count;
         }
+
         System.out.println(result);
     }
 }
 
-class UsingArrayListCompressString
-{
+class UsingArrayListCompressString {
     public static void UsingArrayListCompressStringMethods(String str) {
-        
-        ArrayList<Character>list=new ArrayList<>();
-        for(int i=0;i<str.length();i++)
-        {
+
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
             list.add(str.charAt(i));
         }
-        StringBuilder result=new StringBuilder();
-        for(int i=0;i<list.size();i++)
-        {
-            boolean found=false;
-            for(int j=0;j<i;j++)
-            {
-                if(list.get(i)==list.get(j))
-                {
-                    found=true;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
+            boolean found = false;
+            for (int j = 0; j < i; j++) {
+                if (list.get(i) == list.get(j)) {
+                    found = true;
                     break;
                 }
             }
-            if(found)
-            {
+            if (found) {
                 continue;
             }
 
-            int count=1;
-            for(int k=i+1;k<list.size();k++)
-            {
-                if(list.get(k)==list.get(i))
-                {
+            int count = 1;
+            for (int k = i + 1; k < list.size(); k++) {
+                if (list.get(k) == list.get(i)) {
                     count++;
                 }
             }
@@ -75,9 +70,10 @@ class UsingArrayListCompressString
         System.out.println(result);
     }
 }
+
 public class CompressString {
     public static void main(String[] args) {
         UsingForLoopCompressString.UsingForLoopCompressStringMethods("aaabbcdddd");
-        UsingArrayListCompressString.UsingArrayListCompressStringMethods("aaabbbcccddd");
+        // UsingArrayListCompressString.UsingArrayListCompressStringMethods("aaabbbcccddd");
     }
 }

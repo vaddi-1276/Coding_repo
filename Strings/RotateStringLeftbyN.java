@@ -10,32 +10,26 @@ import java.util.ArrayList;
 // cdefab
 
 class UsingNestedForLoopRotateStringLeftbyN {
-    public static void UsingNestedForLoopRotateStringLeftbyNMethods(String str) {
+    public static void UsingNestedForLoopRotateStringLeftbyNMethods(String str, int position) {
 
-        int positions = 2;
         String result = "";
-
-        for (int i = positions; i < str.length(); i++) {
+        for (int i = position; i < str.length(); i++) {
             result = result + str.charAt(i);
         }
 
-        for (int i = 0; i < positions; i++) {
+        for (int i = 0; i < position; i++) {
             result = result + str.charAt(i);
         }
+
         System.out.println(result);
     }
 }
 
 class UsingSubstringRotateStringLeftbyN {
-    public static void UsingSubstringRotateStringLeftbyNMethods(String str) {
-
-        int positions = 2;
-
+    public static void UsingSubstringRotateStringLeftbyNMethods(String str, int position) {
         String result = "";
-
-        result = result + str.substring(positions);
-        result = result + str.substring(0, positions);
-
+        result = result + str.substring(position, str.length());
+        result = result + str.substring(0, position);
         System.out.println(result);
     }
 }
@@ -63,8 +57,8 @@ class UsingArrayListRotateStringLeftbyN {
 
 public class RotateStringLeftbyN {
     public static void main(String[] args) {
-        UsingNestedForLoopRotateStringLeftbyN.UsingNestedForLoopRotateStringLeftbyNMethods("abcdef");
-        UsingSubstringRotateStringLeftbyN.UsingSubstringRotateStringLeftbyNMethods("abcdef");
-        UsingArrayListRotateStringLeftbyN.UsingArrayListRotateStringLeftbyNMethods("abcdef");
+        UsingNestedForLoopRotateStringLeftbyN.UsingNestedForLoopRotateStringLeftbyNMethods("abcdef", 2);
+        UsingSubstringRotateStringLeftbyN.UsingSubstringRotateStringLeftbyNMethods("abcdef", 2);
+        // UsingArrayListRotateStringLeftbyN.UsingArrayListRotateStringLeftbyNMethods("abcdef");
     }
 }

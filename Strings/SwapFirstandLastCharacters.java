@@ -5,23 +5,19 @@ package Strings;
 
 class UsingForLoopSwapFirstandLastCharacters {
     public static void UsingForLoopSwapFirstandLastCharactersMethods(String str) {
-
-        char firstchar = str.charAt(0);
-        char lastchar = str.charAt(str.length() - 1);
-        String finalvalue = "";
-
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
-
-            char ch = str.charAt(i);
             if (i == 0) {
-                finalvalue = finalvalue + lastchar;
-            } else if (i == str.length() - 1) {
-                finalvalue = finalvalue + firstchar;
+                result = result + str.charAt(str.length() - 1);
+            }
+
+            else if (i == str.length() - 1) {
+                result = result + str.charAt(0);
             } else {
-                finalvalue = finalvalue + ch;
+                result = result + str.charAt(i);
             }
         }
-        System.out.println(finalvalue);
+        System.out.println(result);
     }
 }
 
@@ -50,8 +46,9 @@ public class SwapFirstandLastCharacters {
     public static void main(String[] args) {
         UsingForLoopSwapFirstandLastCharacters.UsingForLoopSwapFirstandLastCharactersMethods("Java");
 
-        String str = "Java";
-        UsingRecursionSwapFirstandLastCharacters.UsingRecursionSwapFirstandLastCharactersMethods(str, 0, "",
-                str.charAt(0), str.charAt(str.length() - 1));
+        // String str = "Java";
+        // UsingRecursionSwapFirstandLastCharacters.UsingRecursionSwapFirstandLastCharactersMethods(str,
+        // 0, "",
+        // str.charAt(0), str.charAt(str.length() - 1));
     }
 }

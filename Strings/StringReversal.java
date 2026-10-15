@@ -12,11 +12,12 @@ import java.util.Collections;
 class ReverseUsingLoop {
 
     public static void reverseUsingLoop(String str) {
-        String reverseString = "";
+
         for (int i = str.length() - 1; i >= 0; i--) {
-            reverseString = reverseString + str.charAt(i);
+            char ch = str.charAt(i);
+            System.out.print(ch);
         }
-        System.out.println(reverseString);
+        System.out.println();
     }
 }
 
@@ -66,7 +67,7 @@ class using_recursion_reverse_String {
         if (index < 0)
             return;
         System.out.print(str.charAt(index));
-        using_recursion_reverse_String_methods(str, index-1);
+        using_recursion_reverse_String_methods(str, index - 1);
     }
 }
 
@@ -74,11 +75,11 @@ public class StringReversal {
 
     public static void main(String[] args) {
         ReverseUsingLoop.reverseUsingLoop("Java");
-        ReverseUsingStringBuilder.reverseUsingStringBuilder("Python");
-        ReverseUsingArrayList.reverseUsingArrayList("Ruby");
-        ReverseUsingCollections.reverseUsingCollections("Appium");
-        using_recursion_reverse_String.using_recursion_reverse_String_methods("Playwright",
-        "Playwright".length()-1);
-        System.out.println();
+        // ReverseUsingStringBuilder.reverseUsingStringBuilder("Python");
+        // ReverseUsingArrayList.reverseUsingArrayList("Ruby");
+        // ReverseUsingCollections.reverseUsingCollections("Appium");
+        // using_recursion_reverse_String.using_recursion_reverse_String_methods("Playwright",
+        // "Playwright".length()-1);
+        // System.out.println();
     }
 }

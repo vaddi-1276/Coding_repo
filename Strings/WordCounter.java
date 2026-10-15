@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 class WordCountUsingSplit {
     public static void countUsingSplit(String str) {
-        String words[] = str.split(" ");
+       
+        String words[]=str.split(" ");
         System.out.println(words.length);
     }
 }
@@ -46,7 +47,7 @@ class WordCountUsingArrayList {
 public class WordCounter {
     public static void main(String[] args) {
         WordCountUsingSplit.countUsingSplit("Java Selenium Automation Testing");
-        WordCountUsingLoop.countUsingLoop("Java Selenium Automation Testing Learning");
-        WordCountUsingArrayList.countUsingArrayList("Selenium Automation Learning Pratcing Programming Programs");
+        // WordCountUsingLoop.countUsingLoop("Java Selenium Automation Testing Learning");
+        // WordCountUsingArrayList.countUsingArrayList("Selenium Automation Learning Pratcing Programming Programs");
     }
 }

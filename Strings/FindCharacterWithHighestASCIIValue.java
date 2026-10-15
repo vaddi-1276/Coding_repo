@@ -6,18 +6,20 @@ package Strings;
 class UsingForLoopFindCharacterWithHighestASCIIValue {
     public static void UsingForLoopFindCharacterWithHighestASCIIValueMethods(String str) {
 
-        int highestasciivalue = Integer.MIN_VALUE;
-        char highestasciiletter = ' ';
+        int highestasciivalue=Integer.MIN_VALUE;
+        char highestasciiletter=' ';
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
 
-            if ((int) ch > highestasciivalue) {
-                highestasciivalue = (int) ch;
-                highestasciiletter = str.charAt(i);
+            if((int)ch>highestasciivalue)
+            {
+                highestasciivalue=(int)ch;
+                highestasciiletter=ch;
             }
         }
-        System.out.println(highestasciiletter + " = " + highestasciivalue);
+        System.out.println(highestasciiletter+" = "+highestasciivalue);
     }
 }
 
@@ -42,6 +44,6 @@ class UsingRecursionFindCharacterWithHighestASCIIValue {
 public class FindCharacterWithHighestASCIIValue {
     public static void main(String[] args) {
         UsingForLoopFindCharacterWithHighestASCIIValue.UsingForLoopFindCharacterWithHighestASCIIValueMethods("BAD");
-        UsingRecursionFindCharacterWithHighestASCIIValue.UsingRecursionFindCharacterWithHighestASCIIValueMethods("BADE", 0, 0, ' ');
+       // UsingRecursionFindCharacterWithHighestASCIIValue.UsingRecursionFindCharacterWithHighestASCIIValueMethods("BADE", 0, 0, ' ');
     }
 }

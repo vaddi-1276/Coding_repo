@@ -10,16 +10,17 @@ class UsingForLoopPrintConsonantsOrder {
         for (int i = 0; i < str.length(); i++) {
             boolean found = false;
             for (int j = 0; j < vowels.length; j++) {
-
                 if (str.charAt(i) == vowels[j]) {
                     found = true;
                     break;
                 }
             }
-            if (!found) {
-                System.out.println(str.charAt(i));
+
+            if (found == false) {
+                System.out.print(str.charAt(i) + " ");
             }
         }
+        System.out.println();
     }
 }
 
@@ -46,7 +47,8 @@ class UsingRecursionPrintConsonantsOrder {
 
 public class PrintConsonantsOrder {
     public static void main(String[] args) {
-       UsingForLoopPrintConsonantsOrder.UsingForLoopPrintConsonantsOrderMethods("programming");
-        UsingRecursionPrintConsonantsOrder.UsingRecursionPrintConsonantsOrderMethods("programming", 0);
+        UsingForLoopPrintConsonantsOrder.UsingForLoopPrintConsonantsOrderMethods("programming");
+        // UsingRecursionPrintConsonantsOrder.UsingRecursionPrintConsonantsOrderMethods("programming",
+        // 0);
     }
 }

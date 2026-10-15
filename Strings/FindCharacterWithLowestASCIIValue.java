@@ -5,18 +5,20 @@ package Strings;
 
 class UsingForLoopFindCharacterWithLowestASCIIValue {
     public static void UsingForLoopFindCharacterWithLowestASCIIValueMethods(String str) {
+        int minimumvalue=Integer.MAX_VALUE;
+        char minimumchar=' ';
 
-        int minimumvalue = Integer.MAX_VALUE;
-        char minimumchar = ' ';
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
 
-            if ((int) ch < minimumvalue) {
-                minimumvalue = (int) ch;
-                minimumchar = ch;
+            if((int)ch<minimumvalue)
+            {
+                minimumvalue=(int)ch;
+                minimumchar=ch;
             }
         }
-        System.out.println(minimumchar + " = " + minimumvalue);
+        System.out.println(minimumchar+" = "+minimumvalue);
     }
 }
 
@@ -40,8 +42,8 @@ class UsingRecursionFindCharacterWithLowestASCIIValue {
 
 public class FindCharacterWithLowestASCIIValue {
     public static void main(String[] args) {
-        UsingForLoopFindCharacterWithLowestASCIIValue.UsingForLoopFindCharacterWithLowestASCIIValueMethods("CDE");
-        UsingRecursionFindCharacterWithLowestASCIIValue.UsingRecursionFindCharacterWithLowestASCIIValueMethods("BCDE",
-                0, Integer.MAX_VALUE, ' ');
+        UsingForLoopFindCharacterWithLowestASCIIValue.UsingForLoopFindCharacterWithLowestASCIIValueMethods("ABC");
+        // UsingRecursionFindCharacterWithLowestASCIIValue.UsingRecursionFindCharacterWithLowestASCIIValueMethods("BCDE",
+        //         0, Integer.MAX_VALUE, ' ');
     }
 }
