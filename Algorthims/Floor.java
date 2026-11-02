@@ -1,5 +1,16 @@
 package Algorthims;
 
+// int value = -1;
+
+// for (int i = 0; i < arr.length; i++) {
+//     if (arr[i] <= target) {
+//         value = arr[i];
+//     } else {
+//         break;
+//     }
+// }
+// return value;
+
 // Input:
 // Array = [1, 2, 4, 6, 10]
 // Target = 5
@@ -12,19 +23,17 @@ package Algorthims;
 
 public class Floor {
     public static int FloorMethods(int arr[], int target) {
-
         int value = -1;
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= target) {
+            if (arr[i] < target) {
                 value = arr[i];
-            } else {
-                break;
             }
         }
         return value;
     }
+
     public static void main(String[] args) {
-        FloorMethods(new int[]{1, 2, 4, 6, 10}, 5);
+        System.out.println(FloorMethods(new int[] { 1, 2, 4, 6, 10 }, 5));
     }
 }

@@ -1,7 +1,10 @@
 package Algorthims;
 
+//  7, 1, 5, 3, 6, 4
+// 5
 public class Buy_and_Sell_Stock {
     public static int Buy_and_Sell_StockMethods(int arr[]) {
+
         int maxprofit = 0;
 
         for (int i = 0; i < arr.length; i++) {

@@ -16,16 +16,16 @@ package Algorthims;
 
 public class Ceiling {
     public static int CeilingMethods(int arr[]) {
-
         int value = -1;
-        int target = 5;
+        int targetvalue = 5;
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > target) {
+            if (arr[i] >= targetvalue) {
                 value = arr[i];
                 break;
             }
         }
+
         return value;
     }
 
