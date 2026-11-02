@@ -5,27 +5,21 @@ package Algorthims;
 // 6
 
 public class ClosestElement {
-    public static int ClosestElementMethods(int arr[]) {
+    public static void ClosestElementMethods(int arr[]) {
+        int value = -1;
+        int targetvalue = 7;
 
-        int value=-1;
-        int target=7;
-        for(int i=0;i<arr.length;i++)
-        {
-            if(arr[i]<=target)
-            {
-                value=arr[i];
-            }
-
-            else
-            {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < targetvalue) {
+                value = arr[i];
+            } else {
                 break;
             }
-
         }
-        return value;
+        System.out.println(value);
     }
 
     public static void main(String[] args) {
-        System.out.println(ClosestElementMethods(new int[] { 1, 4, 6, 8, 10 }));
+        ClosestElementMethods(new int[] { 1, 4, 6, 8, 10 });
     }
 }

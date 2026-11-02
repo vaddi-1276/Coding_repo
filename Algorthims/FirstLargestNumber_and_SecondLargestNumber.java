@@ -6,11 +6,8 @@ package Algorthims;
 // Second Largest Number 15
 
 public class FirstLargestNumber_and_SecondLargestNumber {
-
     public static int FirstLargestNumberMethods(int arr[]) {
-
         int firstlargestnumber = Integer.MIN_VALUE;
-
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > firstlargestnumber) {
                 firstlargestnumber = arr[i];
@@ -20,21 +17,20 @@ public class FirstLargestNumber_and_SecondLargestNumber {
     }
 
     public static int SecondLargestNumberMethods(int arr[]) {
-
         int firstlargestnumber = Integer.MIN_VALUE;
-        int secondlargest = Integer.MIN_VALUE;
+        int secondlargestnumber = Integer.MIN_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > firstlargestnumber) {
-                secondlargest = firstlargestnumber;
+                secondlargestnumber = firstlargestnumber;
                 firstlargestnumber = arr[i];
             }
 
-            else if (arr[i] > secondlargest && firstlargestnumber != arr[i]) {
-                secondlargest = arr[i];
+            else if (arr[i] > secondlargestnumber && firstlargestnumber != arr[i]) {
+                secondlargestnumber = arr[i];
             }
         }
-        return secondlargest;
+        return secondlargestnumber;
     }
 
     public static void main(String[] args) {
